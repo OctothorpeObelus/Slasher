@@ -341,7 +341,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ -138.0, 50.0 ]
+				m_vecPosition = [ -138.0, 2.0 ]
 				m_nNodeID = 
 				{
 					m_id = 192381123
@@ -954,7 +954,7 @@
 						{
 							m_id = 1749138382
 						}
-						m_position = [ -2.0, -190.0 ]
+						m_position = [ -1.0, -216.0 ]
 						m_bIsStartState = false
 						m_bIsEndtState = false
 						m_bIsPassthrough = false
@@ -975,7 +975,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ -136.0, 99.0 ]
+				m_vecPosition = [ -141.0, 133.0 ]
 				m_nNodeID = 
 				{
 					m_id = 327905047
@@ -1610,7 +1610,7 @@
 			{
 				_class = "CLookAtAnimNode"
 				m_sName = "Aim Head"
-				m_vecPosition = [ 304.0, -63.0 ]
+				m_vecPosition = [ 314.0, -53.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1946632052

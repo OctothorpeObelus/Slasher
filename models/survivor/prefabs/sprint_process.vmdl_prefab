@@ -15,7 +15,7 @@
 				align_rz = false
 				align_frame_type = "Number"
 				frame = 0
-				align_to_anim = "Idle"
+				align_to_anim = "IdlePose_Default"
 				align_to_frame_type = "Number"
 				align_to_frame = 0
 				bone = "Hips"
