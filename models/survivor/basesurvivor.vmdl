@@ -1,0 +1,1037 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "content/basesurvivor-fixedlegs.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "AIMPitch"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/AIM-Pitch.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "AIMYaw"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/AIM-Yaw.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "IdlePose_Default"
+						activity_name = "ACT_IDLE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Idle.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "Folder"
+						name = "Walk"
+						children = 
+						[
+							{
+								_class = "AnimFile"
+								name = "WalkSW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_1.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "WalkS"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_2.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "WalkSE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_3.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "WalkW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_4.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "WalkE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_6.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "WalkNW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_7.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "WalkN"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_8.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "WalkNE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/walk_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Walk_9.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "1DBlend"
+								name = "Walk_1D"
+								activity_name = "ACT_WALK"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								poseParam = "move_direction"
+								blendList = 
+								[
+									{
+										name = "WalkN"
+										weight = 0.0
+									},
+									{
+										name = "WalkNE"
+										weight = 45.0
+									},
+									{
+										name = "WalkE"
+										weight = 90.0
+									},
+									{
+										name = "WalkSE"
+										weight = 135.0
+									},
+									{
+										name = "WalkS"
+										weight = 180.0
+									},
+									{
+										name = "WalkSW"
+										weight = 225.0
+									},
+									{
+										name = "WalkW"
+										weight = 270.0
+									},
+									{
+										name = "WalkNW"
+										weight = 315.0
+									},
+									{
+										name = "WalkN"
+										weight = 360.0
+									},
+								]
+							},
+							{
+								_class = "2DBlend"
+								name = "Walk_2D"
+								activity_name = "ACT_WALK"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								row_pose_param_name = "move_y"
+								col_pose_param_name = "move_x"
+								row_weight_list = [ -1.0, 0.0, 1.0 ]
+								col_weight_list = [ 0.0, 0.0, 0.0 ]
+								blend_anim_list = 
+								[
+									[ 
+										"WalkSW",
+										"WalkS",
+										"WalkSE",
+									],
+									[ 
+										"WalkW",
+										"Idle",
+										"WalkE",
+									],
+									[ 
+										"WalkNW",
+										"WalkN",
+										"WalkNE",
+									],
+								]
+							},
+						]
+					},
+					{
+						_class = "Folder"
+						name = "Run"
+						children = 
+						[
+							{
+								_class = "AnimFile"
+								name = "RunSW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RunSW.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "RunS"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RUNS.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "RunSE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RunSE.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "RunW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RunW.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "RunE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RunE.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "RunNW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RunNW.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "RunN"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RunN.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "RunNE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/run_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/RunNE.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "1DBlend"
+								name = "Run_1D"
+								activity_name = "ACT_RUN"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								poseParam = "move_direction"
+								blendList = 
+								[
+									{
+										name = "RunN"
+										weight = 0.0
+									},
+									{
+										name = "RunNE"
+										weight = 45.0
+									},
+									{
+										name = "RunE"
+										weight = 90.0
+									},
+									{
+										name = "RunSE"
+										weight = 135.0
+									},
+									{
+										name = "RunS"
+										weight = 180.0
+									},
+									{
+										name = "RunSW"
+										weight = 225.0
+									},
+									{
+										name = "RunW"
+										weight = 270.0
+									},
+									{
+										name = "RunNW"
+										weight = 315.0
+									},
+									{
+										name = "RunN"
+										weight = 360.0
+									},
+								]
+							},
+							{
+								_class = "2DBlend"
+								name = "Run_2D"
+								activity_name = "ACT_RUN"
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								row_pose_param_name = "move_y"
+								col_pose_param_name = "move_x"
+								row_weight_list = [ -1.0, 0.0, 1.0 ]
+								col_weight_list = [ 0.0, 0.0, 0.0 ]
+								blend_anim_list = 
+								[
+									[ 
+										"RunSW",
+										"RunS",
+										"RunSE",
+									],
+									[ 
+										"RunW",
+										"Idle",
+										"RunE",
+									],
+									[ 
+										"RunNW",
+										"RunN",
+										"RunNE",
+									],
+								]
+							},
+						]
+					},
+					{
+						_class = "Folder"
+						name = "Jumping"
+						children = 
+						[
+							{
+								_class = "AnimFile"
+								name = "Jump"
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Jump.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "Fall"
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Fall.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "Land"
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Land.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+						]
+					},
+					{
+						_class = "Folder"
+						name = "Sprint"
+						children = 
+						[
+							{
+								_class = "AnimFile"
+								name = "Sprint"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/sprint_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/Sprint.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "SprintNE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/sprint_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/SprintNE.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "SprintNW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/survivor/prefabs/sprint_process.vmdl_prefab"
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "content/sprintnw.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								reverse = false
+							},
+						]
+					},
+				]
+				default_root_bone_name = ""
+			},
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 0.1
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},
+			{
+				_class = "PoseParamList"
+				children = 
+				[
+					{
+						_class = "PoseParam"
+						name = "move_direction"
+						poseparam_min = 0.0
+						poseparam_max = 360.0
+						poseparam_looping = true
+						poseparam_loop = 0.0
+					},
+					{
+						_class = "PoseParam"
+						name = "move_x"
+						poseparam_min = -1.0
+						poseparam_max = 1.0
+						poseparam_looping = false
+						poseparam_loop = 0.0
+					},
+					{
+						_class = "PoseParam"
+						name = "move_y"
+						poseparam_min = -1.0
+						poseparam_max = 1.0
+						poseparam_looping = false
+						poseparam_loop = 0.0
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "Feet"
+						children = 
+						[
+							{
+								_class = "Foot"
+								name = "right_foot"
+								anklebone = "FootR"
+								toebone = "ToeR"
+								balloffset = [ 0.0, 0.0, 0.0 ]
+								heeloffset = [ 0.0, 0.0, 0.0 ]
+								autolevel = true
+								traceheight = 40.0
+								traceradius = 2.0
+							},
+							{
+								_class = "Foot"
+								name = "left_foot"
+								anklebone = "FootL"
+								toebone = "ToeL"
+								balloffset = [ 0.0, 0.0, 0.0 ]
+								heeloffset = [ 0.0, 0.0, 0.0 ]
+								autolevel = true
+								traceheight = 40.0
+								traceradius = 2.0
+							},
+						]
+						locktolerance = 0.6
+						heighttolerance = 2.0
+						sanitizetrajectories = true
+					},
+					{
+						_class = "MovementSettings"
+						movementsettings = 
+						{
+							name = ""
+							speeds = [  ]
+							runspeed = 150.0
+							walkspeed = 75.0
+							maxSpringTension = 100.0
+							springConstant = 10.0
+							useSmoothPaths = true
+							useMotionDamping = false
+							sharpStartAngle = 180.0
+							m_vTraceScale = [ 1.0, 1.0, 1.0 ]
+						}
+					},
+					{
+						_class = "LookAtChain"
+						name = "LookChain"
+						lookat_chain = 
+						{
+							name = ""
+							bones = 
+							[
+								{
+									name = "Head"
+									weight = 0.6
+								},
+								{
+									name = "Neck"
+									weight = 0.35
+								},
+							]
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "material.vmat"
+								to = "materials/concrete_b_bld.vmat"
+							},
+						]
+						use_global_default = true
+						global_default_material = "materials/concrete_b_bld.vmat"
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "forward_reference"
+						parent_bone = "Head"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 90.0, 180.0, 90.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = "models/survivor/basesurvivor.vanmgrph"
+	}
+}
