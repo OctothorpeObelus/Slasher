@@ -4,6 +4,9 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 content/
+tools_asset_info.bin
+tools_thumbnail_cache.bin
+.vscode/
 
 # User-specific files
 *.rsuser
