@@ -740,7 +740,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
-								source_filename = "content/Jump.fbx"
+								source_filename = "content/idle.fbx"
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0

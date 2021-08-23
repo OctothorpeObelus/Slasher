@@ -337,3 +337,6 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+tools_asset_info.bin
+content/*.*
+.vscode/*.*
