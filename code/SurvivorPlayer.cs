@@ -9,6 +9,7 @@ partial class SurvivorPlayer : Player {
         Animator = new StandardPlayerAnimator();
         Camera = new ThirdPersonCamera();
 
+        SetBodyGroup("Survivors",2);
         EnableAllCollisions = true;
         EnableDrawing = true;
         EnableHideInFirstPerson = true;

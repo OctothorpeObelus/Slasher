@@ -3,6 +3,46 @@
 	rootNode = 
 	{
 		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "AnimAlign"
+				align_tx = true
+				align_ty = true
+				align_tz = false
+				align_rx = false
+				align_ry = false
+				align_rz = false
+				align_frame_type = "Number"
+				frame = 0
+				align_to_anim = "IdlePose_Default"
+				align_to_frame_type = "Number"
+				align_to_frame = 0
+				bone = "Hips"
+			},
+			{
+				_class = "AnimEvent"
+				event_class = "AE_FOOTSTEP"
+				event_frame = 19
+				event_keys = 
+				{
+					Attachment = ""
+					Foot = "0"
+					Volume = 0.5
+				}
+			},
+			{
+				_class = "AnimEvent"
+				event_class = "AE_FOOTSTEP"
+				event_frame = 40
+				event_keys = 
+				{
+					Attachment = ""
+					Foot = "1"
+					Volume = 0.5
+				}
+			},
+		]
 		model_archetype = ""
 		primary_associated_entity = ""
 		anim_graph_name = ""

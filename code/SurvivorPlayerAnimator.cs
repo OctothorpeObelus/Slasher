@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Sandbox {
     public class SurvivorPlayerAnimator : PawnAnimator {
-        public override void Simulate() {
+        /* public override void Simulate() {
             DoWalk();
         }
 
@@ -28,6 +28,6 @@ namespace Sandbox {
                 SetParam("move_y", sideward);
                 SetParam("move_x", forward);
             }
-        }
+        } */
     }
 }
