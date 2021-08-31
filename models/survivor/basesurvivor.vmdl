@@ -1291,6 +1291,34 @@
 								from = "man3_body_diffuse.vmat"
 								to = "materials/howard/body.vmat"
 							},
+							{
+								from = "male1_body_diffuse.vmat"
+								to = "materials/john/man_1_body_diffuse.vmat"
+							},
+							{
+								from = "male1_shoes_diffuse.vmat"
+								to = "materials/howard/shoes.vmat"
+							},
+							{
+								from = "male1_bottom_diffuse.vmat"
+								to = "male1_bottom_diffuse.vmat"
+							},
+							{
+								from = "man_1_bottom_diffuse.vmat"
+								to = "materials/john/pants.vmat"
+							},
+							{
+								from = "man_1_top_diffuse.vmat"
+								to = "materials/john/top.vmat"
+							},
+							{
+								from = "man_1_shoes_diffuse.vmat"
+								to = "materials/john/shoes.vmat"
+							},
+							{
+								from = "man_1_hair_diffuse.vmat"
+								to = "materials/john/hair.vmat"
+							},
 						]
 					},
 					{
@@ -1325,6 +1353,62 @@
 								from = "material.vmat"
 								to = "materials/concrete_b_bld.vmat"
 							},
+							{
+								from = "man_1_body_diffuse.vmat"
+								to = "materials/john/man_1_body_diffuse.vmat"
+							},
+							{
+								from = "man_1_bottom_diffuse.vmat"
+								to = "materials/john/pants.vmat"
+							},
+							{
+								from = "man_1_hair_diffuse.vmat"
+								to = "materials/john/hair.vmat"
+							},
+							{
+								from = "man_1_shoes_diffuse.vmat"
+								to = "materials/john/shoes.vmat"
+							},
+							{
+								from = "man_1_top_diffuse.vmat"
+								to = "materials/john/top.vmat"
+							},
+							{
+								from = "man4_body_diffuse.vmat"
+								to = "materials/tim/body.vmat"
+							},
+							{
+								from = "man4_bottom_diffuse.vmat"
+								to = "materials/tim/pants.vmat"
+							},
+							{
+								from = "man4_hair_diffuse.vmat"
+								to = "materials/tim/hair.vmat"
+							},
+							{
+								from = "man4_shoes_diffuse.vmat"
+								to = "materials/tim/shoes.vmat"
+							},
+							{
+								from = "man4_top_diffuse.vmat"
+								to = "materials/tim/top.vmat"
+							},
+							{
+								from = "male1_body_diffuse.vmat"
+								to = "materials/demarcus/body.vmat"
+							},
+							{
+								from = "male1_bottom_diffuse.vmat"
+								to = "materials/demarcus/pants.vmat"
+							},
+							{
+								from = "male1_shoes_diffuse.vmat"
+								to = "materials/demarcus/shoes.vmat"
+							},
+							{
+								from = "male1_top_diffuse.vmat"
+								to = "materials/demarcus/top.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
@@ -1332,7 +1416,33 @@
 					{
 						_class = "MaterialGroup"
 						name = "John"
-						remaps = [  ]
+						remaps = 
+						[
+							{
+								from = "male1_body_diffuse.vmat"
+								to = "materials/john/man_1_body_diffuse.vmat"
+							},
+							{
+								from = "male1_shoes_diffuse.vmat"
+								to = "materials/john/shoes.vmat"
+							},
+							{
+								from = "male1_bottom_diffuse.vmat"
+								to = "materials/john/pants.vmat"
+							},
+							{
+								from = "male1_top_diffuse.vmat"
+								to = "materials/john/top.vmat"
+							},
+							{
+								from = "man_1_bottom_diffuse.vmat"
+								to = "materials/john/pants.vmat"
+							},
+							{
+								from = "man_1_top_diffuse.vmat"
+								to = "materials/john/top.vmat"
+							},
+						]
 					},
 				]
 			},
