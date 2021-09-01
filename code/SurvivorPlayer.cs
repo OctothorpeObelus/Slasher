@@ -7,10 +7,13 @@ partial class SurvivorPlayer : Player {
 
         Controller = new WalkController();
         Animator = new StandardPlayerAnimator();
-        Camera = new ThirdPersonCamera();
+		Camera = new ThirdPersonCamera();
+		//Camera = new FirstPersonCamera();
 
-        SetBodyGroup("Survivors",1);
-        EnableAllCollisions = true;
+		SetBodyGroup("Survivors",1);
+		SetBodyGroup("GasCan", 0);
+		SetBodyGroup("Flashlight", 0);
+		EnableAllCollisions = true;
         EnableDrawing = true;
         EnableHideInFirstPerson = true;
         EnableShadowInFirstPerson = true;

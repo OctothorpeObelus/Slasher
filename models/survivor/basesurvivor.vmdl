@@ -1656,6 +1656,11 @@
 						[
 							{
 								_class = "BodyGroupChoice"
+								name = "EmptyHandItem"
+								meshes = [  ]
+							},
+							{
+								_class = "BodyGroupChoice"
 								name = "FuelCan"
 								meshes = 
 								[
@@ -1670,6 +1675,11 @@
 						name = "Flashlight"
 						children = 
 						[
+							{
+								_class = "BodyGroupChoice"
+								name = "EmptyHandLight"
+								meshes = [  ]
+							},
 							{
 								_class = "BodyGroupChoice"
 								name = "Flashlightmodel"
