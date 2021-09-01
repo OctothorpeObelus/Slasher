@@ -9,12 +9,15 @@ partial class SurvivorPlayer : Player {
         Animator = new StandardPlayerAnimator();
         Camera = new ThirdPersonCamera();
 
-        SetBodyGroup("Survivors",2);
+        SetBodyGroup("Survivors",3);
         EnableAllCollisions = true;
         EnableDrawing = true;
         EnableHideInFirstPerson = true;
         EnableShadowInFirstPerson = true;
         
         base.Respawn();
-    }
+
+	}
+
 }
+
