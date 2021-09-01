@@ -89,6 +89,38 @@
 							exception_list = [  ]
 						}
 					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/FuelCan/FuelCan-survivor.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/Flashlight/Flashlight-survivor.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
 				]
 			},
 			{
@@ -1429,6 +1461,14 @@
 								from = "male1_top_diffuse.vmat"
 								to = "materials/demarcus/top.vmat"
 							},
+							{
+								from = "jerrycan.vmat"
+								to = "materials/game/fuelcan/gascan.vmat"
+							},
+							{
+								from = "defaultmaterial.vmat"
+								to = "materials/game/flashlight/flashlighttex.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
@@ -1604,6 +1644,38 @@
 								meshes = 
 								[
 									"unnamed_5",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+					{
+						_class = "BodyGroup"
+						name = "GasCan"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								name = "FuelCan"
+								meshes = 
+								[
+									"unnamed_6",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+					{
+						_class = "BodyGroup"
+						name = "Flashlight"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								name = "Flashlightmodel"
+								meshes = 
+								[
+									"unnamed_7",
 								]
 							},
 						]
