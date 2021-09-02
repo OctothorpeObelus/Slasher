@@ -1,0 +1,340 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 0.1
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},
+			{
+				_class = "BodyGroupList"
+				children = 
+				[
+					{
+						_class = "BodyGroup"
+						name = "Battery"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								name = "False"
+								meshes = [  ]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "True"
+								meshes = 
+								[
+									"unnamed_3",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "aluminum.vmat"
+								to = "materials/game/generator/aluminum.vmat"
+							},
+							{
+								from = "jerrycan.vmat"
+								to = "materials/game/fuelcan/gascan.vmat"
+							},
+							{
+								from = "paint.vmat"
+								to = "materials/game/generator/paint.vmat"
+							},
+							{
+								from = "panel.vmat"
+								to = "materials/game/generator/panel.vmat"
+							},
+							{
+								from = "steeldark.vmat"
+								to = "materials/game/generator/darksteel.vmat"
+							},
+							{
+								from = "wheels_mat.vmat"
+								to = "materials/game/generator/wheel.vmat"
+							},
+							{
+								from = "red.vmat"
+								to = "materials/game/generator/red.vmat"
+							},
+							{
+								from = ""
+								to = "materials/game/generator/black.vmat"
+							},
+							{
+								from = "battery_material.vmat"
+								to = "materials/game/battery/battery.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ -0.059564, 137.432388, -15.600766 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 30.354828, 275.864777, 63.924236 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "rubber"
+						collision_prop = "default"
+						origin = [ 0.029804, 10.75042, -20.001137 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 49.410965, 22.500839, 24.705648 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ -0.023204, 7.5665, 29.023373 ]
+						angles = [ 45.0, 0.0, 0.0 ]
+						dimensions = [ 12.484642, 19.193302, 12.525133 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ -0.022506, 7.5665, 22.034605 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 17.661386, 19.193302, 13.922556 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/Generator/GeneratorFull.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/Generator/GeneratorBattery.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/Generator/GeneratorBatteryInserted.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "DefaultState"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.0
+						fade_out_time = 0.0
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Game/Generator/Generator-Nullstate.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "FuelPour"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 100
+								event_keys = 
+								{
+									TypeName = "FuelFilled"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+						]
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.0
+						fade_out_time = 0.0
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Game/Generator/Generator-FuelPour.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "BatteryInsert"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_SV_BODYGROUP_SET_VALUE"
+								event_frame = 0
+								event_keys = 
+								{
+									bodygroup = "Battery"
+									value = 1
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_SV_BODYGROUP_SET_VALUE"
+								event_frame = 59
+								event_keys = 
+								{
+									bodygroup = "Battery"
+									value = 0
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 59
+								event_keys = 
+								{
+									TypeName = "BatteryIn"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+						]
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.0
+						fade_out_time = 0.0
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Game/Generator/Generator-BatteryInsert.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "BatteryState"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.0
+						fade_out_time = 0.0
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Game/Generator/Generator-Batterystate.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+		]
+		model_archetype = "static_prop_model"
+		primary_associated_entity = "prop_static"
+		anim_graph_name = ""
+	}
+}

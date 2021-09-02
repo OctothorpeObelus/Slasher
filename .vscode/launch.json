@@ -5,7 +5,14 @@
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
-            "processName": "sbox.exe",
+            "processName": "sbox-dev.exe",
+            "requireExactSource": false // makes sure you can debug stuff with codegen (e.g entities)
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processName": "sbox-dev.exe",
             "requireExactSource": false // makes sure you can debug stuff with codegen (e.g entities)
         }
     ]
