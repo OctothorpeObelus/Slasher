@@ -12,8 +12,8 @@ partial class SurvivorPlayer : Player {
 
 		SetBodyGroup("Survivors",1);
 		SetBodyGroup("GasCan", 0);
-		SetBodyGroup("Flashlight", 0);
-		SetBodyGroup("Battery", 1);
+		SetBodyGroup("Flashlight", 1);
+		SetBodyGroup("Battery", 0);
 		EnableAllCollisions = true;
         EnableDrawing = true;
         EnableHideInFirstPerson = true;
