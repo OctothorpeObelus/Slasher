@@ -1,16 +1,14 @@
+using System.Diagnostics.Tracing;
 using Sandbox;
 
 public partial class GeneratorEntity : AnimEntity, IUse {
-    private SurvivorPlayer user;
-    private bool HasBattery;
+    private bool HasBattery {get; set;} = false;
 
     public override void Spawn() {
         base.Spawn();
 
         SetModel("models/generator/generator.vmdl");
         SetupPhysicsFromModel(PhysicsMotionType.Static, false);
-        this.user = null;
-        this.HasBattery = false;
         Sequence = "DefaultState";
     }
 
@@ -19,13 +17,14 @@ public partial class GeneratorEntity : AnimEntity, IUse {
     }
 
     public bool OnUse( Entity user ) {
-        Sandbox.Log.Info(user);
-        if ( user is SurvivorPlayer player) {
-            //TODO: Check for tags of items and handle appropriately.
+        if (Sequence == "BatteryInsert" || Tags.Has("has_battery")) {return false;}
+
+        if ( user is Player player) {
             if (player.Tags.Has("is_holding_battery") && !Tags.Has("has_battery")) {
-                this.user = player;
-                Sandbox.Log.Info("User has battery and generator does not.");
+                player.Tags.Remove("is_holding_battery");
+                player.SetAnimBool("b_item_equipped_generic", false);
                 Sequence = "BatteryInsert";
+                Tags.Add("has_battery");
             }
         }
 
@@ -33,15 +32,18 @@ public partial class GeneratorEntity : AnimEntity, IUse {
     }
 
     public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData) {
-        Sandbox.Log.Info(name+" "+Tags.Has("has_battery"));
-        if (name == "BatteryIn" && this.user != null) {
-            //Insert the battery.
-            SetBodyGroup("Battery",1);
+        if (name == "BatteryIn") {
+            //Insert the battery into the generator.
+            Tags.Add("battery_in");
             Sequence = "DefaultState";
-            Tags.Add("has_battery");
-            this.user.SetBodyGroup("Battery", 0);
-            this.user.Tags.Remove("is_holding_battery");
-            this.user = null;
+        }
+    }
+
+    public override void Simulate( Client cl ) {
+        if (Tags.Has("battery_in")) {
+            this.SetBodyGroup("Battery",1);
+        } else {
+            this.SetBodyGroup("Battery",0);
         }
     }
 }

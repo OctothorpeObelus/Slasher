@@ -13,7 +13,7 @@
 				{
 					Attachment = ""
 					Foot = "1"
-					Volume = 1.0
+					Volume = 100.0
 				}
 			},
 			{
@@ -24,7 +24,7 @@
 				{
 					Attachment = ""
 					Foot = "0"
-					Volume = 1.0
+					Volume = 100.0
 				}
 			},
 			{

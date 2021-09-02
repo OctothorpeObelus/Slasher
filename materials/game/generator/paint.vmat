@@ -26,7 +26,7 @@ Layer0
 	TextureNormal "content/game/generator/materials/paint.jpg"
 
 	//---- Roughness ----
-	TextureRoughness "materials/default/default_rough.tga"
+	TextureRoughness "content/Game/Generator/materials/paint_rough1.jpg"
 
 	//---- Texture Coordinates ----
 	g_nScaleTexCoordUByModelScaleAxis "0"
