@@ -22,8 +22,10 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         if ( user is Player player) {
             if (player.Tags.Has("is_holding_battery") && !Tags.Has("has_battery")) {
                 player.Tags.Remove("is_holding_battery");
-                player.SetAnimBool("b_item_equipped_generic", false);
-                Sequence = "BatteryInsert";
+				player.Tags.Remove("has_item");
+				player.SetAnimBool("b_item_equipped_generic", false);
+				player.Sequence = "BatteryInserting";
+				Sequence = "BatteryInsert";
                 Tags.Add("has_battery");
             }
         }

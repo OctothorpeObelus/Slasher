@@ -16,6 +16,14 @@ public partial class Slasher : Sandbox.Game {
         generator.Position = new Vector3(-202.90f, -3024.05f, 4.03f);
         generator.Spawn();
 
-        player.Respawn();
+		var fuelcan = new FuelEntity();
+		fuelcan.Position = new Vector3(-272.90f, -3064.05f, 4.03f);
+		fuelcan.Spawn();
+
+		var battery = new BatteryEntity();
+		battery.Position = new Vector3(-272.90f, -2964.05f, 4.03f);
+		battery.Spawn();
+
+		player.Respawn();
     }
 }

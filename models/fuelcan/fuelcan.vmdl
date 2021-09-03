@@ -1,0 +1,116 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 0.1
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},
+			{
+				_class = "BodyGroupList"
+				children = 
+				[
+					{
+						_class = "BodyGroup"
+						name = "GasCan"
+						hidden_in_tools = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "jerrycan.vmat"
+								to = "materials/game/fuelcan/gascan.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "metal.sheet"
+						collision_prop = "default"
+						origin = [ -0.205999, -0.035917, 9.527588 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 14.294096, 6.07909, 19.077724 ]
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "GuelHitbox"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = ""
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -7.449704, -3.047743, -0.09875 ]
+								hitbox_maxs = [ 7.37447, 2.933445, 19.081932 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/FuelCan/FuelCan.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}
