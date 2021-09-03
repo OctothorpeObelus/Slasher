@@ -258,7 +258,7 @@
 			},
 			{
 				_class = "CBoolAnimParameter"
-				m_name = "b_inserting_battery"
+				m_name = "b_batteryinsertion"
 				m_id = 
 				{
 					m_id = 662489861

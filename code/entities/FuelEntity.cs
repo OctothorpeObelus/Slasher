@@ -25,8 +25,7 @@ public partial class FuelEntity : Prop, IUse
 			{
 				player.Tags.Add("is_holding_fuel");
 				player.Tags.Add("has_item");
-				player.SetAnimBool("b_item_equipped_generic", true);
-				player.SetBodyGroup("GasCan", 1);
+
 				Delete();
 			}
 		}

@@ -1208,6 +1208,29 @@
 											value = 0
 										}
 									},
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 60
+										event_keys = 
+										{
+											TypeName = "BatteryInsertionComplete"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+									{
+										_class = "AnimEvent"
+										event_class = "AE_SV_BODYGROUP_SET_VALUE"
+										event_frame = 1
+										event_keys = 
+										{
+											bodygroup = "Battery"
+											value = 0
+										}
+									},
 								]
 								activity_name = ""
 								activity_weight = 1

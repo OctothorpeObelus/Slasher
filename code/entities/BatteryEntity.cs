@@ -25,7 +25,6 @@ public partial class BatteryEntity : Prop, IUse
 			{
 				player.Tags.Add("is_holding_battery");
 				player.Tags.Add("has_item");
-				player.SetAnimBool("b_item_equipped_generic", true);
 
 				Delete();
 			}

@@ -70,6 +70,8 @@ partial class SurvivorPlayer : Player
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
+
+		flashlightOn = false;
 	}
 	private SpotLightEntity CreateLight()
 	{
@@ -93,11 +95,36 @@ partial class SurvivorPlayer : Player
 		return light;
 	}
 
+	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData)
+	{
+		if (name == "BatteryInsertionComplete")
+		{
+			Tags.Remove("active_battery_inserter");
+
+			Controller = new WalkController();
+		}
+	}
+
 	public override void Simulate(Client cl)
 	{
 		base.Simulate(cl);
 
 		TickPlayerUse();
+
+		if (Tags.Has("active_battery_inserter"))
+		{
+			this.SetAnimBool("b_batteryinsertion", true);
+
+			this.SetBodyGroup("Battery", 0);
+
+			Controller = null;
+
+			//Position = GeneratorEntity().Position;
+		}
+		else
+		{
+			this.SetAnimBool("b_batteryinsertion", false);
+		}
 
 		if (Input.Pressed(InputButton.Attack2))
 		{
@@ -148,14 +175,14 @@ partial class SurvivorPlayer : Player
 			}
 		}
 
-		if (Tags.Has("is_holding_battery"))
-		{
-			this.SetBodyGroup("Battery", 1);
-		}
-		else
-		{
-			this.SetBodyGroup("Battery", 0);
-		}
+		//if (Tags.Has("is_holding_battery"))
+		//{
+		//	this.SetBodyGroup("Battery", 1);
+		//}
+		//else
+		//{
+		//	this.SetBodyGroup("Battery", 0);
+		//}
 
 		if (Tags.Has("is_holding_fuel"))
 		{
@@ -175,6 +202,9 @@ partial class SurvivorPlayer : Player
 			this.SetAnimBool("b_item_equipped_generic", false);
 		}
 	}
+
+	//dropping an item causes an extra, useless dummy prop to be spawned for no reason
+	//needs fixed
 
 	void DropFuelCan()
 	{
@@ -206,5 +236,27 @@ partial class SurvivorPlayer : Player
 			droppedbat.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 100.0f, true);
 		}
 	}
+
+	//why are bodygroups like this why
+	//it's like they are consistently delayed by one action what do i do
+	//no matter what i try they ALWAYS need one extra push to realize what tf they are supposed to be doing
+
+	protected override void OnTagAdded(string tag)
+	{
+		if(tag == "is_holding_battery")
+        {
+			this.SetBodyGroup("Battery", 1);
+		}
+	}
+
+	protected override void OnTagRemoved(string tag)
+	{
+		if (tag == "is_holding_battery")
+		{
+			this.SetBodyGroup("Battery", 0);
+		}
+	}
+
+	//even here the bodygroups won't change unless one of the defined inputs is pressed afterwards.
 }
 

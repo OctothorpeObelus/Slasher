@@ -311,6 +311,26 @@
 				]
 				default_root_bone_name = ""
 			},
+			{
+				_class = "WeightListList"
+				children = 
+				[
+					{
+						_class = "WeightList"
+						name = "Battery"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "Battery"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+				]
+			},
 		]
 		model_archetype = "static_prop_model"
 		primary_associated_entity = "prop_static"
