@@ -11,15 +11,45 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         SetModel("models/generator/generator.vmdl");
         SetupPhysicsFromModel(PhysicsMotionType.Static, false);
         Sequence = "DefaultState";
-    }
 
-    public bool IsUsable( Entity user ) {
+		//this.SetBodyGroup("Battery", 0);
+	}
+
+	public override void Simulate(Client cl)
+	{
+
+		this.Simulate(cl);
+
+		if (Tags.Has("battery_in"))
+		{
+			this.SetBodyGroup("Battery", 1);
+			Position = Position + new Vector3(0,0,1);
+		}
+		else
+		{
+			//this.SetBodyGroup("Battery", 0);
+		}
+	}
+
+	public bool IsUsable( Entity user ) {
         return true;
     }
 
     public bool OnUse( Entity user ) 
 	{
-        if (Sequence == "BatteryInsert" || Tags.Has("has_battery")) {return false;}
+
+		//this.SetBodyGroup("Battery", 1);
+
+		if (Tags.Has("battery_in"))
+		{
+			this.SetBodyGroup("Battery", 1);
+		}
+		else
+		{
+			//this.SetBodyGroup("Battery", 0);
+		}
+
+		if (Sequence == "BatteryInsert" || Tags.Has("has_battery")) {return false;}
 
         if ( user is Player player) {
             if (player.Tags.Has("is_holding_battery") && !Tags.Has("has_battery")) {
@@ -34,8 +64,10 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 
 
 				Sequence = "BatteryInsert";
-                Tags.Add("has_battery");
-            }
+				Tags.Add("has_battery");
+
+				//this.SetBodyGroup("Battery", 1);
+			}
         }
 
         return false;
@@ -44,20 +76,16 @@ public partial class GeneratorEntity : AnimEntity, IUse {
     public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData) {
         if (name == "BatteryIn") {
 			//Insert the battery into the generator.
-			Tags.Add("battery_in");
+
+			//Tags.Add("battery_in");
             Sequence = "DefaultState";
-			this.SetBodyGroup("Battery", 1);
+
+			//this.SetBodyGroup("Battery", 1);
+		}
+
+		if (name == "debug_battery")
+		{
+			this.Tags.Add("battery_in");
 		}
 	}
-
-    public override void Simulate( Client cl ) {
-
-		base.Simulate(cl);
-
-		if (Tags.Has("battery_in")) {
-			this.SetBodyGroup("Battery",1);
-        } else {
-			this.SetBodyGroup("Battery",0);
-        }
-    }
 }

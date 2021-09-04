@@ -31,6 +31,7 @@
 						[
 							{
 								_class = "BodyGroupChoice"
+								name = "EmptySlot"
 								meshes = [  ]
 							},
 							{
@@ -264,6 +265,19 @@
 								event_keys = 
 								{
 									TypeName = "BatteryIn"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 10
+								event_keys = 
+								{
+									TypeName = "debug_battery"
 									Int = 0
 									Float = 0.0
 									Vector = [ 0.0, 0.0, 0.0 ]

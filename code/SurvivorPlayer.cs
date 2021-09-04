@@ -43,8 +43,15 @@ partial class SurvivorPlayer : Player
 	public override void OnKilled()
 	{
 		base.OnKilled();
-		Camera = new SpectateRagdollCamera();
 		Controller = null;
+
+		//bool "b_dying" has to be set to true when slasher kills the survivor
+
+		//this.SetAnimBool("b_dying",true);
+
+		flashlightOn = false;
+
+		Camera = new SpectateRagdollCamera();
 
 		ent = new ModelEntity();
 		ent.Position = Position;
@@ -70,8 +77,6 @@ partial class SurvivorPlayer : Player
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
-
-		flashlightOn = false;
 	}
 	private SpotLightEntity CreateLight()
 	{
@@ -103,6 +108,38 @@ partial class SurvivorPlayer : Player
 
 			Controller = new WalkController();
 		}
+
+		if (name == "OnDeath")
+		{
+			Camera = new SpectateRagdollCamera();
+
+			ent = new ModelEntity();
+			ent.Position = Position;
+			ent.Rotation = Rotation;
+			ent.Scale = Scale;
+			ent.MoveType = MoveType.Physics;
+			ent.UsePhysicsCollision = true;
+			ent.EnableAllCollisions = true;
+			ent.CollisionGroup = CollisionGroup.Debris;
+			ent.SetModel(GetModelName());
+			ent.CopyBonesFrom(this);
+			ent.CopyBodyGroups(this);
+			ent.CopyMaterialGroup(this);
+			ent.TakeDecalsFrom(this);
+			ent.EnableHitboxes = true;
+			ent.EnableAllCollisions = true;
+			ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
+			ent.RenderColorAndAlpha = RenderColorAndAlpha;
+			ent.PhysicsGroup.Velocity = Velocity;
+			ent.SetInteractsAs(CollisionLayer.Debris);
+			ent.SetInteractsExclude(CollisionLayer.Player | CollisionLayer.Debris);
+			//ent.DeleteAsync( 10.0f );
+
+			EnableAllCollisions = false;
+			EnableDrawing = false;
+
+			//kill survivor also
+		}
 	}
 
 	public override void Simulate(Client cl)
@@ -120,6 +157,8 @@ partial class SurvivorPlayer : Player
 			Controller = null;
 
 			//Position = GeneratorEntity().Position;
+
+			//to do: force position to player to line up with the generator used
 		}
 		else
 		{
@@ -128,6 +167,7 @@ partial class SurvivorPlayer : Player
 
 		if (Input.Pressed(InputButton.Attack2))
 		{
+
 			if (Tags.Has("is_holding_fuel"))
 			{
 				Tags.Remove("is_holding_fuel");
@@ -201,10 +241,24 @@ partial class SurvivorPlayer : Player
 		{
 			this.SetAnimBool("b_item_equipped_generic", false);
 		}
+
+		//debug item spawns
+
+		if (Input.Pressed(InputButton.Slot1)) 
+		{
+			DropFuelCan();
+		}
+		if (Input.Pressed(InputButton.Slot2))
+		{
+			DropBattery();
+		}
+
 	}
 
 	//dropping an item causes an extra, useless dummy prop to be spawned for no reason
 	//needs fixed
+
+	//update: the dummy prop exists only clientside for some reason
 
 	void DropFuelCan()
 	{
@@ -241,6 +295,8 @@ partial class SurvivorPlayer : Player
 	//it's like they are consistently delayed by one action what do i do
 	//no matter what i try they ALWAYS need one extra push to realize what tf they are supposed to be doing
 
+	//update: apparently this only applies to the game host (or literally just me)
+
 	protected override void OnTagAdded(string tag)
 	{
 		if(tag == "is_holding_battery")
@@ -256,7 +312,5 @@ partial class SurvivorPlayer : Player
 			this.SetBodyGroup("Battery", 0);
 		}
 	}
-
-	//even here the bodygroups won't change unless one of the defined inputs is pressed afterwards.
 }
 
