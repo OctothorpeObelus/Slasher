@@ -8,11 +8,15 @@ public partial class Slasher : Sandbox.Game {
     public override void ClientJoined(Client client) {
         base.ClientJoined(client);
 
-        var player = new SurvivorPlayer();
-        player.Tags.Add("survivor");
-        client.Pawn = player;
+		var player = new SurvivorPlayer();
+		player.Tags.Add("survivor");
+		client.Pawn = player;
 
-        var generator = new GeneratorEntity();
+		//var player = new SlasherPlayer();
+		//player.Tags.Add("slasher");
+		//client.Pawn = player;
+
+		var generator = new GeneratorEntity();
         generator.Position = new Vector3(-202.90f, -3024.05f, 4.03f);
         generator.Spawn();
 		generator.Tags.Add("Generator_1");

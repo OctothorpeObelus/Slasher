@@ -1402,7 +1402,7 @@
 				m_tagSpans = [  ]
 				m_sequenceName = "IdlePose_Default"
 				m_playbackSpeed = 1.0
-				m_bLoop = false
+				m_bLoop = true
 			}
 		},
 		{
@@ -2415,7 +2415,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ 1632.0, -272.0 ]
+				m_vecPosition = [ 1600.0, -272.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1449670813

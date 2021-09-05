@@ -45,7 +45,7 @@ partial class SurvivorPlayer : Player
 		base.OnKilled();
 		Controller = null;
 
-		//bool "b_dying" has to be set to true when slasher kills the survivor
+		//bool "b_dying" to be set to true when slasher kills the survivor
 
 		//this.SetAnimBool("b_dying",true);
 

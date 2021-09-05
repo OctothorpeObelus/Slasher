@@ -28,7 +28,7 @@ partial class SlasherPlayer : Player {
 
 
     public override void Respawn() {
-        SetModel("models/citizen/citizen.vmdl");
+        SetModel("models/slasher/baba/bababooey.vmdl");
 
         Controller = new WalkController();
         Animator = new StandardPlayerAnimator();
