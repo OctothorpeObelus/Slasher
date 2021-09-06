@@ -137,6 +137,22 @@
 							exception_list = [  ]
 						}
 					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Survivor/Joe/survivorjoe.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
 				]
 			},
 			{
@@ -1615,6 +1631,22 @@
 								from = "battery_mat.vmat"
 								to = "materials/game/battery/battery.vmat"
 							},
+							{
+								from = "joe_arm.vmat"
+								to = "materials/survivor/joe/joe_arm.vmat"
+							},
+							{
+								from = "joe_clothes.vmat"
+								to = "materials/survivor/joe/joe_clothes.vmat"
+							},
+							{
+								from = "joe_face.vmat"
+								to = "materials/survivor/joe/joe_face.vmat"
+							},
+							{
+								from = "joe_shoe.vmat"
+								to = "materials/survivor/joe/joe_shoe.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
@@ -1790,6 +1822,14 @@
 								meshes = 
 								[
 									"unnamed_5",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "Joe"
+								meshes = 
+								[
+									"unnamed_9",
 								]
 							},
 						]
