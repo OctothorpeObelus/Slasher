@@ -1647,6 +1647,10 @@
 								from = "joe_shoe.vmat"
 								to = "materials/survivor/joe/joe_shoe.vmat"
 							},
+							{
+								from = "joe_hair.vmat"
+								to = "materials/survivor/joe/joe_hair.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""

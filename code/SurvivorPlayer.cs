@@ -244,7 +244,7 @@ partial class SurvivorPlayer : Player
 
 		//debug item spawns
 
-		if (Input.Pressed(InputButton.Slot1)) 
+		if (Input.Pressed(InputButton.Slot1))
 		{
 			DropFuelCan();
 		}
@@ -255,10 +255,12 @@ partial class SurvivorPlayer : Player
 
 	}
 
-	//dropping an item causes an extra, useless dummy prop to be spawned for no reason
-	//needs fixed
+		//dropping an item causes an extra, useless dummy prop to be spawned for no reason
+		//needs fixed
 
-	//update: the dummy prop exists only clientside for some reason
+		//update: the dummy prop exists only clientside for some reason
+
+		//update: fixed
 
 	void DropFuelCan()
 	{
@@ -272,9 +274,9 @@ partial class SurvivorPlayer : Player
 			droppedfuel.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 300.0f + Vector3.Up * 100.0f, true);
 			droppedfuel.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 100.0f, true);
 		}
-		else
-		{ 
-			
+		if (droppedfuel.IsServer == false) //the fix, remember for later
+		{
+			droppedfuel.Delete();
 		}
 	}
 	void DropBattery()
@@ -288,6 +290,10 @@ partial class SurvivorPlayer : Player
 		{
 			droppedbat.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 400.0f + Vector3.Up * 100.0f, true);
 			droppedbat.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 100.0f, true);
+		}
+		if (droppedbat.IsServer == false) //the fix, remember for later
+		{
+			droppedbat.Delete();
 		}
 	}
 
