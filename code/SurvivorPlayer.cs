@@ -266,12 +266,12 @@ partial class SurvivorPlayer : Player
 	{
 		var droppedfuel = new FuelEntity()
 		{
-			Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
+			Position = EyePos + EyeRot.Forward * 25,
 		};
 
 		if (droppedfuel != null)
 		{
-			droppedfuel.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 300.0f + Vector3.Up * 100.0f, true);
+			droppedfuel.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 150.0f + Vector3.Up * 30.0f, true);
 			droppedfuel.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 100.0f, true);
 		}
 		if (droppedfuel.IsServer == false) //the fix, remember for later
@@ -283,13 +283,13 @@ partial class SurvivorPlayer : Player
 	{
 		var droppedbat = new BatteryEntity()
 		{
-			Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
+			Position = EyePos + EyeRot.Forward * 25,
 		};
 
 		if (droppedbat != null)
 		{
-			droppedbat.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 400.0f + Vector3.Up * 100.0f, true);
-			droppedbat.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 100.0f, true);
+			droppedbat.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 200.0f + Vector3.Up * 50.0f, true);
+			droppedbat.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 50.0f, true);
 		}
 		if (droppedbat.IsServer == false) //the fix, remember for later
 		{
