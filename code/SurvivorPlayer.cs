@@ -77,6 +77,8 @@ partial class SurvivorPlayer : Player
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
+
+		this.flashlight = null;
 	}
 	private SpotLightEntity CreateLight()
 	{
@@ -105,6 +107,13 @@ partial class SurvivorPlayer : Player
 		if (name == "BatteryInsertionComplete")
 		{
 			Tags.Remove("active_battery_inserter");
+
+			Controller = new WalkController();
+		}
+
+		if (name == "PourFinished")
+		{
+			Tags.Remove("active_fuel_pourer");
 
 			Controller = new WalkController();
 		}
@@ -165,6 +174,23 @@ partial class SurvivorPlayer : Player
 			this.SetAnimBool("b_batteryinsertion", false);
 		}
 
+		if (Tags.Has("active_fuel_pourer"))
+		{
+			this.SetAnimBool("b_pouring_fuel", true);
+
+			this.SetBodyGroup("GasCan", 0);
+
+			Controller = null;
+
+			//Position = GeneratorEntity().Position;
+
+			//to do: force position to player to line up with the generator used
+		}
+		else
+		{
+			this.SetAnimBool("b_pouring_fuel", false);
+		}
+
 		if (Input.Pressed(InputButton.Attack2))
 		{
 
@@ -213,24 +239,6 @@ partial class SurvivorPlayer : Player
 			{
 				Camera = new ThirdPersonCamera();
 			}
-		}
-
-		//if (Tags.Has("is_holding_battery"))
-		//{
-		//	this.SetBodyGroup("Battery", 1);
-		//}
-		//else
-		//{
-		//	this.SetBodyGroup("Battery", 0);
-		//}
-
-		if (Tags.Has("is_holding_fuel"))
-		{
-			this.SetBodyGroup("GasCan", 1);
-		}
-		else
-		{
-			this.SetBodyGroup("GasCan", 0);
 		}
 
 		if (Tags.Has("is_holding_battery") || Tags.Has("is_holding_fuel"))
@@ -295,8 +303,32 @@ partial class SurvivorPlayer : Player
 		{
 			droppedbat.Delete();
 		}
+
 	}
 
+	public override void FrameSimulate(Client cl)
+	{
+		base.FrameSimulate(cl);
+
+		if (Tags.Has("is_holding_battery"))
+		{
+			this.SetBodyGroup("Battery", 1);
+		}
+		else
+		{
+			this.SetBodyGroup("Battery", 0);
+		}
+
+		if (Tags.Has("is_holding_fuel"))
+		{
+			this.SetBodyGroup("GasCan", 1);
+		}
+		else
+		{
+			this.SetBodyGroup("GasCan", 0);
+		}
+
+	}
 	//why are bodygroups like this why
 	//it's like they are consistently delayed by one action what do i do
 	//no matter what i try they ALWAYS need one extra push to realize what tf they are supposed to be doing
@@ -305,17 +337,55 @@ partial class SurvivorPlayer : Player
 
 	protected override void OnTagAdded(string tag)
 	{
-		if(tag == "is_holding_battery")
+		if(tag == "has_item")
         {
-			this.SetBodyGroup("Battery", 1);
+			PlaySound("pickup");
+		}
+
+		if (IsLocalPawn != true)
+		{
+			if (Tags.Has("is_holding_battery"))
+			{
+				this.SetBodyGroup("Battery", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("Battery", 0);
+			}
+
+			if (Tags.Has("is_holding_fuel"))
+			{
+				this.SetBodyGroup("GasCan", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("GasCan", 0);
+			}
 		}
 	}
 
 	protected override void OnTagRemoved(string tag)
 	{
-		if (tag == "is_holding_battery")
+
+		if (IsServer == true)
 		{
-			this.SetBodyGroup("Battery", 0);
+			if (Tags.Has("is_holding_battery"))
+			{
+				this.SetBodyGroup("Battery", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("Battery", 0);
+			}
+
+			if (Tags.Has("is_holding_fuel"))
+			{
+				this.SetBodyGroup("GasCan", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("GasCan", 0);
+			}
 		}
 	}
 }

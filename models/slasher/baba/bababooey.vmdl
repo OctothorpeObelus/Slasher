@@ -187,6 +187,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlN"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -207,6 +214,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlSW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -227,6 +241,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlS"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -247,6 +268,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlSE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -267,6 +295,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -287,6 +322,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -307,6 +349,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlNW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -327,6 +376,13 @@
 							{
 								_class = "AnimFile"
 								name = "ProwlNE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -354,6 +410,13 @@
 							{
 								_class = "AnimFile"
 								name = "ChaseN"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -374,6 +437,13 @@
 							{
 								_class = "AnimFile"
 								name = "ChaseNE"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -394,6 +464,13 @@
 							{
 								_class = "AnimFile"
 								name = "ChaseNW"
+								children = 
+								[
+									{
+										_class = "Prefab"
+										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""

@@ -1268,6 +1268,22 @@
 							{
 								_class = "AnimFile"
 								name = "PourFuel"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 100
+										event_keys = 
+										{
+											TypeName = "PourFinished"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -1649,7 +1665,7 @@
 							},
 							{
 								from = "joe_hair.vmat"
-								to = "materials/survivor/joe/joe_hair.vmat"
+								to = "materials/survivor/joe/joe_hair1.vmat"
 							},
 						]
 						use_global_default = false

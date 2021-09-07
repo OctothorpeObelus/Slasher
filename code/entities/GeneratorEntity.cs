@@ -11,11 +11,9 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         SetModel("models/generator/generator.vmdl");
         SetupPhysicsFromModel(PhysicsMotionType.Static, false);
         Sequence = "DefaultState";
-
-		//this.SetBodyGroup("Battery", 0);
 	}
 
-	public override void Simulate(Client cl)
+	public void Simulate(Client cl)
 	{
 
 		this.Simulate(cl);
@@ -23,69 +21,74 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 		if (Tags.Has("battery_in"))
 		{
 			this.SetBodyGroup("Battery", 1);
-			Position = Position + new Vector3(0,0,1);
 		}
-		else
+
+		if (!Tags.Has("has_fuel") && !Tags.Has("has_battery"))
 		{
-			//this.SetBodyGroup("Battery", 0);
+			Sequence = "DefaultState";
 		}
 	}
 
 	public bool IsUsable( Entity user ) {
-        return true;
+       return true;
     }
 
     public bool OnUse( Entity user ) 
 	{
 
-		//this.SetBodyGroup("Battery", 1);
-
-		if (Tags.Has("battery_in"))
+		if (Tags.Has("being_filled"))
 		{
-			this.SetBodyGroup("Battery", 1);
-		}
-		else
-		{
-			//this.SetBodyGroup("Battery", 0);
+			Sandbox.Log.Info("Fuel do be being poured!");
 		}
 
-		if (Sequence == "BatteryInsert" || Tags.Has("has_battery")) {return false;}
+		if (Tags.Has("has_battery"))
+		{
+			Sandbox.Log.Info("battery do be being poured!");
+		}
 
-        if ( user is Player player) {
+		//if (Sequence == "BatteryInsert" || Sequence == "FuelPour" || Tags.Has("being_filled")) {return false;}
+
+		if ( user is Player player) {
             if (player.Tags.Has("is_holding_battery") && !Tags.Has("has_battery")) {
-
-				//player.SetAnimBool("b_batteryinsertion", true);
-				//player.SetAnimBool("b_item_equipped_generic", false);
 
 				player.Tags.Remove("is_holding_battery");
 				player.Tags.Remove("has_item");
 
 				player.Tags.Add("active_battery_inserter");
 
-
 				Sequence = "BatteryInsert";
 				Tags.Add("has_battery");
-
-				//this.SetBodyGroup("Battery", 1);
 			}
-        }
+
+			if (player.Tags.Has("is_holding_fuel") && Sequence != "FuelPour")
+			{
+
+				player.Tags.Remove("is_holding_fuel");
+				player.Tags.Remove("has_item");
+
+				player.Tags.Add("active_fuel_pourer");
+
+				Sequence = "FuelPour";
+				Tags.Add("being_filled");
+			}
+
+		}
 
         return false;
     }
 
-    public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData) {
+	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData) {
         if (name == "BatteryIn") {
+
 			//Insert the battery into the generator.
+			Tags.Add("battery_in");
 
-			//Tags.Add("battery_in");
-            Sequence = "DefaultState";
-
-			//this.SetBodyGroup("Battery", 1);
 		}
-
-		if (name == "debug_battery")
+		if (name == "FuelFilled")
 		{
-			this.Tags.Add("battery_in");
+			//Can of Fuel poured.
+			Tags.Remove("being_filled");
+			Sequence = "DefaultState";
 		}
 	}
 }

@@ -5,8 +5,7 @@ Layer0
 	shader "hair.vfx"
 
 	//---- Translucent ----
-	F_ALPHA_TEST 1
-	F_PREPASS_ALPHA_TEST 1
+	F_TRANSLUCENT 1
 
 	//---- Ambient Occlusion ----
 	TextureAmbientOcclusion "materials/default/default_ao.tga"
@@ -14,7 +13,7 @@ Layer0
 	//---- Color ----
 	g_flModelTintAmount "1.000"
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
-	TextureColor "content/survivor/joe/joe_hair1.png"
+	TextureColor "content/Survivor/Joe/joe_hair4.png"
 
 	//---- Fade ----
 	g_flFadeExponent "1.000"
@@ -24,13 +23,13 @@ Layer0
 	g_flDirectionalLightmapStrength "1.000"
 
 	//---- Metalness ----
-	g_flMetalness "0.755"
+	g_flMetalness "0.000"
 
 	//---- Normal ----
 	TextureNormal "content/Survivor/Joe/joe_hairnm.png"
 
 	//---- Roughness ----
-	TextureRoughness "[1.000000 1.000000 1.000000 0.000000]"
+	TextureRoughness "[0.917647 0.917647 0.917647 0.000000]"
 
 	//---- Texture Coordinates ----
 	g_nScaleTexCoordUByModelScaleAxis "0"
@@ -41,5 +40,5 @@ Layer0
 
 	//---- Translucent ----
 	g_flOpacityScale "1.000"
-	TextureTranslucency "materials/default/default_trans.tga"
+	TextureTranslucency "content/Survivor/Joe/joe_hairtr.png"
 }
