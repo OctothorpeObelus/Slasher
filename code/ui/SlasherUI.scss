@@ -1,0 +1,56 @@
+Crosshair {
+	position: absolute;
+	background-color: rgba( black, 0.75 );
+	right: 50%;
+	bottom: 25%;
+	color: white;
+	height: 15px;
+	padding: 0 5px;
+	align-items: center;
+	border-radius: 50%;
+}
+
+PickedUpText {
+	position: absolute;
+	left: 10%;
+	bottom: 150px;
+	font-size: 40px;
+	font-weight: bold;
+	color: white;
+	height: 80px;
+	padding: 0 20px;
+	align-items: center;
+	text-shadow: 8px 8px 8px black;
+	opacity: 0;
+	transition: all 1s ease-in-out;
+
+	.item-name {
+		position: absolute;
+		top: 50px;
+		left: 0%;
+		font-size: 60px;
+		font-weight: bold;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		transition: all 1s ease-in-out;
+	}
+
+	.toolt {
+		position: absolute;
+		top: 110px;
+		left: 0%;
+		font-size: 30px;
+		font-weight: normal;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		transition: all 1s ease-in-out;
+	}
+
+	&.active {
+		opacity: 1.0;
+	}
+}

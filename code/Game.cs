@@ -2,8 +2,12 @@ using System.Numerics;
 using Sandbox;
 public partial class Slasher : Sandbox.Game {
     public Slasher() {
-
-    }
+		if (IsServer)
+		{
+			// Create the HUD
+			_ = new SlasherHud();
+		}
+	}
 
     public override void ClientJoined(Client client) {
         base.ClientJoined(client);

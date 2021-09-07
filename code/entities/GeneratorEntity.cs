@@ -13,18 +13,23 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         Sequence = "DefaultState";
 	}
 
-	public void Simulate(Client cl)
+	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData)
 	{
-
-		this.Simulate(cl);
-
-		if (Tags.Has("battery_in"))
+		if (name == "BatteryIn")
 		{
-			this.SetBodyGroup("Battery", 1);
+
+			//Insert the battery into the generator.
+			//Tags.Add("battery_in");
+
+			HasBattery = true;
+
+			Sandbox.Log.Info("Debug 1 !");
+
 		}
-
-		if (!Tags.Has("has_fuel") && !Tags.Has("has_battery"))
+		if (name == "FuelFilled")
 		{
+			//Can of Fuel poured.
+			Tags.Remove("being_filled");
 			Sequence = "DefaultState";
 		}
 	}
@@ -77,17 +82,30 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         return false;
     }
 
-	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData) {
-        if (name == "BatteryIn") {
+	public override void Simulate(Client cl)
+	{
+		if (cl == null) return;
+		if (!IsServer) return;
 
-			//Insert the battery into the generator.
-			Tags.Add("battery_in");
+		Sandbox.Log.Info("Debug !");
 
-		}
-		if (name == "FuelFilled")
+		//base.Simulate(cl);
+
+		if (HasBattery == true)
 		{
-			//Can of Fuel poured.
-			Tags.Remove("being_filled");
+			Tags.Add("battery_in");
+			Sequence = "DefaultState";
+			this.SetBodyGroup("Battery", 1);
+			Sandbox.Log.Info("Debug 2 !");
+		}
+
+		if (Tags.Has("battery_in"))
+		{
+			//this.SetBodyGroup("Battery", 1);
+		}
+
+		if (!Tags.Has("has_fuel") && !Tags.Has("has_battery"))
+		{
 			Sequence = "DefaultState";
 		}
 	}
