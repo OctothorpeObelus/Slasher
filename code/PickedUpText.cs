@@ -10,6 +10,10 @@ public class PickedUpText : Panel
 
 	public Label Tooltip;
 
+	public Label IconFuel;
+
+	public Label IconBattery;
+
 	public PickedUpText()
 	{
 		Label = Add.Label("Picked Up:", "info");
@@ -17,6 +21,10 @@ public class PickedUpText : Panel
 		CurrentItem = Add.Label("FUEL CAN", "item-name");
 
 		Tooltip = Add.Label("E to use | M2 to drop", "toolt");
+
+		IconFuel = Add.Label("", "iconfuel");
+
+		IconBattery = Add.Label("", "iconbattery");
 	}
 
 	public override void Tick()
@@ -28,11 +36,19 @@ public class PickedUpText : Panel
 		if(player.Tags.Has("is_holding_fuel"))
         {
 			SetClass("active", true);
+
+			SetClass("activeiconbattery", false);
+			SetClass("activeiconfuel", true);
+
 			CurrentItem.Text = "FUEL CAN";
 		}
 		else if (player.Tags.Has("is_holding_battery"))
 		{
 			SetClass("active", true);
+
+			SetClass("activeiconbattery", true);
+			SetClass("activeiconfuel", false);
+
 			CurrentItem.Text = "CAR BATTERY";
 		}
         else 

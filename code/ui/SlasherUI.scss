@@ -10,6 +10,18 @@ Crosshair {
 	border-radius: 50%;
 }
 
+Logo {
+	position: absolute;
+	background-image: url(ui/img/slasherlogo.png)
+	background-repeat: no-repeat;
+	width: 617px;
+	height: 112px;
+	left: 5%;
+	top: 10%;
+	background-size: cover;
+    overflow: hidden;	
+}
+
 PickedUpText {
 	position: absolute;
 	left: 10%;
@@ -48,6 +60,31 @@ PickedUpText {
 		padding: 0 20px;
 		align-items: center;
 		transition: all 1s ease-in-out;
+	}
+
+	.iconfuel {
+		position: absolute;
+		background-image: url(ui/img/fuelcan.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		right: 125%;
+		top: 10%;
+		background-size: cover;
+   	 	overflow: hidden;	
+		opacity: 1;
+	}
+	.iconbattery {
+		position: absolute;
+		background-image: url(ui/img/carbattery.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		right: 125%;
+		top: 10%;
+		background-size: cover;
+   	 	overflow: hidden;	
+		opacity: 1;
 	}
 
 	&.active {

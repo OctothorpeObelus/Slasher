@@ -13,5 +13,6 @@ public partial class SlasherHud : HudEntity<RootPanel>
 
 		RootPanel.AddChild<Crosshair>();
 		RootPanel.AddChild<PickedUpText>();
+		RootPanel.AddChild<Logo>();
 	}
 }
