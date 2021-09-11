@@ -10,9 +10,9 @@ public class PickedUpText : Panel
 
 	public Label Tooltip;
 
-	public Label IconFuel;
+	public Panel IconFuel;
 
-	public Label IconBattery;
+	public Panel IconBattery;
 
 	public PickedUpText()
 	{
@@ -22,9 +22,9 @@ public class PickedUpText : Panel
 
 		Tooltip = Add.Label("E to use | M2 to drop", "toolt");
 
-		IconFuel = Add.Label("", "iconfuel");
+		IconFuel = Add.Panel("iconfuel");
 
-		IconBattery = Add.Label("", "iconbattery");
+		IconBattery = Add.Panel("iconbattery");
 	}
 
 	public override void Tick()
@@ -37,8 +37,8 @@ public class PickedUpText : Panel
         {
 			SetClass("active", true);
 
-			SetClass("activeiconbattery", false);
-			SetClass("activeiconfuel", true);
+			IconFuel.SetClass("active", true);
+			IconBattery.SetClass("active", false);
 
 			CurrentItem.Text = "FUEL CAN";
 		}
@@ -46,8 +46,8 @@ public class PickedUpText : Panel
 		{
 			SetClass("active", true);
 
-			SetClass("activeiconbattery", true);
-			SetClass("activeiconfuel", false);
+			IconFuel.SetClass("active", false);
+			IconBattery.SetClass("active", true);
 
 			CurrentItem.Text = "CAR BATTERY";
 		}

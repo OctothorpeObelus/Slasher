@@ -72,7 +72,11 @@ PickedUpText {
 		top: 10%;
 		background-size: cover;
    	 	overflow: hidden;	
-		opacity: 1;
+		opacity: 0;
+
+		&.active {
+			opacity: 1.0;
+		}
 	}
 	.iconbattery {
 		position: absolute;
@@ -84,7 +88,11 @@ PickedUpText {
 		top: 10%;
 		background-size: cover;
    	 	overflow: hidden;	
-		opacity: 1;
+		opacity: 0;
+
+		&.active {
+			opacity: 1.0;
+		}
 	}
 
 	&.active {
