@@ -53,27 +53,7 @@ partial class SurvivorPlayer : Player
 
 		Camera = new SpectateRagdollCamera();
 
-		ent = new ModelEntity();
-		ent.Position = Position;
-		ent.Rotation = Rotation;
-		ent.Scale = Scale;
-		ent.MoveType = MoveType.Physics;
-		ent.UsePhysicsCollision = true;
-		ent.EnableAllCollisions = true;
-		ent.CollisionGroup = CollisionGroup.Debris;
-		ent.SetModel(GetModelName());
-		ent.CopyBonesFrom(this);
-		ent.CopyBodyGroups(this);
-		ent.CopyMaterialGroup(this);
-		ent.TakeDecalsFrom(this);
-		ent.EnableHitboxes = true;
-		ent.EnableAllCollisions = true;
-		ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
-		ent.RenderColorAndAlpha = RenderColorAndAlpha;
-		ent.PhysicsGroup.Velocity = Velocity;
-		ent.SetInteractsAs(CollisionLayer.Debris);
-		ent.SetInteractsExclude(CollisionLayer.Player | CollisionLayer.Debris);
-		//ent.DeleteAsync( 10.0f );
+		
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
@@ -123,26 +103,27 @@ partial class SurvivorPlayer : Player
 			Camera = new SpectateRagdollCamera();
 
 			ent = new ModelEntity();
-			ent.Position = Position;
-			ent.Rotation = Rotation;
-			ent.Scale = Scale;
-			ent.MoveType = MoveType.Physics;
-			ent.UsePhysicsCollision = true;
-			ent.EnableAllCollisions = true;
-			ent.CollisionGroup = CollisionGroup.Debris;
-			ent.SetModel(GetModelName());
-			ent.CopyBonesFrom(this);
-			ent.CopyBodyGroups(this);
-			ent.CopyMaterialGroup(this);
-			ent.TakeDecalsFrom(this);
-			ent.EnableHitboxes = true;
-			ent.EnableAllCollisions = true;
-			ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
-			ent.RenderColorAndAlpha = RenderColorAndAlpha;
-			ent.PhysicsGroup.Velocity = Velocity;
-			ent.SetInteractsAs(CollisionLayer.Debris);
-			ent.SetInteractsExclude(CollisionLayer.Player | CollisionLayer.Debris);
-			//ent.DeleteAsync( 10.0f );
+			
+		//ent.Position = Position;
+		//ent.Rotation = Rotation;
+		//ent.Scale = Scale;
+		//ent.MoveType = MoveType.Physics;
+		//ent.UsePhysicsCollision = true;
+		//ent.EnableAllCollisions = true;
+		//ent.CollisionGroup = CollisionGroup.Debris;
+		//ent.SetModel(GetModelName());
+		//ent.CopyBonesFrom(this);
+		//ent.CopyBodyGroups(this);
+		//ent.CopyMaterialGroup(this);
+		//ent.TakeDecalsFrom(this);
+		//ent.EnableHitboxes = true;
+		//ent.EnableAllCollisions = true;
+		//ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
+		//ent.RenderColorAndAlpha = RenderColorAndAlpha;
+		//ent.PhysicsGroup.Velocity = Velocity;
+		//ent.SetInteractsAs(CollisionLayer.Debris);
+		//ent.SetInteractsExclude(CollisionLayer.Player | CollisionLayer.Debris);
+		//ent.DeleteAsync( 10.0f );
 
 			EnableAllCollisions = false;
 			EnableDrawing = false;
