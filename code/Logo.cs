@@ -8,7 +8,7 @@ public class Logo : Panel
 
 	public Logo()
 	{
-		Label = Add.Label("", "Logo");
+		Label = Add.Label("Alpha v0.01", "Logo");
 	}
 
 	public override void Tick()

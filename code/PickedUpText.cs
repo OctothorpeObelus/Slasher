@@ -14,9 +14,11 @@ public class PickedUpText : Panel
 
 	public Panel IconBattery;
 
+	private int hideDelay;
+
 	public PickedUpText()
 	{
-		Label = Add.Label("Picked Up:", "info");
+		Label = Add.Label("Holding:", "pickedup");
 
 		CurrentItem = Add.Label("FUEL CAN", "item-name");
 
@@ -35,25 +37,47 @@ public class PickedUpText : Panel
 
 		if(player.Tags.Has("is_holding_fuel"))
         {
-			SetClass("active", true);
 
 			IconFuel.SetClass("active", true);
 			IconBattery.SetClass("active", false);
 
+			Tooltip.Text = "E to use | M2 to drop";
+
 			CurrentItem.Text = "FUEL CAN";
+
+			if(Input.Pressed(InputButton.Use))
+				hideDelay = 1;
+
+			if(hideDelay < 800)
+				hideDelay++;
+
 		}
 		else if (player.Tags.Has("is_holding_battery"))
 		{
-			SetClass("active", true);
 
 			IconFuel.SetClass("active", false);
 			IconBattery.SetClass("active", true);
 
+			Tooltip.Text = "E to use | M2 to drop";
+
 			CurrentItem.Text = "CAR BATTERY";
+
+			if(Input.Pressed(InputButton.Use))
+				hideDelay = 1;
+
+			if(hideDelay < 800)
+				hideDelay++;
 		}
-        else 
+        else
 		{
 			SetClass("active", false);
+			hideDelay = 0;
 		}
+
+		if(hideDelay > 0 && hideDelay < 800)
+			SetClass("active", true);
+
+		if(hideDelay >= 800)
+			SetClass("active", false);
 	}
 }
