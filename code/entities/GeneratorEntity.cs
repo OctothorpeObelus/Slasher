@@ -3,7 +3,13 @@ using Sandbox;
 
 public partial class GeneratorEntity : AnimEntity, IUse {
 
-    private bool HasBattery {get; set;} = false;
+    public static bool HasBattery;
+
+	public static bool IsCurrentlyBeingFilledWithFuel;
+
+	public static bool IsCurrentlyHavingTheBatteryInsertedIntoIt;
+
+	public int fuelIn;
 
     public override void Spawn() {
         base.Spawn();
@@ -11,50 +17,34 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         SetModel("models/generator/generator.vmdl");
         SetupPhysicsFromModel(PhysicsMotionType.Static, false);
         Sequence = "DefaultState";
-	}
 
-	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData)
-	{
-		if (name == "BatteryIn")
-		{
-
-			//Insert the battery into the generator.
-			//Tags.Add("battery_in");
-
-			HasBattery = true;
-
-			Sandbox.Log.Info("Debug 1 !");
-
-		}
-		if (name == "FuelFilled")
-		{
-			//Can of Fuel poured.
-			Tags.Remove("being_filled");
-			Sequence = "DefaultState";
-		}
+		this.SetBodyGroup("Battery", 0);
 	}
 
 	public bool IsUsable( Entity user ) {
        return true;
+
+	   if(HasBattery == true)
+				this.SetBodyGroup("Battery", 1);
     }
 
     public bool OnUse( Entity user ) 
 	{
 
-		if (Tags.Has("being_filled"))
-		{
-			Sandbox.Log.Info("Fuel do be being poured!");
-		}
+			Sandbox.Log.Info("Does this jank ass code think the battery is being inserted? Answer: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
+			Sandbox.Log.Info("Does this jank ass code think fuel is being poured? Answer: " + IsCurrentlyBeingFilledWithFuel);
+			Sandbox.Log.Info("How many fuel cans does this jank ass code think you poured in? Answer: " + fuelIn);
 
-		if (Tags.Has("has_battery"))
-		{
-			Sandbox.Log.Info("battery do be being poured!");
-		}
+			Sandbox.Log.Info("Does this jank ass code think the battery is nice and cozy inside it's perfect slot? Answer: " + HasBattery);
+
+			if(HasBattery == true)
+				this.SetBodyGroup("Battery", 1);
+
 
 		//if (Sequence == "BatteryInsert" || Sequence == "FuelPour" || Tags.Has("being_filled")) {return false;}
 
 		if ( user is Player player) {
-            if (player.Tags.Has("is_holding_battery") && !Tags.Has("has_battery")) {
+            if (player.Tags.Has("is_holding_battery") && !Tags.Has("has_battery") && IsCurrentlyBeingFilledWithFuel == false  && IsCurrentlyHavingTheBatteryInsertedIntoIt == false) {
 
 				player.Tags.Remove("is_holding_battery");
 				player.Tags.Remove("has_item");
@@ -65,7 +55,7 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 				Tags.Add("has_battery");
 			}
 
-			if (player.Tags.Has("is_holding_fuel") && Sequence != "FuelPour")
+			if (player.Tags.Has("is_holding_fuel") && fuelIn < 4  && IsCurrentlyBeingFilledWithFuel == false  && IsCurrentlyHavingTheBatteryInsertedIntoIt == false)
 			{
 
 				player.Tags.Remove("is_holding_fuel");
@@ -74,7 +64,8 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 				player.Tags.Add("active_fuel_pourer");
 
 				Sequence = "FuelPour";
-				Tags.Add("being_filled");
+
+				fuelIn++;
 			}
 
 		}
@@ -82,31 +73,96 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         return false;
     }
 
-	public override void Simulate(Client cl)
+	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData)
 	{
-		if (cl == null) return;
-		if (!IsServer) return;
+		base.OnAnimEventGeneric(name, intData, floatData, vectorData, stringData);
 
-		Sandbox.Log.Info("Debug !");
-
-		//base.Simulate(cl);
-
-		if (HasBattery == true)
+		if (name == "BatteryBegin")
 		{
+			//Battering beginning insertion.
+
+			IsCurrentlyHavingTheBatteryInsertedIntoIt = true;
+
+			Sandbox.Log.Info("The following has to read true istg: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
+
+		}
+
+		if (name == "BatteryIn")
+		{
+
+			//Insert the battery into the generator.
+
 			Tags.Add("battery_in");
+
+			HasBattery = true;
+
+			Sandbox.Log.Info("battery should be inside for good now");
+
+			IsCurrentlyHavingTheBatteryInsertedIntoIt = false;
+
+			Sandbox.Log.Info("The following should read 'false' if not, there is something wrong with s&box: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
+
+			if(HasBattery)
+				this.SetBodyGroup("Battery", 1);
+
 			Sequence = "DefaultState";
-			this.SetBodyGroup("Battery", 1);
-			Sandbox.Log.Info("Debug 2 !");
+
+			Sandbox.Log.Info("the following should read 'DefaultState' . if not, fuck me: " + Sequence);
+
 		}
 
-		if (Tags.Has("battery_in"))
+		if (name == "FuelBegin")
 		{
-			//this.SetBodyGroup("Battery", 1);
+			//Can of Fuel now being poured.
+
+			IsCurrentlyBeingFilledWithFuel = true;
+
+			Sandbox.Log.Info("The following has to read true istg: " + IsCurrentlyBeingFilledWithFuel);
+
 		}
 
-		if (!Tags.Has("has_fuel") && !Tags.Has("has_battery"))
+		if (name == "FuelFilled")
 		{
+			//Can of Fuel poured.
+
+			Sandbox.Log.Info("Alright here's where the code is supposed to increase the amound of gas cans poured by 1! Is it right? Answer: " + fuelIn);
+
 			Sequence = "DefaultState";
+
+			Sandbox.Log.Info("the following should read 'DefaultState' . if not, fuck me: " + Sequence);
+
+			IsCurrentlyBeingFilledWithFuel = false;
+
+			Sandbox.Log.Info("The following should read 'false' if not, there is something wrong with s&box: " + IsCurrentlyBeingFilledWithFuel);
 		}
 	}
+
+	// Simulate() literally just doesn't fucking work. it does not run at all.
+
+	// public override void Simulate(Client cl)
+	// {
+		
+	// 	base.Simulate(cl);
+
+	// 	//if (cl == null) return;
+	// 	//if (!IsServer) return;
+
+	// 	if (HasBattery == true)
+	// 	{
+	// 		Tags.Add("battery_in");
+	// 		Sequence = "DefaultState";
+	// 		this.SetBodyGroup("Battery", 1);
+	// 		Sandbox.Log.Info("Debug 2 !");
+	// 	}
+
+	// 	if (Tags.Has("battery_in"))
+	// 	{
+	// 		//this.SetBodyGroup("Battery", 1);
+	// 	}
+
+	// 	if (!Tags.Has("has_fuel") && !Tags.Has("has_battery"))
+	// 	{
+	// 		Sequence = "DefaultState";
+	// 	}
+	// }
 }

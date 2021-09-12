@@ -271,6 +271,19 @@
 									tags = ""
 								}
 							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 0
+								event_keys = 
+								{
+									TypeName = "FuelBegin"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
 						]
 						activity_name = ""
 						activity_weight = 1
@@ -341,6 +354,19 @@
 									stop_on_seq_change = false
 									use_layer_sequence = false
 									tags = ""
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 0
+								event_keys = 
+								{
+									TypeName = "BatteryBegin"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
 								}
 							},
 						]
