@@ -77,63 +77,58 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 	{
 		base.OnAnimEventGeneric(name, intData, floatData, vectorData, stringData);
 
-		if (name == "BatteryBegin")
+		switch(name)
 		{
-			//Battering beginning insertion.
+			case "BatteryBegin":
+				//Battering beginning insertion.
 
-			IsCurrentlyHavingTheBatteryInsertedIntoIt = true;
+				IsCurrentlyHavingTheBatteryInsertedIntoIt = true;
 
-			Sandbox.Log.Info("The following has to read true istg: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
+				Sandbox.Log.Info("The following has to read true istg: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
+			break;
+			case "BatteryIn":
+				//Insert the battery into the generator.		
+				Tags.Add("battery_in");
 
-		}
+				HasBattery = true;
 
-		if (name == "BatteryIn")
-		{
+				Sandbox.Log.Info("battery should be inside for good now");
 
-			//Insert the battery into the generator.
+				IsCurrentlyHavingTheBatteryInsertedIntoIt = false;
 
-			Tags.Add("battery_in");
+				Sandbox.Log.Info("The following should read 'false' if not, there is something wrong with s&box: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
 
-			HasBattery = true;
+				if(HasBattery) this.SetBodyGroup("Battery", 1);
 
-			Sandbox.Log.Info("battery should be inside for good now");
+				Sequence = "DefaultState";
 
-			IsCurrentlyHavingTheBatteryInsertedIntoIt = false;
+				Sandbox.Log.Info("the following should read 'DefaultState' . if not, fuck me: " + Sequence);
 
-			Sandbox.Log.Info("The following should read 'false' if not, there is something wrong with s&box: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
+				if(fuelIn > 3) PlaySound("generator_start");
+			break;
+			case "FuelBegin":
+				//Can of Fuel now being poured.
+				
+				IsCurrentlyBeingFilledWithFuel = true;
 
-			if(HasBattery)
-				this.SetBodyGroup("Battery", 1);
+				Sandbox.Log.Info("The following has to read true istg: " + IsCurrentlyBeingFilledWithFuel);
+			break;
+			case "FuelFilled":
+				//Can of Fuel poured.
 
-			Sequence = "DefaultState";
+				Sandbox.Log.Info("Alright here's where the code is supposed to increase the amound of gas cans poured by 1! Is it right? Answer: " + fuelIn);
 
-			Sandbox.Log.Info("the following should read 'DefaultState' . if not, fuck me: " + Sequence);
+				Sequence = "DefaultState";
 
-		}
+				Sandbox.Log.Info("the following should read 'DefaultState' . if not, fuck me: " + Sequence);
 
-		if (name == "FuelBegin")
-		{
-			//Can of Fuel now being poured.
+				IsCurrentlyBeingFilledWithFuel = false;
 
-			IsCurrentlyBeingFilledWithFuel = true;
+				Sandbox.Log.Info("The following should read 'false' if not, there is something wrong with s&box: " + IsCurrentlyBeingFilledWithFuel);
 
-			Sandbox.Log.Info("The following has to read true istg: " + IsCurrentlyBeingFilledWithFuel);
+				if(fuelIn > 3) PlaySound("generator_start");
+			break;
 
-		}
-
-		if (name == "FuelFilled")
-		{
-			//Can of Fuel poured.
-
-			Sandbox.Log.Info("Alright here's where the code is supposed to increase the amound of gas cans poured by 1! Is it right? Answer: " + fuelIn);
-
-			Sequence = "DefaultState";
-
-			Sandbox.Log.Info("the following should read 'DefaultState' . if not, fuck me: " + Sequence);
-
-			IsCurrentlyBeingFilledWithFuel = false;
-
-			Sandbox.Log.Info("The following should read 'false' if not, there is something wrong with s&box: " + IsCurrentlyBeingFilledWithFuel);
 		}
 	}
 

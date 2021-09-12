@@ -44,6 +44,8 @@ partial class SlasherPlayer : Player {
         worldLight = CreateLight();
         worldLight.SetParent(this, false);
         worldLight.Enabled = true;
+
+		Sound.FromEntity("bababooey_breathing", this);
     }
 
     // Literally too angry to die
