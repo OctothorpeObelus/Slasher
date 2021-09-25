@@ -21,7 +21,7 @@ public partial class FuelEntity : Prop, IUse
 	{
 		if (user is Player player)
 		{
-			if (!player.Tags.Has("is_holding_fuel") && !player.Tags.Has("has_item"))
+			if (!player.Tags.Has("is_holding_fuel") && !player.Tags.Has("has_item") && player.Tags.Has("survivor"))
 			{
 				player.Tags.Add("is_holding_fuel");
 				player.Tags.Add("has_item");

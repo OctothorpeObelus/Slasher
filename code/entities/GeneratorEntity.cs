@@ -3,13 +3,19 @@ using Sandbox;
 
 public partial class GeneratorEntity : AnimEntity, IUse {
 
-    public static bool HasBattery;
+    public bool HasBattery = true;
 
-	public static bool IsCurrentlyBeingFilledWithFuel;
+	public bool IsCurrentlyBeingFilledWithFuel;
 
-	public static bool IsCurrentlyHavingTheBatteryInsertedIntoIt;
+	public bool IsCurrentlyHavingTheBatteryInsertedIntoIt;
 
 	public int fuelIn;
+
+	public int fuelTime;
+
+	public int batteryTime;
+
+	public int startTime;
 
     public override void Spawn() {
         base.Spawn();
@@ -19,13 +25,12 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         Sequence = "DefaultState";
 
 		this.SetBodyGroup("Battery", 0);
+
+		HasBattery = false;
 	}
 
 	public bool IsUsable( Entity user ) {
        return true;
-
-	   if(HasBattery == true)
-				this.SetBodyGroup("Battery", 1);
     }
 
     public bool OnUse( Entity user ) 
@@ -39,6 +44,8 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 
 			if(HasBattery == true)
 				this.SetBodyGroup("Battery", 1);
+			else
+				this.SetBodyGroup("Battery", 0);
 
 
 		//if (Sequence == "BatteryInsert" || Sequence == "FuelPour" || Tags.Has("being_filled")) {return false;}
@@ -53,6 +60,10 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 
 				Sequence = "BatteryInsert";
 				Tags.Add("has_battery");
+
+				IsCurrentlyHavingTheBatteryInsertedIntoIt = true;
+
+				batteryTime = 0;
 			}
 
 			if (player.Tags.Has("is_holding_fuel") && fuelIn < 4  && IsCurrentlyBeingFilledWithFuel == false  && IsCurrentlyHavingTheBatteryInsertedIntoIt == false)
@@ -65,7 +76,9 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 
 				Sequence = "FuelPour";
 
-				fuelIn++;
+				IsCurrentlyBeingFilledWithFuel = true;
+
+				fuelTime = 0;
 			}
 
 		}
@@ -73,9 +86,60 @@ public partial class GeneratorEntity : AnimEntity, IUse {
         return false;
     }
 
+	[Event.Tick.Server]
+	protected void Tick()
+	{
+		if(HasBattery == true)
+			this.SetBodyGroup("Battery", 1);
+		else
+			this.SetBodyGroup("Battery", 0);
+
+
+		if(IsCurrentlyBeingFilledWithFuel == false && IsCurrentlyHavingTheBatteryInsertedIntoIt == false)
+			Sequence = "DefaultState";
+
+		if(IsCurrentlyBeingFilledWithFuel == true && IsCurrentlyHavingTheBatteryInsertedIntoIt == false)
+		{
+			fuelTime++;
+
+			if(fuelTime > 230)
+			{
+				IsCurrentlyBeingFilledWithFuel = false;
+				fuelIn++;
+			}
+		}
+
+		if(IsCurrentlyBeingFilledWithFuel == false && IsCurrentlyHavingTheBatteryInsertedIntoIt == true)
+		{
+			batteryTime++;
+
+			if(batteryTime > 180)
+			{
+				IsCurrentlyHavingTheBatteryInsertedIntoIt = false;
+				HasBattery = true;
+			}
+		}
+
+		if(HasBattery == true & fuelIn>3)
+		{
+			if(startTime == 0)
+				PlaySound("generator_start");
+
+			startTime++;
+
+			if(startTime == 600)
+			{
+				PlaySound("generator_run");
+				Tags.Add("running");
+			}
+		}
+	}
+
+	//what lies below is just findamentally broken. i had to butcher it to make it work but i DID IT.
+
+/*
 	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData)
 	{
-		base.OnAnimEventGeneric(name, intData, floatData, vectorData, stringData);
 
 		switch(name)
 		{
@@ -130,34 +194,8 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 			break;
 
 		}
+
+		base.OnAnimEventGeneric(name,intData, floatData,vectorData,stringData);
 	}
-
-	// Simulate() literally just doesn't fucking work. it does not run at all.
-
-	// public override void Simulate(Client cl)
-	// {
-		
-	// 	base.Simulate(cl);
-
-	// 	//if (cl == null) return;
-	// 	//if (!IsServer) return;
-
-	// 	if (HasBattery == true)
-	// 	{
-	// 		Tags.Add("battery_in");
-	// 		Sequence = "DefaultState";
-	// 		this.SetBodyGroup("Battery", 1);
-	// 		Sandbox.Log.Info("Debug 2 !");
-	// 	}
-
-	// 	if (Tags.Has("battery_in"))
-	// 	{
-	// 		//this.SetBodyGroup("Battery", 1);
-	// 	}
-
-	// 	if (!Tags.Has("has_fuel") && !Tags.Has("has_battery"))
-	// 	{
-	// 		Sequence = "DefaultState";
-	// 	}
-	// }
+*/
 }

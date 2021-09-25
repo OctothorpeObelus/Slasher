@@ -18,8 +18,51 @@ Logo {
 	height: 112px;
 	left: 5%;
 	top: 10%;
-	background-size: cover;
-    overflow: hidden;	
+	background-size: cover;	
+	pointer-events: all;
+	opacity: 0;
+	
+
+	.spawn-slasher {
+		position: absolute;
+		top: 350px;
+		left: 0%;
+		font-size: 60px;
+		font-weight: bold;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		transition: all 0.2s ease-in-out;
+		opacity: 0.5;
+
+		&:hover {
+			opacity: 1;
+			color: red;
+		}
+	}
+	.spawn-survivor {
+		position: absolute;
+		top: 230px;
+		left: 0%;
+		font-size: 60px;
+		font-weight: bold;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		transition: all 0.2s ease-in-out;
+		opacity: 0.5;
+
+		&:hover {
+			opacity: 1;
+			color: red;
+		}
+	}
+
+	&.active {
+		opacity: 1.0;
+	}
 }
 
 PickedUpText {
