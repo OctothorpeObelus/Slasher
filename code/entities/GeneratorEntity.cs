@@ -36,12 +36,6 @@ public partial class GeneratorEntity : AnimEntity, IUse {
     public bool OnUse( Entity user ) 
 	{
 
-			Sandbox.Log.Info("Does this jank ass code think the battery is being inserted? Answer: " + IsCurrentlyHavingTheBatteryInsertedIntoIt);
-			Sandbox.Log.Info("Does this jank ass code think fuel is being poured? Answer: " + IsCurrentlyBeingFilledWithFuel);
-			Sandbox.Log.Info("How many fuel cans does this jank ass code think you poured in? Answer: " + fuelIn);
-
-			Sandbox.Log.Info("Does this jank ass code think the battery is nice and cozy inside it's perfect slot? Answer: " + HasBattery);
-
 			if(HasBattery == true)
 				this.SetBodyGroup("Battery", 1);
 			else
@@ -135,7 +129,7 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 		}
 	}
 
-	//what lies below is just findamentally broken. i had to butcher it to make it work but i DID IT.
+	//what lies below is just fundamentally broken. i had to butcher it to make it work but i DID IT.
 
 /*
 	public override void OnAnimEventGeneric(string name, int intData, float floatData, Vector3 vectorData, string stringData)

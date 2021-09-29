@@ -255,7 +255,7 @@ partial class SurvivorPlayer : Player
 	{
 		var droppedfuel = new FuelEntity()
 		{
-			Position = EyePos + EyeRot.Forward * 25,
+			Position = EyePos + EyeRot.Forward * 15,
 		};
 
 		if (droppedfuel != null)
@@ -272,7 +272,7 @@ partial class SurvivorPlayer : Player
 	{
 		var droppedbat = new BatteryEntity()
 		{
-			Position = EyePos + EyeRot.Forward * 25,
+			Position = EyePos + EyeRot.Forward * 15,
 		};
 
 		if (droppedbat != null)
