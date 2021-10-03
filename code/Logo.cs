@@ -21,46 +21,27 @@ public class Logo : Panel
 		SlasherSpawn = Add.Label("Spawn as Slasher", "spawn-slasher");
 
 		Label.SetClass("active" , false);
-	}
-
-	public override void Tick()
-	{
-		/*
-
-		if(picked == false) SetClass("active" , true);
-		if(picked == true) SetClass("active" , false);
 
 		SurvivorSpawn.AddEventListener( "onclick", () =>
 			{
 				picked = true;
 
-				foreach ( var client in Client.All )
-				{
-					var player = new SurvivorPlayer();
-					player.Tags.Add("survivor");
-					client.Pawn = player;
-
-    				player.Respawn();
-					
-				}
+				ConsoleSystem.Run( "spawnsurvivor");					
 		} );
 
 		SlasherSpawn.AddEventListener( "onclick", () =>
 			{
 				picked = true;
 
-				foreach ( var client in Client.All )
-				{
-
-					var player = new SlasherPlayer();
-					player.Tags.Add("slasher");
-					client.Pawn = player;
-
-    				player.Respawn();
-
-					
-				}
+				ConsoleSystem.Run( "spawnslasher");
 		} );
-		*/
+	}
+
+	public override void Tick()
+	{
+
+		if(picked == false) SetClass("active" , true);
+		if(picked == true) SetClass("active" , false);
+
 	}
 }

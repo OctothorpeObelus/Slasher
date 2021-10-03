@@ -2,6 +2,8 @@ using System.Numerics;
 using Sandbox;
 public partial class Slasher : Sandbox.Game {
 
+	public bool spawned = false;
+
 	public static AnimEntity gene1;
 
 	public static AnimEntity gene2;
@@ -38,15 +40,18 @@ public partial class Slasher : Sandbox.Game {
     public override void ClientJoined(Client client) {
         base.ClientJoined(client);
 
-		var player = new SurvivorPlayer();
-		player.Tags.Add("survivor");
-		client.Pawn = player;
+		//var player = new SurvivorPlayer();
+		//player.Tags.Add("survivor");
+		//client.Pawn = player;
+
+		//SpawnSurvivor(client);
 
 		//var player = new SlasherPlayer();
 		//player.Tags.Add("slasher");
 		//client.Pawn = player;
 
-		player.Respawn();
+		//player.Respawn();
+
 		/*
 		var generator = new GeneratorEntity();
         generator.Position = new Vector3(-100f, -3424.05f, 4.03f);
@@ -61,6 +66,9 @@ public partial class Slasher : Sandbox.Game {
 		gene2 = generator2;
 		*/
 
+		if(spawned == false)
+		{
+
 		var fuelcan = new FuelEntity();
 		fuelcan.Position = new Vector3(-272.90f, -3064.05f, 4.03f);
 		fuelcan.Spawn();
@@ -68,6 +76,10 @@ public partial class Slasher : Sandbox.Game {
 		var battery = new BatteryEntity();
 		battery.Position = new Vector3(-272.90f, -2964.05f, 4.03f);
 		battery.Spawn();
+
+		spawned = true;
+
+		}
 
 		if (IsServer)
 		{
@@ -85,31 +97,33 @@ public partial class Slasher : Sandbox.Game {
 
 	}
 
-	/*
-	public SpawnSurvivor()
+	[ServerCmd( "spawnsurvivor" )]
+	public static void SpawnSurvivor()
 	{
-		foreach ( var client in Client.All )
-			{
-				var player = new SurvivorPlayer();
-				player.Tags.Add("survivor");
-				client.Pawn = player;
+		if ( ConsoleSystem.Caller == null )
+			return;
 
-    			player.Respawn();
-					
-			}
+		Sandbox.Log.Info("Spawning as Survivor...");
+
+		var player = new SurvivorPlayer();
+		player.Tags.Add("survivor");
+		ConsoleSystem.Caller.Pawn = player;
+
+		player.Respawn();
 	}
 
-	public SpawnSlasher()
+	[ServerCmd( "spawnslasher" )]
+	public static void SpawnSlasher()
 	{
-		foreach ( var client in Client.All )
-			{
-				var player = new SlasherPlayer();
-				player.Tags.Add("slasher");
-				client.Pawn = player;
+		if ( ConsoleSystem.Caller == null )
+			return;
 
-    			player.Respawn();
-					
-			}
+		Sandbox.Log.Info("Spawning as Slasher...");
+
+		var player = new SlasherPlayer();
+		player.Tags.Add("slasher");
+		ConsoleSystem.Caller.Pawn = player;
+
+		player.Respawn();
 	}
-	*/
 }
