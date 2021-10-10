@@ -51,9 +51,27 @@ partial class SurvivorPlayer : Player
 
 		flashlightOn = false;
 
-		Camera = new SpectateRagdollCamera();
+		Camera = new SpectateRagdollCamera();		
 
-		
+		var ent = new ModelEntity();
+		ent.Position = Position;
+		ent.Rotation = Rotation;
+		ent.Scale = Scale;
+		ent.MoveType = MoveType.Physics;
+		ent.UsePhysicsCollision = true;
+		ent.EnableAllCollisions = true;
+		ent.CollisionGroup = CollisionGroup.Debris;
+		ent.SetModel( GetModelName() );
+		ent.CopyBonesFrom( this );
+		ent.CopyBodyGroups( this );
+		ent.CopyMaterialGroup( this );
+		ent.TakeDecalsFrom( this );
+		ent.EnableHitboxes = true;
+		ent.EnableAllCollisions = true;
+		ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
+		ent.RenderColor = RenderColor;
+
+		//ent.DeleteAsync( 10.0f );
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
@@ -101,32 +119,6 @@ partial class SurvivorPlayer : Player
 		if (name == "OnDeath")
 		{
 			Camera = new SpectateRagdollCamera();
-
-			ent = new ModelEntity();
-			
-		//ent.Position = Position;
-		//ent.Rotation = Rotation;
-		//ent.Scale = Scale;
-		//ent.MoveType = MoveType.Physics;
-		//ent.UsePhysicsCollision = true;
-		//ent.EnableAllCollisions = true;
-		//ent.CollisionGroup = CollisionGroup.Debris;
-		//ent.SetModel(GetModelName());
-		//ent.CopyBonesFrom(this);
-		//ent.CopyBodyGroups(this);
-		//ent.CopyMaterialGroup(this);
-		//ent.TakeDecalsFrom(this);
-		//ent.EnableHitboxes = true;
-		//ent.EnableAllCollisions = true;
-		//ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
-		//ent.RenderColorAndAlpha = RenderColorAndAlpha;
-		//ent.PhysicsGroup.Velocity = Velocity;
-		//ent.SetInteractsAs(CollisionLayer.Debris);
-		//ent.SetInteractsExclude(CollisionLayer.Player | CollisionLayer.Debris);
-		//ent.DeleteAsync( 10.0f );
-
-			EnableAllCollisions = false;
-			EnableDrawing = false;
 
 			//kill survivor also
 		}

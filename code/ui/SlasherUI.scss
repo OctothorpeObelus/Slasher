@@ -60,6 +60,104 @@ Logo {
 		}
 	}
 
+	.slashericon1 {
+		position: absolute;
+		background-image: url(ui/img/slasher_ico/bababooey.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		left: 120%;
+		top: 10%;
+		background-size: cover;
+   	 	overflow: hidden;	
+		opacity: 0.85;
+		transition: all 0.2s ease-in-out;
+
+		&:hover{
+			opacity: 0.9;
+		}
+
+		&.selected{
+			width: 190px;
+			height: 190px;
+			opacity: 1;
+		}
+	}
+
+	.slashericon2 {
+		position: absolute;
+		background-image: url(ui/img/slasher_ico/amogus.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		left: 150%;
+		top: 10%;
+		background-size: cover;
+		overflow: hidden;	
+		opacity: 0.85;
+		transition: all 0.2s ease-in-out;
+	
+		&:hover{
+			opacity: 0.9;
+		}
+
+		&.selected{
+			width: 190px;
+			height: 190px;
+			opacity: 1;
+		}
+	}
+
+	.slashericon3 {
+		position: absolute;
+		background-image: url(ui/img/slasher_ico/trollge.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		left: 180%;
+		top: 10%;
+		background-size: cover;
+		overflow: hidden;	
+		opacity: 0.85;
+		transition: all 0.2s ease-in-out;
+	
+		&:hover{
+			opacity: 0.9;
+		}
+
+		&.selected{
+			width: 190px;
+			height: 190px;
+			opacity: 1;
+		}
+	}
+
+	.slasher-name {
+		position: absolute;
+		top: 500%;
+		left: 110%;
+		font-size: 60px;
+		font-weight: bold;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		opacity: 1;
+	}
+
+	.slasher-description {
+		position: absolute;
+		top: 560%;
+		left: 110%;
+		font-size: 30px;
+		font-weight: normal;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: top;
+		opacity: 1;
+	}
+
 	&.active {
 		opacity: 1.0;
 	}
