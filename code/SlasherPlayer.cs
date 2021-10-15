@@ -30,6 +30,8 @@ partial class SlasherPlayer : Player {
     public override void Respawn() {
         SetModel("models/slasher/baba/bababooey.vmdl");
 
+		//SetModel("models/slasher/amogus/amogus.vmdl");
+
         Controller = new WalkController();
         Animator = new StandardPlayerAnimator();
         Camera = new ThirdPersonCamera();
