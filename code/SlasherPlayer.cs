@@ -59,4 +59,5 @@ partial class SlasherPlayer : Player {
 	public void TookDamage( DamageFlags damageFlags, Vector3 forcePos, Vector3 force )
 	{
 	}
+
 }
