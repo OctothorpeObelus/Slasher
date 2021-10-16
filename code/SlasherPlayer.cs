@@ -28,9 +28,9 @@ partial class SlasherPlayer : Player {
 
 
     public override void Respawn() {
-        SetModel("models/slasher/baba/bababooey.vmdl");
+        //SetModel("models/slasher/baba/bababooey.vmdl");
 
-		//SetModel("models/slasher/amogus/amogus.vmdl");
+		SetModel("models/slasher/amogus/amogus.vmdl");
 
         Controller = new WalkController();
         Animator = new StandardPlayerAnimator();
@@ -47,7 +47,7 @@ partial class SlasherPlayer : Player {
         worldLight.SetParent(this, false);
         worldLight.Enabled = true;
 
-		Sound.FromEntity("bababooey_breathing", this);
+		//Sound.FromEntity("bababooey_breathing", this);
     }
 
     // Literally too angry to die
