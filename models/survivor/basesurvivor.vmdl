@@ -11,7 +11,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "content/basesurvivor-fixedlegs.fbx"
+						filename = "content/Survivor/basesurvivor.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -161,46 +161,6 @@
 				[
 					{
 						_class = "AnimFile"
-						name = "AIMPitch"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "content/AIM-Pitch.fbx"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "AIMYaw"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "content/AIM-Yaw.fbx"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
 						name = "IdlePose_Default"
 						activity_name = "ACT_IDLE"
 						activity_weight = 1
@@ -213,7 +173,7 @@
 						hidden = false
 						anim_markup_ordered = false
 						disable_compression = false
-						source_filename = "content/Idle.fbx"
+						source_filename = "content/Survivor/anim/Idle.fbx"
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
@@ -250,7 +210,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_1.fbx"
+										source_filename = "content/Survivor/anim/Walk_1.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -277,7 +237,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_2.fbx"
+										source_filename = "content/Survivor/anim/Walk_2.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -304,7 +264,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_3.fbx"
+										source_filename = "content/Survivor/anim/Walk_3.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -331,7 +291,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_4.fbx"
+										source_filename = "content/Survivor/anim/Walk_4.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -358,7 +318,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_6.fbx"
+										source_filename = "content/Survivor/anim/Walk_6.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -385,7 +345,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_7.fbx"
+										source_filename = "content/Survivor/anim/Walk_7.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -412,7 +372,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_8.fbx"
+										source_filename = "content/Survivor/anim/Walk_8.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -439,7 +399,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Walk_9.fbx"
+										source_filename = "content/Survivor/anim/Walk_9.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -565,7 +525,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RunSW.fbx"
+										source_filename = "content/Survivor/anim/RunSW.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -592,7 +552,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RUNS.fbx"
+										source_filename = "content/Survivor/anim/RUNS.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -619,7 +579,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RunSE.fbx"
+										source_filename = "content/Survivor/anim/RunSE.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -646,7 +606,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RunW.fbx"
+										source_filename = "content/Survivor/anim/RunW.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -673,7 +633,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RunE.fbx"
+										source_filename = "content/Survivor/anim/RunE.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -700,7 +660,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RunNW.fbx"
+										source_filename = "content/Survivor/anim/RunNW.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -727,7 +687,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RunN.fbx"
+										source_filename = "content/Survivor/anim/RunN.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -754,7 +714,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/RunNE.fbx"
+										source_filename = "content/Survivor/anim/RunNE.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -873,7 +833,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/jump.fbx"
+										source_filename = "content/Survivor/anim/jump.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -893,7 +853,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Fall.fbx"
+										source_filename = "content/Survivor/anim/Fall.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -913,7 +873,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Land.fbx"
+										source_filename = "content/Survivor/anim/Land.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -947,7 +907,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/Sprint.fbx"
+										source_filename = "content/Survivor/anim/Sprint.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -974,7 +934,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/SprintNE.fbx"
+										source_filename = "content/Survivor/anim/SprintNE.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -1001,7 +961,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/sprintnw.fbx"
+										source_filename = "content/Survivor/anim/sprintnw.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -1046,7 +1006,167 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/CrouchIdle.fbx"
+										source_filename = "content/Survivor/anim/CrouchIdle.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlN"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlN.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlE"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlE.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlNE"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlNE.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlNW"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlNW.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlS"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlS.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlSE"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlSE.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlSW"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlSW.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "CrawlW"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "content/Survivor/anim/CrawlW.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -1098,7 +1218,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/ItemPickup.fbx"
+										source_filename = "content/Survivor/anim/ItemPickup.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -1136,7 +1256,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/ItemHolding.fbx"
+										source_filename = "content/Survivor/anim/ItemHolding.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -1181,7 +1301,7 @@
 										hidden = false
 										anim_markup_ordered = false
 										disable_compression = false
-										source_filename = "content/FlashlightBase.fbx"
+										source_filename = "content/Survivor/anim/FlashlightBase.fbx"
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
@@ -1203,7 +1323,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
-								source_filename = "content/ItemAndFlashlight.fbx"
+								source_filename = "content/Survivor/anim/ItemAndFlashlight.fbx"
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
@@ -1259,7 +1379,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
-								source_filename = "content/BatteryInserting.fbx"
+								source_filename = "content/Survivor/anim/BatteryInserting.fbx"
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
@@ -1295,49 +1415,13 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
-								source_filename = "content/PourFuel.fbx"
+								source_filename = "content/Survivor/anim/PourFuel.fbx"
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
 								reverse = false
 							},
 						]
-					},
-					{
-						_class = "AnimFile"
-						name = "Death"
-						children = 
-						[
-							{
-								_class = "AnimEvent"
-								event_class = "AE_GENERIC_EVENT"
-								event_frame = 49
-								event_keys = 
-								{
-									TypeName = "OnDeath"
-									Int = 0
-									Float = 0.0
-									Vector = [ 0.0, 0.0, 0.0 ]
-									StringData = ""
-								}
-							},
-						]
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "content/Death.fbx"
-						start_frame = -1
-						end_frame = -1
-						framerate = -1.0
-						reverse = false
 					},
 				]
 				default_root_bone_name = ""
