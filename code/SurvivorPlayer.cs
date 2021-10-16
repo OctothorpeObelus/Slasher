@@ -183,6 +183,22 @@ partial class SurvivorPlayer : Player
 				DropBattery();
 			}
 
+			if (Tags.Has("is_holding_mayo"))
+			{
+				Tags.Remove("is_holding_mayo");
+				Tags.Remove("has_item");
+
+				DropMayo();
+			}
+
+			if (Tags.Has("is_holding_milk"))
+			{
+				Tags.Remove("is_holding_milk");
+				Tags.Remove("has_item");
+
+				DropMilk();
+			}
+
 		}
 
 		if (Input.Pressed(InputButton.Flashlight)) 
@@ -214,7 +230,7 @@ partial class SurvivorPlayer : Player
 			}
 		}
 
-		if (Tags.Has("is_holding_battery") || Tags.Has("is_holding_fuel"))
+		if (Tags.Has("is_holding_battery") || Tags.Has("is_holding_fuel") || Tags.Has("is_holding_milk"))
 		{
 			this.SetAnimBool("b_item_equipped_generic", true);
 		}
@@ -233,6 +249,15 @@ partial class SurvivorPlayer : Player
 		{
 			DropBattery();
 		}
+		if (Input.Pressed(InputButton.Slot3))
+		{
+			DropMayo();
+		}
+		if (Input.Pressed(InputButton.Slot4))
+		{
+			DropMilk();
+		}
+
 
 	}
 
@@ -275,6 +300,44 @@ partial class SurvivorPlayer : Player
 		if (droppedbat.IsServer == false) //the fix, remember for later
 		{
 			droppedbat.Delete();
+		}
+
+	}
+
+	void DropMayo()
+	{
+		var droppedmayo = new MayoEntity()
+		{
+			Position = EyePos + EyeRot.Forward * 15,
+		};
+
+		if (droppedmayo != null)
+		{
+			droppedmayo.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 200.0f + Vector3.Up * 50.0f, true);
+			droppedmayo.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 50.0f, true);
+		}
+		if (droppedmayo.IsServer == false)
+		{
+			droppedmayo.Delete();
+		}
+
+	}
+
+	void DropMilk()
+	{
+		var droppedmilk = new MilkEntity()
+		{
+			Position = EyePos + EyeRot.Forward * 15,
+		};
+
+		if (droppedmilk != null)
+		{
+			droppedmilk.PhysicsGroup.ApplyImpulse(Velocity + EyeRot.Forward * 200.0f + Vector3.Up * 50.0f, true);
+			droppedmilk.PhysicsGroup.ApplyAngularImpulse(Vector3.Random * 50.0f, true);
+		}
+		if (droppedmilk.IsServer == false)
+		{
+			droppedmilk.Delete();
 		}
 
 	}
@@ -334,6 +397,24 @@ partial class SurvivorPlayer : Player
 			{
 				this.SetBodyGroup("GasCan", 0);
 			}
+
+			if (Tags.Has("is_holding_mayo"))
+			{
+				this.SetBodyGroup("Mayo", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("Mayo", 0);
+			}
+
+			if (Tags.Has("is_holding_milk"))
+			{
+				this.SetBodyGroup("Milk", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("Milk", 0);
+			}
 		}
 	}
 
@@ -358,6 +439,24 @@ partial class SurvivorPlayer : Player
 			else
 			{
 				this.SetBodyGroup("GasCan", 0);
+			}
+
+			if (Tags.Has("is_holding_mayo"))
+			{
+				this.SetBodyGroup("Mayo", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("Mayo", 0);
+			}
+
+			if (Tags.Has("is_holding_milk"))
+			{
+				this.SetBodyGroup("Milk", 1);
+			}
+			else
+			{
+				this.SetBodyGroup("Milk", 0);
 			}
 		}
 	}

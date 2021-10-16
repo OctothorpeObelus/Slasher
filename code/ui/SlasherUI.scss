@@ -235,6 +235,54 @@ PickedUpText {
 			opacity: 1.0;
 		}
 	}
+	.iconmayo {
+		position: absolute;
+		background-image: url(ui/img/mayo.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		right: 125%;
+		top: 10%;
+		background-size: cover;
+   	 	overflow: hidden;	
+		opacity: 0;
+
+		&.active {
+			opacity: 1.0;
+		}
+	}
+	.iconmilk {
+		position: absolute;
+		background-image: url(ui/img/milk.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		right: 125%;
+		top: 10%;
+		background-size: cover;
+   	 	overflow: hidden;	
+		opacity: 0;
+
+		&.active {
+			opacity: 1.0;
+		}
+	}
+	.iconburger {
+		position: absolute;
+		background-image: url(ui/img/burger.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		right: 125%;
+		top: 10%;
+		background-size: cover;
+   	 	overflow: hidden;	
+		opacity: 0;
+
+		&.active {
+			opacity: 1.0;
+		}
+	}
 
 	&.active {
 		opacity: 1.0;

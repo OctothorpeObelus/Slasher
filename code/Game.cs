@@ -102,6 +102,10 @@ public partial class Slasher : Sandbox.Game {
 		battery.Position = new Vector3(-272.90f, -2964.05f, 4.03f);
 		battery.Spawn();
 
+		var mayo = new MayoEntity();
+		mayo.Position = new Vector3(-272.90f, -3000f, 4.03f);
+		mayo.Spawn();
+
 		spawned = true;
 
 		}
