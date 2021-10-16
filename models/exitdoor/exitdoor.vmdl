@@ -1,0 +1,193 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 0.1
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = ""
+								to = "materials/game/exitdoor/exitdoor.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ 22.446701, 42.352386, -0.070523 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 8.414921, 85.704773, 21.212055 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ -22.446699, 42.352402, -0.070523 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 8.414921, 85.704773, 21.212055 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ 0.0, 81.848099, -0.070523 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 37.899822, 6.713477, 21.212055 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "Root"
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 0.0, 40.0, -3.91875 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 37.773243, 77.704987, 13.719944 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/ExitDoor/ExitDoor.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "ClosedState"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Game/ExitDoor/anim/ClosedState.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "Opening"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 59
+								event_keys = 
+								{
+									TypeName = "Opened"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+						]
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Game/ExitDoor/anim/Opening.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "OpenState"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Game/ExitDoor/anim/OpenState.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

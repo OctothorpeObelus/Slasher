@@ -819,49 +819,49 @@
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkE"
-						m_blendValue = [ 49.0, 0.0 ]
+						m_blendValue = [ 65.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkN"
-						m_blendValue = [ 0.0, 49.0 ]
+						m_blendValue = [ 0.0, 65.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkNE"
-						m_blendValue = [ 34.0, 34.0 ]
+						m_blendValue = [ 44.0, 44.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkNW"
-						m_blendValue = [ -34.0, 34.0 ]
+						m_blendValue = [ -44.0, 44.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkS"
-						m_blendValue = [ 0.0, -49.0 ]
+						m_blendValue = [ 0.0, -65.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkSE"
-						m_blendValue = [ 34.0, -34.0 ]
+						m_blendValue = [ 44.0, -44.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkSW"
-						m_blendValue = [ -34.0, -34.0 ]
+						m_blendValue = [ -44.0, -44.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "WalkW"
-						m_blendValue = [ -49.0, 0.0 ]
+						m_blendValue = [ -65.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"

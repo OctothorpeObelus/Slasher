@@ -11,8 +11,7 @@ public partial class Slasher : Sandbox.Game {
 	public bool ExitOpen;
 
 	public static AnimEntity exit1;
-
-	public static AnimEntity exit2;
+	
 
     public Slasher() {
 		if (IsServer)
@@ -30,10 +29,25 @@ public partial class Slasher : Sandbox.Game {
         gene1.Spawn();
 		gene1.Tags.Add("Generator_1");
 
+		//if(gene1.IsServer == false)
+			//gene1 = null;
+
 		gene2 = new GeneratorEntity();
 		gene2.Position = new Vector3(50f, -3424.05f, 4.03f);
         gene2.Spawn();
 		gene2.Tags.Add("Generator_2");
+
+		//if(gene2.IsServer == false)
+			//gene2 = null;
+
+		exit1 = new ExitEntity();
+		exit1.Position = new Vector3(-240f, -3224.05f, 4.03f);
+        exit1.Spawn();
+		exit1.Tags.Add("Exit_1");
+
+		if(exit1.IsServer == false)
+			exit1.Delete();
+
 
 	}
 
@@ -92,8 +106,12 @@ public partial class Slasher : Sandbox.Game {
 	{
 		base.Simulate(cl);
 
-		if(gene1.Tags.Has("running") && gene2.Tags.Has("running"))
+		//if(gene1.Tags.Has("running") && gene2.Tags.Has("running"))
+		if(gene1.Tags.Has("running") || gene2.Tags.Has("running"))
 			ExitOpen = true;
+
+		if(ExitOpen == true)
+			exit1.Tags.Add("open");
 
 	}
 
