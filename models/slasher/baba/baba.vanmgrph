@@ -495,49 +495,49 @@
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlW"
-						m_blendValue = [ 177.0, 0.0 ]
+						m_blendValue = [ 160.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlN"
-						m_blendValue = [ 0.0, 177.0 ]
+						m_blendValue = [ 0.0, 160.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlNE"
-						m_blendValue = [ 125.0, 125.0 ]
+						m_blendValue = [ 110.0, 110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlNW"
-						m_blendValue = [ -125.0, 125.0 ]
+						m_blendValue = [ -110.0, 110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlS"
-						m_blendValue = [ 0.0, -177.0 ]
+						m_blendValue = [ 0.0, -160.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlSE"
-						m_blendValue = [ 125.0, -125.0 ]
+						m_blendValue = [ 110.0, -110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlSW"
-						m_blendValue = [ -125.0, -125.0 ]
+						m_blendValue = [ -110.0, -110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ProwlE"
-						m_blendValue = [ -177.0, 0.0 ]
+						m_blendValue = [ -160.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
@@ -549,19 +549,19 @@
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ChaseN"
-						m_blendValue = [ 0.0, 354.0 ]
+						m_blendValue = [ 0.0, 330.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ChaseNW"
-						m_blendValue = [ -250.0, 250.0 ]
+						m_blendValue = [ -230.0, 230.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
 						m_sequenceName = "ChaseNE"
-						m_blendValue = [ 250.0, 250.0 ]
+						m_blendValue = [ 230.0, 230.0 ]
 					},
 				]
 				m_blendSourceX = "Parameter"
