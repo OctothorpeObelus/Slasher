@@ -4,6 +4,7 @@ using Sandbox.UI.Construct;
 
 public class Menu : Panel
 {
+
 	public Label Label;
 
 	public Label SurvivorSpawn;
@@ -26,7 +27,8 @@ public class Menu : Panel
 
 	public Menu()
 	{
-		Label = Add.Label("Alpha v0.01", "Logo");
+
+		Label = Add.Label("Alpha v0.01", "logo");
 
 		SurvivorSpawn = Add.Label("Spawn as Survivor", "spawn-survivor");
 

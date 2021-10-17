@@ -11,7 +11,7 @@ Crosshair {
 }
 
 Menu {
-	position: absolute;
+	position: fixed;
 	background-image: url(ui/img/slasherlogo.png)
 	background-repeat: no-repeat;
 	width: 617px;
@@ -21,7 +21,22 @@ Menu {
 	background-size: cover;	
 	pointer-events: all;
 	opacity: 0;
-	
+	z-index: 10;
+
+	.backdrop {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		font-size: 60px;
+		font-weight: bold;
+		color: white;
+		height: 800px;
+		width: 800px;
+		align-items: center;
+		background-color: rgba( black, 1 );
+		opacity: 1;	
+		z-index: -1;
+	}
 
 	.spawn-slasher {
 		position: absolute;
@@ -41,6 +56,7 @@ Menu {
 		&:hover {
 			opacity: 1;
 			color: red;
+			box-shadow: 0px 0px 200px red;
 		}
 	}
 	.spawn-survivor {
@@ -61,6 +77,7 @@ Menu {
 		&:hover {
 			opacity: 1;
 			color: red;
+			box-shadow: 0px 0px 200px red;
 		}
 	}
 

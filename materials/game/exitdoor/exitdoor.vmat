@@ -26,7 +26,7 @@ Layer0
 	TextureNormal "content/Game/ExitDoor/ExitDoornm.png"
 
 	//---- Roughness ----
-	TextureRoughness "[0.152941 0.152941 0.152941 1.000000]"
+	TextureRoughness "content/Game/ExitDoor/ExitDoormat-rgh.png"
 
 	//---- Texture Coordinates ----
 	g_nScaleTexCoordUByModelScaleAxis "0"
