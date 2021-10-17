@@ -57,6 +57,10 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 
 				IsCurrentlyHavingTheBatteryInsertedIntoIt = true;
 
+				player.Rotation = this.Rotation + new Angles(0, -90, 0).ToRotation();
+
+				player.Position = this.Position + this.Rotation.Backward*25 + this.Rotation.Left*35;
+
 				batteryTime = 0;
 			}
 
@@ -67,6 +71,10 @@ public partial class GeneratorEntity : AnimEntity, IUse {
 				player.Tags.Remove("has_item");
 
 				player.Tags.Add("active_fuel_pourer");
+
+				player.Rotation = this.Rotation + new Angles(0, -90, 0).ToRotation();
+
+				player.Position = this.Position + this.Rotation.Backward*45 + this.Rotation.Left*22;
 
 				Sequence = "FuelPour";
 

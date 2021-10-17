@@ -14,7 +14,7 @@ partial class SurvivorPlayer : Player
 	{
 		SetModel("models/survivor/basesurvivor.vmdl");
 
-		Controller = new WalkController();
+		Controller = new SurvivorController();
 		Animator = new StandardPlayerAnimator();
 		//Camera = new ThirdPersonCamera();
 		Camera = new FirstPersonCamera();
@@ -106,14 +106,14 @@ partial class SurvivorPlayer : Player
 		{
 			Tags.Remove("active_battery_inserter");
 
-			Controller = new WalkController();
+			Controller = new SurvivorController();
 		}
 
 		if (name == "PourFinished")
 		{
 			Tags.Remove("active_fuel_pourer");
 
-			Controller = new WalkController();
+			Controller = new SurvivorController();
 		}
 
 		if (name == "OnDeath")
@@ -137,10 +137,6 @@ partial class SurvivorPlayer : Player
 			this.SetBodyGroup("Battery", 0);
 
 			Controller = null;
-
-			//Position = GeneratorEntity().Position;
-
-			//to do: force position to player to line up with the generator used
 		}
 		else
 		{
@@ -154,10 +150,6 @@ partial class SurvivorPlayer : Player
 			this.SetBodyGroup("GasCan", 0);
 
 			Controller = null;
-
-			//Position = GeneratorEntity().Position;
-
-			//to do: force position to player to line up with the generator used
 		}
 		else
 		{

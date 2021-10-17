@@ -3,6 +3,8 @@ using System;
 using Sandbox;
 public partial class Slasher : Sandbox.Game {
 
+	public static int SelectedSlasher = 1;
+
 	public bool spawned = false;
 
 	public static AnimEntity gene1;
@@ -34,8 +36,19 @@ public partial class Slasher : Sandbox.Game {
 
 		}
 
+		OpenExit1 = new Random().Next(1, 4);
+
+		OpenExit2 = new Random().Next(1, 4);
+
+		BeginSpawn();
+
+	}
+
+	public static void BeginSpawn()	
+	{
 		gene1 = new GeneratorEntity();
-		gene1.Position = new Vector3(-100f, -3424.05f, 4.03f);
+		gene1.Position = new Vector3(130f, 570f, 16f);
+		gene1.Rotation = new Angles(0f, 90f, 0f).ToRotation();
         gene1.Spawn();
 		gene1.Tags.Add("Generator_1");
 
@@ -43,7 +56,8 @@ public partial class Slasher : Sandbox.Game {
 			gene1.Delete();
 
 		gene2 = new GeneratorEntity();
-		gene2.Position = new Vector3(50f, -3424.05f, 4.03f);
+		gene2.Position = new Vector3(-600f, 1080f, 16f);
+		gene2.Rotation = new Angles(0f, -90f, 0f).ToRotation();
         gene2.Spawn();
 		gene2.Tags.Add("Generator_2");
 
@@ -51,40 +65,39 @@ public partial class Slasher : Sandbox.Game {
 			gene2.Delete();
 
 		exit1 = new ExitEntity();
-		exit1.Position = new Vector3(-240f, -3350f, 4.03f);
-        exit1.Spawn();
+		exit1.Position = new Vector3(-500f, 350f, 16f);
+		exit1.Rotation = new Angles(0f, 0f, 0f).ToRotation();
 		exit1.Tags.Add("Exit_1");
 
 		if(exit1.IsServer == false)
 			exit1.Delete();
 
 		exit2 = new ExitEntity();
-		exit2.Position = new Vector3(-240f, -3300f, 4.03f);
+		exit2.Position = new Vector3(-500f, 420f, 16f);
+		exit2.Rotation = new Angles(0f, 0f, 0f).ToRotation();
         exit2.Spawn();
-		exit2.Tags.Add("Exit_1");
+		exit2.Tags.Add("Exit_2");
 
 		if(exit2.IsServer == false)
 			exit2.Delete();
 
 		exit3 = new ExitEntity();
-		exit3.Position = new Vector3(-240f, -3250f, 4.03f);
+		exit3.Position = new Vector3(-500f, 490f, 16f);
+		exit3.Rotation = new Angles(0f, 0f, 0f).ToRotation();
         exit3.Spawn();
-		exit3.Tags.Add("Exit_1");
+		exit3.Tags.Add("Exit_3");
 
 		if(exit3.IsServer == false)
 			exit3.Delete();
 
 		exit4 = new ExitEntity();
-		exit4.Position = new Vector3(-240f, -3200f, 4.03f);
+		exit4.Position = new Vector3(-500f, 560f, 16f);
+		exit4.Rotation = new Angles(0f, 0f, 0f).ToRotation();
         exit4.Spawn();
-		exit4.Tags.Add("Exit_1");
+		exit4.Tags.Add("Exit_4");
 
 		if(exit4.IsServer == false)
 			exit4.Delete();
-
-		OpenExit1 = new Random().Next(1, 4);
-
-		OpenExit2 = new Random().Next(1, 4);
 
 	}
 
@@ -94,22 +107,11 @@ public partial class Slasher : Sandbox.Game {
 		if(spawned == false)
 		{
 
-		var fuelcan = new FuelEntity();
-		fuelcan.Position = new Vector3(-272.90f, -3064.05f, 4.03f);
-		fuelcan.Spawn();
-
-		var battery = new BatteryEntity();
-		battery.Position = new Vector3(-272.90f, -2964.05f, 4.03f);
-		battery.Spawn();
-
-		var mayo = new MayoEntity();
-		mayo.Position = new Vector3(-272.90f, -3000f, 4.03f);
-		mayo.Spawn();
+		//BeginSpawn();
 
 		spawned = true;
 
 		}
-
 
 		if (IsServer)
 		{
@@ -127,7 +129,9 @@ public partial class Slasher : Sandbox.Game {
 
 		//if(gene1.Tags.Has("running") && gene2.Tags.Has("running"))
 		if(gene1.Tags.Has("running") || gene2.Tags.Has("running"))
+		{
 			ExitOpen = true;
+		}
 
 		if(ExitOpen == true){
 			switch(OpenExit1)
@@ -165,6 +169,22 @@ public partial class Slasher : Sandbox.Game {
 
 	}
 
+	[ServerCmd( "slasher_1" )]
+	public static void SlasherBababooey()
+	{
+		SelectedSlasher = 1;
+	}
+	[ServerCmd( "slasher_2" )]
+	public static void SlasherAmogus()
+	{
+		SelectedSlasher = 2;
+	}
+	[ServerCmd( "slasher_3" )]
+	public static void SlasherTrollge()
+	{
+		SelectedSlasher = 3;
+	}
+
 	[ServerCmd( "spawnsurvivor" )]
 	public static void SpawnSurvivor()
 	{
@@ -192,6 +212,9 @@ public partial class Slasher : Sandbox.Game {
 		player.Tags.Add("slasher");
 		ConsoleSystem.Caller.Pawn = player;
 
+		player.SelectSlasher(SelectedSlasher);
+
 		player.Respawn();
 	}
+
 }

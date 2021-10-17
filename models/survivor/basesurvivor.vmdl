@@ -1061,7 +1061,7 @@
 										source_filename = "content/Survivor/anim/CrawlN.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 									{
@@ -1081,7 +1081,7 @@
 										source_filename = "content/Survivor/anim/CrawlE.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 									{
@@ -1101,7 +1101,7 @@
 										source_filename = "content/Survivor/anim/CrawlNE.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 									{
@@ -1121,7 +1121,7 @@
 										source_filename = "content/Survivor/anim/CrawlNW.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 									{
@@ -1141,7 +1141,7 @@
 										source_filename = "content/Survivor/anim/CrawlS.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 									{
@@ -1161,7 +1161,7 @@
 										source_filename = "content/Survivor/anim/CrawlSE.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 									{
@@ -1181,7 +1181,7 @@
 										source_filename = "content/Survivor/anim/CrawlSW.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 									{
@@ -1201,7 +1201,7 @@
 										source_filename = "content/Survivor/anim/CrawlW.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = -1.0
+										framerate = 20.0
 										reverse = false
 									},
 								]
