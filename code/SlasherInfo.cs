@@ -63,7 +63,7 @@ public class SlasherInfo : Panel
 
 		if(player.Tags.Has("trollge")){
 
-			CurrentSlasher.Text = "Trollge";
+			CurrentSlasher.Text = "Trollge (Stage I)";
 
 			Abilities.Text = "M1 to slash";
 
