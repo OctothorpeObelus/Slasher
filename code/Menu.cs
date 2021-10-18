@@ -25,14 +25,31 @@ public class Menu : Panel
 
 	public int SelectedSlasher = 1;
 
+	public Label LobbyBox;
+
+	public Label Player1;
+	public Label ReadyP1;	
+
+	public Label Player2;
+	public Label ReadyP2;	
+
+	public Label Player3;
+	public Label ReadyP3;	
+
+	public Label Player4;
+	public Label ReadyP4;	
+
+	public Label Player5;
+	public Label ReadyP5;	
+
 	public Menu()
 	{
 
 		Label = Add.Label("Alpha v0.01", "logo");
 
-		SurvivorSpawn = Add.Label("Spawn as Survivor", "spawn-survivor");
+		SurvivorSpawn = Add.Label("Play as Survivor", "spawn-survivor");
 
-		SlasherSpawn = Add.Label("Spawn as Slasher", "spawn-slasher");
+		SlasherSpawn = Add.Label("Play as Slasher", "spawn-slasher");
 
 		SlasherName = Add.Label("Bababooey", "slasher-name");
 
@@ -43,6 +60,23 @@ public class Menu : Panel
 		SlasherIcon2 = Add.Label("", "slashericon2");
 
 		SlasherIcon3 = Add.Label("", "slashericon3");
+
+		LobbyBox = Add.Label("Player Lobby", "lobby-box");
+
+			Player1 = LobbyBox.Add.Label("Player 1", "player1");
+				ReadyP1 = Player1.Add.Label("X", "ready");
+
+			Player2 = LobbyBox.Add.Label("Player 2", "player2");
+				ReadyP2 = Player2.Add.Label("X", "ready");
+
+			Player3 = LobbyBox.Add.Label("Player 3", "player3");
+				ReadyP3 = Player3.Add.Label("X", "ready");
+
+			Player4 = LobbyBox.Add.Label("Player 4", "player4");
+				ReadyP4 = Player4.Add.Label("X", "ready");
+
+			Player5 = LobbyBox.Add.Label("Player 5", "player5");
+				ReadyP5 = Player5.Add.Label("X", "ready");
 
 		Label.SetClass("active" , false);
 

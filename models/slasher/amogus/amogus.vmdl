@@ -106,7 +106,7 @@
 								source_filename = "content/Slasher/Amogus/anim/WalkN.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -126,7 +126,7 @@
 								source_filename = "content/Slasher/Amogus/anim/WalkS.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -146,7 +146,7 @@
 								source_filename = "content/Slasher/Amogus/anim/WalkNW.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -166,7 +166,7 @@
 								source_filename = "content/Slasher/Amogus/anim/WalkNE.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -206,7 +206,7 @@
 								source_filename = "content/Slasher/Amogus/anim/WalkSE.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -226,7 +226,7 @@
 								source_filename = "content/Slasher/Amogus/anim/WalkW.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -246,7 +246,7 @@
 								source_filename = "content/Slasher/Amogus/anim/WalkE.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = -1.0
 								reverse = false
 							},
 						]
@@ -273,7 +273,7 @@
 								source_filename = "content/Slasher/Amogus/anim/ChaseN.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 45.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -293,7 +293,7 @@
 								source_filename = "content/Slasher/Amogus/anim/ChaseNW.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 45.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -313,7 +313,7 @@
 								source_filename = "content/Slasher/Amogus/anim/ChaseNE.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 45.0
+								framerate = -1.0
 								reverse = false
 							},
 						]
@@ -361,6 +361,22 @@
 					{
 						_class = "AnimFile"
 						name = "Kill"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 59
+								event_keys = 
+								{
+									TypeName = "JumpscareFinished"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""

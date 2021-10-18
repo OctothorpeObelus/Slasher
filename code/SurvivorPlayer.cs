@@ -53,29 +53,6 @@ partial class SurvivorPlayer : Player
 
 		Camera = new SpectateRagdollCamera();		
 
-		var ent = new ModelEntity();
-		ent.Position = Position;
-		ent.Rotation = Rotation;
-		ent.Scale = Scale;
-		ent.MoveType = MoveType.Physics;
-		ent.UsePhysicsCollision = true;
-		ent.EnableAllCollisions = true;
-		ent.CollisionGroup = CollisionGroup.Debris;
-		ent.SetModel( GetModelName() );
-		ent.CopyBonesFrom( this );
-		ent.CopyBodyGroups( this );
-		ent.CopyMaterialGroup( this );
-		ent.TakeDecalsFrom( this );
-		ent.EnableHitboxes = true;
-		ent.EnableAllCollisions = true;
-		ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
-		ent.RenderColor = RenderColor;
-
-		//ent.DeleteAsync( 10.0f );
-
-		EnableAllCollisions = false;
-		EnableDrawing = false;
-
 		this.flashlight = null;
 	}
 	private SpotLightEntity CreateLight()
@@ -120,7 +97,30 @@ partial class SurvivorPlayer : Player
 		{
 			Camera = new SpectateRagdollCamera();
 
-			//kill survivor also
+		var ent = new ModelEntity();
+		ent.Position = Position;
+		ent.Rotation = Rotation;
+		ent.Scale = Scale;
+		ent.MoveType = MoveType.Physics;
+		ent.UsePhysicsCollision = true;
+		ent.EnableAllCollisions = true;
+		ent.CollisionGroup = CollisionGroup.Debris;
+		ent.SetModel( GetModelName() );
+		ent.CopyBonesFrom( this );
+		ent.CopyBodyGroups( this );
+		ent.CopyMaterialGroup( this );
+		ent.TakeDecalsFrom( this );
+		ent.EnableHitboxes = true;
+		ent.EnableAllCollisions = true;
+		ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
+		ent.RenderColor = RenderColor;
+
+		//ent.DeleteAsync( 10.0f );
+
+		EnableAllCollisions = false;
+		EnableDrawing = false;
+
+			Delete();
 		}
 	}
 

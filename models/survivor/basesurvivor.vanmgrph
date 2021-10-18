@@ -855,7 +855,7 @@
 			{
 				_class = "CBlend2DAnimNode"
 				m_sName = "Universal Walk & Run 2D"
-				m_vecPosition = [ -722.0, -210.0 ]
+				m_vecPosition = [ -736.0, -208.0 ]
 				m_nNodeID = 
 				{
 					m_id = 213225180
@@ -1578,7 +1578,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ -710.0, -146.0 ]
+				m_vecPosition = [ -736.0, -160.0 ]
 				m_nNodeID = 
 				{
 					m_id = 359624953
@@ -1600,7 +1600,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Crouch"
-				m_vecPosition = [ -720.0, -32.0 ]
+				m_vecPosition = [ -736.0, -48.0 ]
 				m_nNodeID = 
 				{
 					m_id = 641039449
@@ -2601,7 +2601,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ 1600.0, -272.0 ]
+				m_vecPosition = [ 1440.0, -336.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1449670813
@@ -2609,7 +2609,7 @@
 				m_networkMode = "ClientPredicted"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "Death"
+				m_sequenceName = "Dying"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}

@@ -28,6 +28,22 @@
 						_class = "BodyGroup"
 						name = "BababooeyBody"
 						note = "Type note..."
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								name = "Visible"
+								meshes = 
+								[
+									"unnamed_1",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "Hidden"
+								meshes = [  ]
+							},
+						]
 						hidden_in_tools = false
 					},
 				]
@@ -208,7 +224,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlN.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 							{
@@ -235,7 +251,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlSW.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 							{
@@ -262,7 +278,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlS.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 							{
@@ -289,7 +305,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlSE.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 							{
@@ -316,7 +332,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlE.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 							{
@@ -343,7 +359,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlW.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 							{
@@ -370,7 +386,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlNW.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 							{
@@ -397,7 +413,7 @@
 								source_filename = "content/Slasher/Baba/anim/ProwlNE.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 35.0
+								framerate = 30.0
 								reverse = false
 							},
 						]
@@ -431,7 +447,7 @@
 								source_filename = "content/Slasher/Baba/anim/ChaseN.fbx"
 								start_frame = -1
 								end_frame = -1
-								framerate = 30.0
+								framerate = -1.0
 								reverse = false
 							},
 							{
@@ -493,6 +509,22 @@
 					{
 						_class = "AnimFile"
 						name = "Kill"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 49
+								event_keys = 
+								{
+									TypeName = "JumpscareFinished"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -510,8 +542,64 @@
 						framerate = -1.0
 						reverse = false
 					},
+					{
+						_class = "AnimFile"
+						name = "GoInvisible"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 40
+								event_keys = 
+								{
+									TypeName = "Invisible"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+						]
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Slasher/Baba/anim/GoInvisible.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
 				]
 				default_root_bone_name = ""
+			},
+			{
+				_class = "WeightListList"
+				children = 
+				[
+					{
+						_class = "WeightList"
+						name = "Hiding"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "Spine"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+				]
 			},
 		]
 		model_archetype = ""

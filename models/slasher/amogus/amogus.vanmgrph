@@ -284,6 +284,20 @@
 				m_bPredicted = false
 				m_bDefaultValue = false
 			},
+			{
+				_class = "CBoolAnimParameter"
+				m_name = "b_killing"
+				m_id = 
+				{
+					m_id = 1721856999
+				}
+				m_previewButton = "ANIMPARAM_BUTTON_NONE"
+				m_bNetwork = false
+				m_bUseMostRecentValue = false
+				m_bAutoReset = false
+				m_bPredicted = false
+				m_bDefaultValue = false
+			},
 		]
 	}
 	m_pTagManager = 
@@ -454,6 +468,143 @@
 		{
 			key = 
 			{
+				m_id = 129905073
+			}
+			value = 
+			{
+				_class = "CStateMachineAnimNode"
+				m_sName = "Unnamed"
+				m_vecPosition = [ 288.0, 64.0 ]
+				m_nNodeID = 
+				{
+					m_id = 129905073
+				}
+				m_networkMode = "ClientPredicted"
+				m_sNote = ""
+				m_states = 
+				[
+					{
+						_class = "CAnimState"
+						m_transitions = 
+						[
+							{
+								_class = "CAnimStateTransition"
+								m_conditions = 
+								[
+									{
+										_class = "CParameterAnimCondition"
+										m_comparisonOp = 0
+										m_paramID = 
+										{
+											m_id = 1721856999
+										}
+										m_comparisonValue = 
+										{
+											m_nType = 1
+											m_data = true
+										}
+									},
+								]
+								m_blendDuration = 0.2
+								m_destState = 
+								{
+									m_id = 145919611
+								}
+								m_bReset = true
+								m_resetCycleOption = "Beginning"
+								m_flFixedCycleValue = 0.0
+								m_blendCurve = 
+								{
+									m_vControlPoint1 = [ 0.5, 0.0 ]
+									m_vControlPoint2 = [ 0.5, 1.0 ]
+								}
+								m_bForceFootPlant = false
+								m_bDisabled = false
+							},
+						]
+						m_tags = [  ]
+						m_tagBehaviors = [  ]
+						m_name = "Normal"
+						m_childNodeID = 
+						{
+							m_id = 1908884856
+						}
+						m_stateID = 
+						{
+							m_id = 758910328
+						}
+						m_position = [ -176.0, -112.0 ]
+						m_bIsStartState = true
+						m_bIsEndtState = false
+						m_bIsPassthrough = false
+						m_bIsRootMotionExclusive = false
+						m_bAlwaysEvaluate = false
+					},
+					{
+						_class = "CAnimState"
+						m_transitions = 
+						[
+							{
+								_class = "CAnimStateTransition"
+								m_conditions = 
+								[
+									{
+										_class = "CParameterAnimCondition"
+										m_comparisonOp = 0
+										m_paramID = 
+										{
+											m_id = 1721856999
+										}
+										m_comparisonValue = 
+										{
+											m_nType = 1
+											m_data = false
+										}
+									},
+								]
+								m_blendDuration = 0.2
+								m_destState = 
+								{
+									m_id = 758910328
+								}
+								m_bReset = true
+								m_resetCycleOption = "Beginning"
+								m_flFixedCycleValue = 0.0
+								m_blendCurve = 
+								{
+									m_vControlPoint1 = [ 0.5, 0.0 ]
+									m_vControlPoint2 = [ 0.5, 1.0 ]
+								}
+								m_bForceFootPlant = false
+								m_bDisabled = false
+							},
+						]
+						m_tags = [  ]
+						m_tagBehaviors = [  ]
+						m_name = "Killing"
+						m_childNodeID = 
+						{
+							m_id = 776377788
+						}
+						m_stateID = 
+						{
+							m_id = 145919611
+						}
+						m_position = [ 48.0, -112.0 ]
+						m_bIsStartState = false
+						m_bIsEndtState = false
+						m_bIsPassthrough = false
+						m_bIsRootMotionExclusive = false
+						m_bAlwaysEvaluate = false
+					},
+				]
+				m_bBlockWaningTags = false
+				m_bLockStateWhenWaning = false
+			}
+		},
+		{
+			key = 
+			{
 				m_id = 192381123
 			}
 			value = 
@@ -494,73 +645,73 @@
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkE"
+						m_sequenceName = "Scene8"
 						m_blendValue = [ 160.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkN"
+						m_sequenceName = "Scene1"
 						m_blendValue = [ 0.0, 160.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkNE"
+						m_sequenceName = "Scene4"
 						m_blendValue = [ 110.0, 110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkNW"
+						m_sequenceName = "Scene3"
 						m_blendValue = [ -110.0, 110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkS"
+						m_sequenceName = "Scene2"
 						m_blendValue = [ 0.0, -160.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkSE"
+						m_sequenceName = "Scene6"
 						m_blendValue = [ 110.0, -110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkSW"
+						m_sequenceName = "Scene5"
 						m_blendValue = [ -110.0, -110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "WalkW"
+						m_sequenceName = "Scene7"
 						m_blendValue = [ -160.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Idle"
+						m_sequenceName = "Armature_ArmatureAction"
 						m_blendValue = [ 0.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "ChaseN"
+						m_sequenceName = "Armature_ArmatureAction3"
 						m_blendValue = [ 0.0, 330.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "ChaseNW"
+						m_sequenceName = "Armature_ArmatureAction4"
 						m_blendValue = [ -230.0, 230.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "ChaseNE"
+						m_sequenceName = "Armature_ArmatureAction5"
 						m_blendValue = [ 230.0, 230.0 ]
 					},
 				]
@@ -1076,7 +1227,7 @@
 				m_networkMode = "ClientPredicted"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "Idle"
+				m_sequenceName = "Armature_ArmatureAction"
 				m_playbackSpeed = 1.0
 				m_bLoop = true
 			}
@@ -1090,7 +1241,7 @@
 			{
 				_class = "CRootAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ 384.0, -32.0 ]
+				m_vecPosition = [ 496.0, 64.0 ]
 				m_nNodeID = 
 				{
 					m_id = 765042063
@@ -1099,8 +1250,30 @@
 				m_sNote = ""
 				m_childID = 
 				{
-					m_id = 1908884856
+					m_id = 129905073
 				}
+			}
+		},
+		{
+			key = 
+			{
+				m_id = 776377788
+			}
+			value = 
+			{
+				_class = "CSequenceAnimNode"
+				m_sName = "Kill"
+				m_vecPosition = [ 80.0, 128.0 ]
+				m_nNodeID = 
+				{
+					m_id = 776377788
+				}
+				m_networkMode = "ClientPredicted"
+				m_sNote = ""
+				m_tagSpans = [  ]
+				m_sequenceName = "Scene"
+				m_playbackSpeed = 1.0
+				m_bLoop = false
 			}
 		},
 		{

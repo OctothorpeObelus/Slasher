@@ -14,6 +14,8 @@ public class SlasherInfo : Panel
 
 	public Panel IconTrollge;
 
+	public static bool IsBabaInvisible;
+
 	public SlasherInfo()
 	{
 		CurrentSlasher = Add.Label("Error!", "");
@@ -33,6 +35,8 @@ public class SlasherInfo : Panel
 
 		var player = Local.Pawn;
 		if (player == null) return;
+
+		IconBaba.SetClass("ability",IsBabaInvisible);
 
 		if(player.Tags.Has("slasher"))
 			SetClass("active",true);
@@ -72,5 +76,16 @@ public class SlasherInfo : Panel
 			IconTrollge.SetClass("active",true);
 		}
 
+	}
+	[ServerCmd( "baba_visible" )]
+	public static void BababooeyVisibleIcon()
+	{
+		IsBabaInvisible = true;
+	}
+
+	[ServerCmd( "inbaba_visible" )]
+	public static void BababooeyInisibleIcon()
+	{
+		IsBabaInvisible = false;
 	}
 }

@@ -1061,7 +1061,7 @@
 										source_filename = "content/Survivor/anim/CrawlN.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 									{
@@ -1081,7 +1081,7 @@
 										source_filename = "content/Survivor/anim/CrawlE.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 									{
@@ -1101,7 +1101,7 @@
 										source_filename = "content/Survivor/anim/CrawlNE.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 									{
@@ -1121,7 +1121,7 @@
 										source_filename = "content/Survivor/anim/CrawlNW.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 									{
@@ -1141,7 +1141,7 @@
 										source_filename = "content/Survivor/anim/CrawlS.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 									{
@@ -1161,7 +1161,7 @@
 										source_filename = "content/Survivor/anim/CrawlSE.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 									{
@@ -1181,7 +1181,7 @@
 										source_filename = "content/Survivor/anim/CrawlSW.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 									{
@@ -1201,7 +1201,7 @@
 										source_filename = "content/Survivor/anim/CrawlW.fbx"
 										start_frame = -1
 										end_frame = -1
-										framerate = 20.0
+										framerate = -1.0
 										reverse = false
 									},
 								]
@@ -1454,6 +1454,42 @@
 								reverse = false
 							},
 						]
+					},
+					{
+						_class = "AnimFile"
+						name = "Dying"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_GENERIC_EVENT"
+								event_frame = 59
+								event_keys = 
+								{
+									TypeName = "OnDeath"
+									Int = 0
+									Float = 0.0
+									Vector = [ 0.0, 0.0, 0.0 ]
+									StringData = ""
+								}
+							},
+						]
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "content/Survivor/anim/Dying.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
 					},
 				]
 				default_root_bone_name = ""
