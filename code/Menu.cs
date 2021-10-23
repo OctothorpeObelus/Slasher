@@ -1,9 +1,12 @@
 using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
+using System;
 
 public class Menu : Panel
 {
+
+	public Lobby SlasherLobby;
 
 	public Label Label;
 
@@ -44,6 +47,7 @@ public class Menu : Panel
 
 	public Menu()
 	{
+		SlasherLobby = new Lobby();
 
 		Label = Add.Label("Alpha v0.01", "logo");
 
@@ -168,4 +172,27 @@ public class Menu : Panel
 		}
 
 	}
+
+	[Event( "player_1" )]
+	public void Player1Info( string playername ) {
+		Player1.Text = playername;
+		Sandbox.Log.Info(playername +"!!!!~!");
+	}
+	[Event( "player_2" )]
+	public void Player2Info( string playername ) {
+		Player2.Text = playername;
+	}
+	[Event( "player_3" )]
+	public void Player3Info( string playername ) {
+		Player3.Text = playername;
+	}
+	[Event( "player_4" )]
+	public void Player4Info( string playername ) {
+		Player4.Text = playername;
+	}
+	[Event( "player_5" )]
+	public void Player5Info( string playername ) {
+		Player5.Text = playername;
+	}
+
 }

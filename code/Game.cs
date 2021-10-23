@@ -1,6 +1,7 @@
 using System.Numerics;
 using System;
 using Sandbox;
+
 public partial class Slasher : Sandbox.Game {
 
 	public static int SelectedSlasher = 1;
@@ -25,6 +26,20 @@ public partial class Slasher : Sandbox.Game {
 
 	public int OpenExit2;
 
+	public int PlayerCount;
+
+	[Net] public static string P1Name {get; set;} = "";
+
+	public string P2Name;
+
+	public string P3Name;
+
+	public string P4Name;
+
+	public string P5Name;
+
+	private Lobby Lobby;
+
     public Slasher() {
 		if (IsServer)
 		{
@@ -32,13 +47,14 @@ public partial class Slasher : Sandbox.Game {
 			_ = new SlasherHud();
 
 			//Play the ambient sound
-			PlaySound("ambient");
+			//PlaySound("ambient");
 
 		}
 
 		OpenExit1 = new Random().Next(1, 4);
 
 		OpenExit2 = new Random().Next(1, 4);
+
 
 		BeginSpawn();
 
@@ -101,24 +117,27 @@ public partial class Slasher : Sandbox.Game {
 
 	}
 
-    public override void ClientJoined(Client client) {
+   public override void ClientJoined(Client client) {
         base.ClientJoined(client);
-
-		if(spawned == false)
-		{
-
-		//BeginSpawn();
-
-		spawned = true;
-
-		}
 
 		if (IsServer)
 		{
 			//Play the ambient sound
 			PlaySound("ambient");
+
+			Lobby = new Lobby();
 		}
+
+		Lobby.PlayerJoined(client);
     }
+
+	public override void ClientDisconnect( Client client, NetworkDisconnectionReason reason )	{
+
+		base.ClientDisconnect( client, reason );
+
+		Lobby.PlayerDisconnect(client);
+
+	}
 
 	public override void Simulate(Client cl)
 	{

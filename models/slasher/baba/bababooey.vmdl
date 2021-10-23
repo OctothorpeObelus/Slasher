@@ -193,6 +193,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -225,6 +226,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -252,6 +254,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -279,6 +282,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -306,6 +310,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -333,6 +338,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -360,6 +366,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -387,6 +394,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -414,6 +422,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = 30.0
+								take = 0
 								reverse = false
 							},
 						]
@@ -430,7 +439,7 @@
 								[
 									{
 										_class = "Prefab"
-										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+										target_file = "models/slasher/baba/prefabs/chase_steps.vmdl_prefab"
 									},
 								]
 								activity_name = ""
@@ -448,6 +457,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -457,7 +467,7 @@
 								[
 									{
 										_class = "Prefab"
-										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+										target_file = "models/slasher/baba/prefabs/chase_steps.vmdl_prefab"
 									},
 								]
 								activity_name = ""
@@ -475,6 +485,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -484,7 +495,7 @@
 								[
 									{
 										_class = "Prefab"
-										target_file = "models/slasher/baba/prefabs/footsteps.vmdl_prefab"
+										target_file = "models/slasher/baba/prefabs/chase_steps.vmdl_prefab"
 									},
 								]
 								activity_name = ""
@@ -502,6 +513,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
+								take = 0
 								reverse = false
 							},
 						]
@@ -540,6 +552,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -576,6 +589,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 				]

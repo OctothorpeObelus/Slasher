@@ -87,6 +87,7 @@ partial class SlasherPlayer : Player {
 
 		Controller = new TrollgeController();
 
+		//Controller?.DefaultSpeed = 150f;
 
 		break;
 		}
@@ -139,7 +140,7 @@ partial class SlasherPlayer : Player {
 			Invisibility = false;
 			Sound.FromEntity("bababooey_reveal", this);
 			TimeSinceVisible = 1;
-			ConsoleSystem.Run("baba_visible");
+			Event.Run("baba_visible");
 		}
 
 		if(Input.Pressed(InputButton.Attack2) && Invisibility == false && (TimeSinceVisible > 50 || TimeSinceVisible == 0) && GoingInvisible == false){
@@ -210,7 +211,7 @@ partial class SlasherPlayer : Player {
 			Invisibility = true;
 			Sound.FromEntity("bababooey_loud", this);
 			GoingInvisible = false;
-			ConsoleSystem.Run("baba_invisible");
+			Event.Run("baba_invisible");
 		}
 	}
 

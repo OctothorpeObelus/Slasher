@@ -14,7 +14,7 @@ public class SlasherInfo : Panel
 
 	public Panel IconTrollge;
 
-	public static bool IsBabaInvisible;
+	public bool IsBabaInvisible;
 
 	public SlasherInfo()
 	{
@@ -77,14 +77,14 @@ public class SlasherInfo : Panel
 		}
 
 	}
-	[ServerCmd( "baba_visible" )]
-	public static void BababooeyVisibleIcon()
+	[Event( "baba_visible" )]
+	public void BababooeyVisibleIcon()
 	{
 		IsBabaInvisible = true;
 	}
 
-	[ServerCmd( "inbaba_visible" )]
-	public static void BababooeyInisibleIcon()
+	[Event( "baba_visible" )]
+	public void BababooeyInisibleIcon()
 	{
 		IsBabaInvisible = false;
 	}
