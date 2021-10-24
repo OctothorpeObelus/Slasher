@@ -14,6 +14,8 @@ public class Menu : Panel
 
 	public Label SlasherSpawn;
 
+	public Label SpectatorSpawn;
+
 	public Label SlasherName;	
 
 	public Label SlasherDesc;	
@@ -55,6 +57,8 @@ public class Menu : Panel
 
 		SlasherSpawn = Add.Label("Play as Slasher", "spawn-slasher");
 
+		SpectatorSpawn = Add.Label("Spectate", "spawn-spectator");
+
 		SlasherName = Add.Label("Bababooey", "slasher-name");
 
 		SlasherDesc = Add.Label("Unknown Slasher.", "slasher-description");
@@ -89,6 +93,13 @@ public class Menu : Panel
 				picked = true;
 
 				ConsoleSystem.Run( "spawnsurvivor");			
+		} );
+
+		SpectatorSpawn.AddEventListener( "onclick", () =>
+			{
+				picked = true;
+
+				ConsoleSystem.Run( "spawnspectator");			
 		} );
 
 		SlasherSpawn.AddEventListener( "onclick", () =>

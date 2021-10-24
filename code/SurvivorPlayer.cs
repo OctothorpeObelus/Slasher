@@ -120,7 +120,9 @@ partial class SurvivorPlayer : Player
 		EnableAllCollisions = false;
 		EnableDrawing = false;
 
-			Delete();
+		ConsoleSystem.Run("spawnspectator");
+
+		Delete();
 		}
 	}
 

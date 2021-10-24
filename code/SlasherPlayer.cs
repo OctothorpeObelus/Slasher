@@ -87,7 +87,7 @@ partial class SlasherPlayer : Player {
 
 		Controller = new TrollgeController();
 
-		//Controller?.DefaultSpeed = 150f;
+		//Controller.DefaultSpeed = 150f;
 
 		break;
 		}
@@ -135,6 +135,8 @@ partial class SlasherPlayer : Player {
 
 		//tworldLight.Rotation = EyeRot;
 
+		if(Tags.Has("bababooey")){
+
 		if(Input.Pressed(InputButton.Attack2) && Invisibility == true){
 			this.SetBodyGroup("BababooeyBody",0);
 			Invisibility = false;
@@ -151,6 +153,8 @@ partial class SlasherPlayer : Player {
 
 		if(TimeSinceVisible > 0 && TimeSinceVisible <500)
 			TimeSinceVisible++;
+
+		}
 
 		var tr = Trace.Ray( EyePos, EyePos + EyeRot.Forward *  50)
 			.UseHitboxes()

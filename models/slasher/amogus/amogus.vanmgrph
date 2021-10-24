@@ -645,73 +645,73 @@
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene8"
+						m_sequenceName = "WalkE"
 						m_blendValue = [ 160.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene1"
+						m_sequenceName = "WalkN"
 						m_blendValue = [ 0.0, 160.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene4"
+						m_sequenceName = "WalkNE"
 						m_blendValue = [ 110.0, 110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene3"
+						m_sequenceName = "WalkNW"
 						m_blendValue = [ -110.0, 110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene2"
+						m_sequenceName = "WalkS"
 						m_blendValue = [ 0.0, -160.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene6"
+						m_sequenceName = "WalkSE"
 						m_blendValue = [ 110.0, -110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene5"
+						m_sequenceName = "WalkSW"
 						m_blendValue = [ -110.0, -110.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Scene7"
+						m_sequenceName = "WalkW"
 						m_blendValue = [ -160.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Armature_ArmatureAction"
+						m_sequenceName = "Idle"
 						m_blendValue = [ 0.0, 0.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Armature_ArmatureAction3"
+						m_sequenceName = "ChaseN"
 						m_blendValue = [ 0.0, 330.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Armature_ArmatureAction4"
+						m_sequenceName = "ChaseNW"
 						m_blendValue = [ -230.0, 230.0 ]
 					},
 					{
 						_class = "CBlend2DItem"
 						m_tagSpans = [  ]
-						m_sequenceName = "Armature_ArmatureAction5"
+						m_sequenceName = "ChaseNW"
 						m_blendValue = [ 230.0, 230.0 ]
 					},
 				]
@@ -1227,7 +1227,7 @@
 				m_networkMode = "ClientPredicted"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "Armature_ArmatureAction"
+				m_sequenceName = "Idle"
 				m_playbackSpeed = 1.0
 				m_bLoop = true
 			}
@@ -1263,7 +1263,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Kill"
-				m_vecPosition = [ 80.0, 128.0 ]
+				m_vecPosition = [ 80.0, 144.0 ]
 				m_nNodeID = 
 				{
 					m_id = 776377788
@@ -1271,7 +1271,7 @@
 				m_networkMode = "ClientPredicted"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "Scene"
+				m_sequenceName = "Kill"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}

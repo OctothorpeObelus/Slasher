@@ -26,5 +26,10 @@ public partial class ExitEntity : AnimEntity
 		}
 
 	}
+	public override void Simulate(Client cl)
+	{
+		base.Simulate(cl);	
+
+	}
 
 }

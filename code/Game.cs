@@ -235,5 +235,19 @@ public partial class Slasher : Sandbox.Game {
 
 		player.Respawn();
 	}
+	[ServerCmd( "spawnspectator" )]
+	public static void SpawnSpectator()
+	{
+		if ( ConsoleSystem.Caller == null )
+			return;
+
+		Sandbox.Log.Info("Now Spectating...");
+
+		var player = new SpectatorPlayer();
+		player.Tags.Add("spectator");
+		ConsoleSystem.Caller.Pawn = player;
+
+		player.Respawn();
+	}
 
 }
