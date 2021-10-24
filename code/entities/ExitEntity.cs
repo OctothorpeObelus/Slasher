@@ -1,7 +1,7 @@
 using Sandbox;
 using System;
 
-public partial class ExitEntity : AnimEntity
+public partial class ExitEntity : AnimEntity, IUse
 {
 
 	public override void Spawn()
@@ -26,9 +26,27 @@ public partial class ExitEntity : AnimEntity
 		}
 
 	}
-	public override void Simulate(Client cl)
+
+	public bool IsUsable( Entity user ) {
+       return true;
+    }
+
+	 public bool OnUse( Entity user ) 
 	{
-		base.Simulate(cl);	
+
+		if ( user is Player player) {
+
+			if(user.Tags.Has("survivor") && Tags.Has("open")){
+
+				user.Delete();
+
+				ConsoleSystem.Run("spawnspectator");
+
+			}
+
+		}
+
+		return false;
 
 	}
 

@@ -51,8 +51,6 @@ partial class SurvivorPlayer : Player
 
 		flashlightOn = false;
 
-		Camera = new SpectateRagdollCamera();		
-
 		this.flashlight = null;
 	}
 	private SpotLightEntity CreateLight()
@@ -95,7 +93,8 @@ partial class SurvivorPlayer : Player
 
 		if (name == "OnDeath")
 		{
-			Camera = new SpectateRagdollCamera();
+
+		//Camera = new SpectateRagdollCamera();
 
 		var ent = new ModelEntity();
 		ent.Position = Position;
@@ -161,37 +160,7 @@ partial class SurvivorPlayer : Player
 		if (Input.Pressed(InputButton.Attack2))
 		{
 
-			if (Tags.Has("is_holding_fuel"))
-			{
-				Tags.Remove("is_holding_fuel");
-				Tags.Remove("has_item");
-
-				DropFuelCan();
-			}
-
-			if (Tags.Has("is_holding_battery"))
-			{
-				Tags.Remove("is_holding_battery");
-				Tags.Remove("has_item");
-
-				DropBattery();
-			}
-
-			if (Tags.Has("is_holding_mayo"))
-			{
-				Tags.Remove("is_holding_mayo");
-				Tags.Remove("has_item");
-
-				DropMayo();
-			}
-
-			if (Tags.Has("is_holding_milk"))
-			{
-				Tags.Remove("is_holding_milk");
-				Tags.Remove("has_item");
-
-				DropMilk();
-			}
+			DropHeldItem();
 
 		}
 
@@ -261,6 +230,41 @@ partial class SurvivorPlayer : Player
 		//update: the dummy prop exists only clientside for some reason
 
 		//update: fixed
+
+	void DropHeldItem()
+	{
+		if (Tags.Has("is_holding_fuel"))
+			{
+				Tags.Remove("is_holding_fuel");
+				Tags.Remove("has_item");
+
+				DropFuelCan();
+			}
+
+			if (Tags.Has("is_holding_battery"))
+			{
+				Tags.Remove("is_holding_battery");
+				Tags.Remove("has_item");
+
+				DropBattery();
+			}
+
+			if (Tags.Has("is_holding_mayo"))
+			{
+				Tags.Remove("is_holding_mayo");
+				Tags.Remove("has_item");
+
+				DropMayo();
+			}
+
+			if (Tags.Has("is_holding_milk"))
+			{
+				Tags.Remove("is_holding_milk");
+				Tags.Remove("has_item");
+
+				DropMilk();
+			}
+	}
 
 	void DropFuelCan()
 	{
