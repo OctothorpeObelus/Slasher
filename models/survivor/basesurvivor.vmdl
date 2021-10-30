@@ -185,6 +185,22 @@
 							exception_list = [  ]
 						}
 					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Survivor/Goober/survivorgoober.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
 				]
 			},
 			{
@@ -209,6 +225,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 					{
@@ -246,6 +263,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -273,6 +291,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -300,6 +319,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -327,6 +347,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -354,6 +375,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -381,6 +403,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -408,6 +431,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -435,6 +459,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -561,6 +586,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -588,6 +614,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -615,6 +642,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -642,6 +670,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -669,6 +698,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -696,6 +726,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -723,6 +754,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -750,6 +782,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -869,6 +902,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -889,6 +923,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -909,6 +944,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 								]
@@ -943,6 +979,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -970,6 +1007,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -997,6 +1035,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 								]
@@ -1042,6 +1081,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1062,6 +1102,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1082,6 +1123,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1102,6 +1144,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1122,6 +1165,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1142,6 +1186,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1162,6 +1207,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1182,6 +1228,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1202,6 +1249,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 								]
@@ -1254,6 +1302,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 									{
@@ -1292,6 +1341,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 								]
@@ -1337,6 +1387,7 @@
 										start_frame = -1
 										end_frame = -1
 										framerate = -1.0
+										take = 0
 										reverse = false
 									},
 								]
@@ -1359,6 +1410,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -1415,6 +1467,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
+								take = 0
 								reverse = false
 							},
 							{
@@ -1451,6 +1504,7 @@
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
+								take = 0
 								reverse = false
 							},
 						]
@@ -1489,6 +1543,7 @@
 						start_frame = -1
 						end_frame = -1
 						framerate = -1.0
+						take = 0
 						reverse = false
 					},
 				]
@@ -1827,6 +1882,22 @@
 								from = "milkjug.vmat"
 								to = "materials/game/milk/milkjug.vmat"
 							},
+							{
+								from = "joe_jacket.vmat"
+								to = "materials/survivor/joe/joe_jacket.vmat"
+							},
+							{
+								from = "joe_pants.vmat"
+								to = "materials/survivor/joe/joe_pants.vmat"
+							},
+							{
+								from = "goober_arm.vmat"
+								to = "materials/survivor/goober/goober_arm.vmat"
+							},
+							{
+								from = "goober_face.vmat"
+								to = "materials/survivor/goober/goober_face.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
@@ -2010,6 +2081,14 @@
 								meshes = 
 								[
 									"unnamed_9",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "Goober"
+								meshes = 
+								[
+									"unnamed_12",
 								]
 							},
 						]
