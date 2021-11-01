@@ -167,7 +167,7 @@ partial class SurvivorPlayer : Player
 		if (Input.Pressed(InputButton.Flashlight)) 
 		{
 			this.SetBodyGroup("Survivors", s_choice);
-			s_choice = (s_choice < 5) ? s_choice + 1 : 0;
+			s_choice = (s_choice < 4) ? s_choice + 1 : 0;
 		}
 
 		if (Input.Pressed(InputButton.Attack1))

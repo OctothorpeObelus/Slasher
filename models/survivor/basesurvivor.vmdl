@@ -27,7 +27,7 @@
 					},
 					{
 						_class = "RenderMeshFile"
-						filename = "content/Howard/howardsurvivor.fbx"
+						filename = "content/Survivor/Joe/survivorjoe.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -43,7 +43,7 @@
 					},
 					{
 						_class = "RenderMeshFile"
-						filename = "content/Demarcus/demarcussurvivor.fbx"
+						filename = "content/Survivor/Goober/survivorgoober.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -59,7 +59,7 @@
 					},
 					{
 						_class = "RenderMeshFile"
-						filename = "content/John/johnsurvivor.fbx"
+						filename = "content/Survivor/Biluy/survivorbiluy.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -75,7 +75,7 @@
 					},
 					{
 						_class = "RenderMeshFile"
-						filename = "content/Tim/timsurvivor.fbx"
+						filename = "content/Survivor/Dash/survivordash.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -139,22 +139,6 @@
 					},
 					{
 						_class = "RenderMeshFile"
-						filename = "content/Survivor/Joe/survivorjoe.fbx"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
 						filename = "content/Game/Mayo/Mayo-survivor.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
@@ -172,22 +156,6 @@
 					{
 						_class = "RenderMeshFile"
 						filename = "content/Game/Milk/milkjug-survivor.fbx"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						filename = "content/Survivor/Goober/survivorgoober.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -1898,6 +1866,18 @@
 								from = "goober_face.vmat"
 								to = "materials/survivor/goober/goober_face.vmat"
 							},
+							{
+								from = "biluy_arm.vmat"
+								to = "materials/survivor/biluy/biluy_arm.vmat"
+							},
+							{
+								from = "biluy_face.vmat"
+								to = "materials/survivor/biluy/biluy_face.vmat"
+							},
+							{
+								from = "dash_face.vmat"
+								to = "materials/survivor/dash/dash_face.vmat"
+							},
 						]
 						use_global_default = false
 						global_default_material = ""
@@ -2045,7 +2025,7 @@
 							},
 							{
 								_class = "BodyGroupChoice"
-								name = "Howard"
+								name = "Joe"
 								meshes = 
 								[
 									"unnamed_2",
@@ -2053,7 +2033,7 @@
 							},
 							{
 								_class = "BodyGroupChoice"
-								name = "Demarcus"
+								name = "Goober"
 								meshes = 
 								[
 									"unnamed_3",
@@ -2061,7 +2041,7 @@
 							},
 							{
 								_class = "BodyGroupChoice"
-								name = "John"
+								name = "Biluy"
 								meshes = 
 								[
 									"unnamed_4",
@@ -2069,26 +2049,10 @@
 							},
 							{
 								_class = "BodyGroupChoice"
-								name = "Tim"
+								name = "Dash"
 								meshes = 
 								[
 									"unnamed_5",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								name = "Joe"
-								meshes = 
-								[
-									"unnamed_9",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								name = "Goober"
-								meshes = 
-								[
-									"unnamed_12",
 								]
 							},
 						]
@@ -2172,7 +2136,7 @@
 								name = "HoldingMayo"
 								meshes = 
 								[
-									"unnamed_10",
+									"unnamed_9",
 								]
 							},
 						]
@@ -2193,7 +2157,7 @@
 								name = "HoldingMilk"
 								meshes = 
 								[
-									"unnamed_11",
+									"unnamed_10",
 								]
 							},
 						]
