@@ -9,6 +9,7 @@ partial class SurvivorPlayer : Player
 	private bool flashlightOn = false;
 	private ModelEntity ent = null;
 	private SpotLightEntity flashlight;
+	private int SelectedSurvivor;
 
 	public override void Respawn()
 	{
@@ -19,7 +20,7 @@ partial class SurvivorPlayer : Player
 		//Camera = new ThirdPersonCamera();
 		Camera = new FirstPersonCamera();
 
-		SetBodyGroup("Survivors", new Random().Next(0, 3));
+		//SetBodyGroup("Survivors", new Random().Next(0, 3));
 		//Tags.Add("is_holding_battery");
 		Sandbox.Log.Info("Player spawned!");
 		EnableAllCollisions = true;
@@ -38,6 +39,11 @@ partial class SurvivorPlayer : Player
 		this.flashlight.SetParent(this, "HandR", new Transform((Vector3.Forward * 0) + (Vector3.Left * 10) + (Vector3.Up * 0)));
 		this.flashlight.LocalRotation = new Angles(0, 135, 0).ToRotation();
 		this.flashlight.Enabled = false;
+	}
+
+	public void SelectSurvivor(int id)
+	{
+		SelectedSurvivor = id;
 	}
 
 	public override void OnKilled()
@@ -131,6 +137,8 @@ partial class SurvivorPlayer : Player
 
 		TickPlayerUse();
 
+		SetBodyGroup("Survivors", SelectedSurvivor);
+
 		if (Tags.Has("active_battery_inserter"))
 		{
 			this.SetAnimBool("b_batteryinsertion", true);
@@ -162,12 +170,6 @@ partial class SurvivorPlayer : Player
 
 			DropHeldItem();
 
-		}
-
-		if (Input.Pressed(InputButton.Flashlight)) 
-		{
-			this.SetBodyGroup("Survivors", s_choice);
-			s_choice = (s_choice < 4) ? s_choice + 1 : 0;
 		}
 
 		if (Input.Pressed(InputButton.Attack1))

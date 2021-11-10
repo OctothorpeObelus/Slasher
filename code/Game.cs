@@ -205,7 +205,7 @@ public partial class Slasher : Sandbox.Game {
 	}
 
 	[ServerCmd( "spawnsurvivor" )]
-	public static void SpawnSurvivor()
+	public static void SpawnSurvivor(int SelectedSurvivor)
 	{
 		if ( ConsoleSystem.Caller == null )
 			return;
@@ -215,6 +215,8 @@ public partial class Slasher : Sandbox.Game {
 		var player = new SurvivorPlayer();
 		player.Tags.Add("survivor");
 		ConsoleSystem.Caller.Pawn = player;
+
+		player.SelectSurvivor(SelectedSurvivor);
 
 		player.Respawn();
 	}

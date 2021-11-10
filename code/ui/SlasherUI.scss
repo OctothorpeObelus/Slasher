@@ -77,19 +77,26 @@ Menu {
 
 			.ready{
 				position: absolute;
+				background-image: url(ui/img/unknown.png)
+				background-size: cover;	
 				top: 0%;
 				left: 130%;
 				font-size: 20px;
 				font-weight: normal;
 				color: white;
-				height: 50px;
-				width: 50px;
+				height: 53px;
+				width: 53px;
 				align-items: center;
 				background-color: rgba( black, 1 );
 				opacity: 1;	
-				padding:10 20px;
-				opacity: 1;
-				border-radius: 5%;
+
+				&.survivor {
+					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+				}
+
+				&.slasher {
+					background-image: url(ui/img/slasher_ico/unknownslasher.png)
+				}
 			}
 		}
 
@@ -111,19 +118,26 @@ Menu {
 
 			.ready{
 				position: absolute;
+				background-image: url(ui/img/unknown.png)
+				background-size: cover;	
 				top: 0%;
 				left: 130%;
 				font-size: 20px;
 				font-weight: normal;
 				color: white;
-				height: 50px;
-				width: 50px;
+				height: 53px;
+				width: 53px;
 				align-items: center;
 				background-color: rgba( black, 1 );
 				opacity: 1;	
-				padding:10 20px;
-				opacity: 1;
-				border-radius: 5%;
+
+				&.survivor {
+					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+				}
+
+				&.slasher {
+					background-image: url(ui/img/survivor/unknownslasher.png)
+				}
 			}
 		}
 
@@ -145,19 +159,26 @@ Menu {
 
 			.ready{
 				position: absolute;
+				background-image: url(ui/img/unknown.png)
+				background-size: cover;	
 				top: 0%;
 				left: 130%;
 				font-size: 20px;
 				font-weight: normal;
 				color: white;
-				height: 50px;
-				width: 50px;
+				height: 53px;
+				width: 53px;
 				align-items: center;
 				background-color: rgba( black, 1 );
 				opacity: 1;	
-				padding:10 20px;
-				opacity: 1;
-				border-radius: 5%;
+
+				&.survivor {
+					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+				}
+
+				&.slasher {
+					background-image: url(ui/img/survivor/unknownslasher.png)
+				}
 			}
 		}
 
@@ -179,19 +200,26 @@ Menu {
 
 			.ready{
 				position: absolute;
+				background-image: url(ui/img/unknown.png)
+				background-size: cover;	
 				top: 0%;
 				left: 130%;
 				font-size: 20px;
 				font-weight: normal;
 				color: white;
-				height: 50px;
-				width: 50px;
+				height: 53px;
+				width: 53px;
 				align-items: center;
 				background-color: rgba( black, 1 );
 				opacity: 1;	
-				padding:10 20px;
-				opacity: 1;
-				border-radius: 5%;
+
+				&.survivor {
+					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+				}
+
+				&.slasher {
+					background-image: url(ui/img/survivor/unknownslasher.png)
+				}
 			}
 		}
 
@@ -213,19 +241,26 @@ Menu {
 
 			.ready{
 				position: absolute;
+				background-image: url(ui/img/unknown.png)
+				background-size: cover;	
 				top: 0%;
 				left: 130%;
 				font-size: 20px;
 				font-weight: normal;
 				color: white;
-				height: 50px;
-				width: 50px;
+				height: 53px;
+				width: 53px;
 				align-items: center;
 				background-color: rgba( black, 1 );
 				opacity: 1;	
-				padding:10 20px;
-				opacity: 1;
-				border-radius: 5%;
+
+				&.survivor {
+					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+				}
+
+				&.slasher {
+					background-image: url(ui/img/survivor/unknownslasher.png)
+				}
 			}
 		}
 	}
@@ -236,7 +271,7 @@ Menu {
 		left: 0%;
 		font-size: 40px;
 		font-weight: bold;
-		color: white;
+		color: gray;
 		height: 80px;
 		padding: 0 20px;
 		align-items: center;
@@ -246,6 +281,12 @@ Menu {
 		opacity: 0.5;
 
 		&:hover {
+			opacity: 1;
+			color: red;
+			box-shadow: 0px 0px 50px red;
+		}
+
+		&.active {
 			opacity: 1;
 			color: red;
 			box-shadow: 0px 0px 100px red;
@@ -257,7 +298,7 @@ Menu {
 		left: 0%;
 		font-size: 40px;
 		font-weight: bold;
-		color: white;
+		color: gray;
 		height: 80px;
 		padding: 0 20px;
 		align-items: center;
@@ -268,8 +309,14 @@ Menu {
 
 		&:hover {
 			opacity: 1;
-			color: red;
-			box-shadow: 0px 0px 100px red;
+			color: white;
+			box-shadow: 0px 0px 50px white;
+		}
+
+		&.active {
+			opacity: 1;
+			color: white;
+			box-shadow: 0px 0px 100px white;
 		}
 	}
 	.spawn-spectator {
@@ -294,111 +341,243 @@ Menu {
 		}
 	}
 
-	.slashericon1 {
-		position: absolute;
-		background-image: url(ui/img/slasher_ico/bababooey.png)
-		background-repeat: no-repeat;
-		width: 150px;
-		height: 150px;
-		left: 120%;
-		top: 10%;
-		background-size: cover;
-   	 	overflow: hidden;	
-		opacity: 0.85;
-		transition: all 0.2s ease-in-out;
-
-		&:hover{
-			box-shadow: 0px 0px 100px red;
-		}
-
-		&.selected{
-			width: 190px;
-			height: 190px;
-			opacity: 1;
-		}
-	}
-
-	.slashericon2 {
-		position: absolute;
-		background-image: url(ui/img/slasher_ico/amogus.png)
-		background-repeat: no-repeat;
-		width: 150px;
-		height: 150px;
-		left: 150%;
-		top: 10%;
-		background-size: cover;
-		overflow: hidden;	
-		opacity: 0.85;
-		transition: all 0.2s ease-in-out;
+		.slashericon1 {
+			position: absolute;
+			background-image: url(ui/img/slasher_ico/bababooey.png)
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 150px;
+			left: 120%;
+			top: -900%;
+			background-size: cover;
+			overflow: hidden;	
+			opacity: 0.85;
+			transition: all 0.2s ease-in-out;
 	
-		&:hover{
-			box-shadow: 0px 0px 100px red;
-		}
-
-		&.selected{
-			width: 190px;
-			height: 190px;
-			opacity: 1;
-		}
-	}
-
-	.slashericon3 {
-		position: absolute;
-		background-image: url(ui/img/slasher_ico/trollge.png)
-		background-repeat: no-repeat;
-		width: 150px;
-		height: 150px;
-		left: 180%;
-		top: 10%;
-		background-size: cover;
-		overflow: hidden;	
-		opacity: 0.85;
-		transition: all 0.2s ease-in-out;
+			&:hover{
+				box-shadow: 0px 0px 100px red;
+			}
 	
-		&:hover{
-			box-shadow: 0px 0px 100px red;
+			&.selected{
+				width: 190px;
+				height: 190px;
+				opacity: 1;
+			}
+
+			&.active {
+				top: 10%;
+			}
+		}
+	
+		.slashericon2 {
+			position: absolute;
+			background-image: url(ui/img/slasher_ico/amogus.png)
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 150px;
+			left: 150%;
+			top: -900%;
+			background-size: cover;
+			overflow: hidden;	
+			opacity: 0.85;
+			transition: all 0.2s ease-in-out;
+		
+			&:hover{
+				box-shadow: 0px 0px 100px red;
+			}
+	
+			&.selected{
+				width: 190px;
+				height: 190px;
+				opacity: 1;
+			}
+
+			&.active {
+				top: 10%;
+			}
+		}
+	
+		.slashericon3 {
+			position: absolute;
+			background-image: url(ui/img/slasher_ico/trollge.png)
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 150px;
+			left: 180%;
+			top: -900%;
+			background-size: cover;
+			overflow: hidden;	
+			opacity: 0.85;
+			transition: all 0.2s ease-in-out;
+		
+			&:hover{
+				box-shadow: 0px 0px 100px red;
+			}
+	
+			&.selected{
+				width: 190px;
+				height: 190px;
+				opacity: 1;
+			}
+
+			&.active {
+				top: 10%;
+			}
 		}
 
-		&.selected{
-			width: 190px;
-			height: 190px;
+
+
+
+		.survivoricon1 {
+			position: absolute;
+			background-image: url(ui/img/survivor_ico/joeaveridge.png)
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 150px;
+			left: 120%;
+			top: -900%;
+			background-size: cover;
+			overflow: hidden;	
+			opacity: 0.85;
+			transition: all 0.2s ease-in-out;
+	
+			&:hover{
+				box-shadow: 0px 0px 100px white;
+			}
+	
+			&.selected{
+				width: 190px;
+				height: 190px;
+				opacity: 1;
+			}
+
+			&.active {
+				top: 10%;
+			}
+		}
+	
+		.survivoricon2 {
+			position: absolute;
+			background-image: url(ui/img/survivor_ico/johngoober.png)
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 150px;
+			left: 150%;
+			top: -900%;
+			background-size: cover;
+			overflow: hidden;	
+			opacity: 0.85;
+			transition: all 0.2s ease-in-out;
+	
+			&:hover{
+				box-shadow: 0px 0px 100px white;
+			}
+	
+			&.selected{
+				width: 190px;
+				height: 190px;
+				opacity: 1;
+			}
+
+			&.active {
+				top: 10%;
+			}
+		}
+	
+		.survivoricon3 {
+			position: absolute;
+			background-image: url(ui/img/survivor_ico/biluyhoward.png)
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 150px;
+			left: 180%;
+			top: -900%;
+			background-size: cover;
+			overflow: hidden;	
+			opacity: 0.85;
+			transition: all 0.2s ease-in-out;
+	
+			&:hover{
+				box-shadow: 0px 0px 100px white;
+			}
+	
+			&.selected{
+				width: 190px;
+				height: 190px;
+				opacity: 1;
+			}
+
+			&.active {
+				top: 10%;
+			}
+		}
+
+		.survivoricon4 {
+			position: absolute;
+			background-image: url(ui/img/survivor_ico/dashketchup.png)
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 150px;
+			left: 210%;
+			top: -900%;
+			background-size: cover;
+			overflow: hidden;	
+			opacity: 0.85;
+			transition: all 0.2s ease-in-out;
+	
+			&:hover{
+				box-shadow: 0px 0px 100px white;
+			}
+	
+			&.selected{
+				width: 190px;
+				height: 190px;
+				opacity: 1;
+			}
+
+			&.active {
+				top: 10%;
+			}
+		}
+
+
+
+
+	
+		.slasher-name {
+			position: absolute;
+			top: 500%;
+			left: 110%;
+			font-size: 60px;
+			font-weight: bold;
+			color: white;
+			height: 400px;
+			width: 1200px;
+			padding: 0 20px;
+			align-items: top;
+			opacity: 1;
+			background-color: rgba( black, 0.95 );
+			border-radius: 3%;
+		}
+	
+		.slasher-description {
+			position: absolute;
+			top: 560%;
+			left: 110%;
+			font-size: 30px;
+			font-weight: normal;
+			color: white;
+			height: 80px;
+			padding: 0 20px;
+			align-items: top;
 			opacity: 1;
 		}
-	}
-
-	.slasher-name {
-		position: absolute;
-		top: 500%;
-		left: 110%;
-		font-size: 60px;
-		font-weight: bold;
-		color: white;
-		height: 400px;
-		width: 1200px;
-		padding: 0 20px;
-		align-items: top;
-		opacity: 1;
-		background-color: rgba( black, 0.95 );
-		border-radius: 3%;
-	}
-
-	.slasher-description {
-		position: absolute;
-		top: 560%;
-		left: 110%;
-		font-size: 30px;
-		font-weight: normal;
-		color: white;
-		height: 80px;
-		padding: 0 20px;
-		align-items: top;
-		opacity: 1;
-	}
 
 	&.active {
 		opacity: 1.0;
 	}
 }
+
 
 PickedUpText {
 	position: absolute;
