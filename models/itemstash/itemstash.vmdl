@@ -1,0 +1,205 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 0.1
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},
+			{
+				_class = "BodyGroupList"
+				children = 
+				[
+					{
+						_class = "BodyGroup"
+						name = "Wards"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								name = "0WardLeft"
+								meshes = 
+								[
+									"",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "1WardLeft"
+								meshes = 
+								[
+									"unnamed_2",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "2WardLeft"
+								meshes = 
+								[
+									"unnamed_3",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "3WardLeft"
+								meshes = 
+								[
+									"unnamed_4",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "jerrycan.vmat"
+								to = "materials/game/fuelcan/gascan.vmat"
+							},
+							{
+								from = "palletmat.vmat"
+								to = "materials/game/itemstash/pallet.vmat"
+							},
+							{
+								from = "wardbox.vmat"
+								to = "materials/game/itemstash/wardbox.vmat"
+							},
+							{
+								from = "wardfabric.vmat"
+								to = "materials/game/itemstash/wardfabric.vmat"
+							},
+							{
+								from = "defaultmaterial.vmat"
+								to = "materials/game/flashlight/flashlighttex.vmat"
+							},
+							{
+								from = "cylinder.vmat"
+								to = "materials/game/mayo/mayo.vmat"
+							},
+							{
+								from = ""
+								to = "materials/game/milk/milkjug.vmat"
+							},
+							{
+								from = "ward.vmat"
+								to = "materials/game/itemstash/deathward.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 0.002617, -0.035475, 18.046864 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 39.728561, 51.956024, 32.991196 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/ItemStash/ItemStash.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/ItemStash/ItemStash-1Ward.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/ItemStash/ItemStash-2Ward.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "content/Game/ItemStash/ItemStash-3Ward.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

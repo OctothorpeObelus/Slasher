@@ -87,15 +87,20 @@ Menu {
 				height: 53px;
 				width: 53px;
 				align-items: center;
-				background-color: rgba( black, 1 );
-				opacity: 1;	
+				opacity: 0.05;	
 
 				&.survivor {
 					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+					opacity: 1;	
 				}
 
 				&.slasher {
 					background-image: url(ui/img/slasher_ico/unknownslasher.png)
+					opacity: 1;	
+				}
+
+				&.confirm {
+					opacity: 1;	
 				}
 			}
 		}
@@ -128,15 +133,20 @@ Menu {
 				height: 53px;
 				width: 53px;
 				align-items: center;
-				background-color: rgba( black, 1 );
-				opacity: 1;	
+				opacity: 0.05;	
 
 				&.survivor {
 					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+					opacity: 1;	
 				}
 
 				&.slasher {
-					background-image: url(ui/img/survivor/unknownslasher.png)
+					background-image: url(ui/img/slasher_ico/unknownslasher.png)
+					opacity: 1;	
+				}
+
+				&.confirm {
+					opacity: 1;	
 				}
 			}
 		}
@@ -169,15 +179,20 @@ Menu {
 				height: 53px;
 				width: 53px;
 				align-items: center;
-				background-color: rgba( black, 1 );
-				opacity: 1;	
+				opacity: 0.05;	
 
 				&.survivor {
 					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+					opacity: 1;	
 				}
 
 				&.slasher {
-					background-image: url(ui/img/survivor/unknownslasher.png)
+					background-image: url(ui/img/slasher_ico/unknownslasher.png)
+					opacity: 1;	
+				}
+
+				&.confirm {
+					opacity: 1;	
 				}
 			}
 		}
@@ -210,15 +225,20 @@ Menu {
 				height: 53px;
 				width: 53px;
 				align-items: center;
-				background-color: rgba( black, 1 );
-				opacity: 1;	
+				opacity: 0.05;	
 
 				&.survivor {
 					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+					opacity: 1;	
 				}
 
 				&.slasher {
-					background-image: url(ui/img/survivor/unknownslasher.png)
+					background-image: url(ui/img/slasher_ico/unknownslasher.png)
+					opacity: 1;	
+				}
+
+				&.confirm {
+					opacity: 1;	
 				}
 			}
 		}
@@ -251,15 +271,20 @@ Menu {
 				height: 53px;
 				width: 53px;
 				align-items: center;
-				background-color: rgba( black, 1 );
-				opacity: 1;	
+				opacity: 0.05;	
 
 				&.survivor {
 					background-image: url(ui/img/survivor_ico/genericsurvivor.png)
+					opacity: 1;	
 				}
 
 				&.slasher {
-					background-image: url(ui/img/survivor/unknownslasher.png)
+					background-image: url(ui/img/slasher_ico/unknownslasher.png)
+					opacity: 1;	
+				}
+
+				&.confirm {
+					opacity: 1;	
 				}
 			}
 		}
@@ -321,7 +346,41 @@ Menu {
 	}
 	.spawn-spectator {
 		position: absolute;
-		top: 370px;
+		top: 430px;
+		left: 60%;
+		font-size: 40px;
+		font-weight: bold;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		transition: all 0.1s ease-in-out;
+		background-color: rgba( black, 0.95 );
+		border-radius: 10%;
+		opacity: 0.25;
+
+		&:hover {
+			opacity: 1;
+			box-shadow: 0px 0px 20px red;
+		}
+
+		&.confirm {
+			opacity: 1;
+			box-shadow: 0px 0px 120px red;
+		}
+
+		&.survivor{
+			color: white;
+		}
+
+		&.slasher{
+			color: red;
+		}
+	}
+
+	.ready-confirmation {
+		position: absolute;
+		top: 400px;
 		left: 0%;
 		font-size: 40px;
 		font-weight: bold;
@@ -332,12 +391,18 @@ Menu {
 		transition: all 0.1s ease-in-out;
 		background-color: rgba( black, 0.95 );
 		border-radius: 10%;
-		opacity: 0.5;
+		opacity: 0.25;
 
 		&:hover {
 			opacity: 1;
+			color: white;
+			box-shadow: 0px 0px 20px red;
+		}
+
+		&.confirm {
+			opacity: 1;
 			color: red;
-			box-shadow: 0px 0px 100px red;
+			box-shadow: 0px 0px 120px red;
 		}
 	}
 
@@ -792,5 +857,178 @@ SlasherInfo {
 	}
 	&.active {
 		opacity: 1;
+	}
+}
+
+
+
+ItemPicker {
+	position: absolute;
+	background-color: black;
+	font-size: 40px;
+	font-weight: bold;
+	left: 20%;
+	top: 20%;
+	width: 1200px;
+	height: 600px;
+	background-size: cover;	
+	pointer-events: all;
+	opacity: 0;
+	padding: 50 50px;
+	align-items: top;
+	border-radius: 15%;
+	color: white;
+
+	.desc{
+		font-size: 20px;
+		font-weight: normal;
+		right: 40%;
+		top: 60%;
+		align-items: left;
+	}
+
+	.confirm {
+		position: absolute;
+		top: 500px;
+		left: 10%;
+		font-size: 40px;
+		font-weight: bold;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		transition: all 0.1s ease-in-out;
+		background-color: rgba( black, 0.95 );
+		border-radius: 10%;
+		opacity: 0.25;
+
+		&:hover {
+			opacity: 1;
+			box-shadow: 0px 0px 20px red;
+		}
+	}
+
+	.cancel {
+		position: absolute;
+		top: 500px;
+		left: 80%;
+		font-size: 40px;
+		font-weight: bold;
+		color: white;
+		height: 80px;
+		padding: 0 20px;
+		align-items: center;
+		transition: all 0.1s ease-in-out;
+		background-color: rgba( black, 0.95 );
+		border-radius: 10%;
+		opacity: 0.25;
+
+		&:hover {
+			opacity: 1;
+			box-shadow: 0px 0px 20px red;
+		}
+	}
+
+	.item1 {
+		position: absolute;
+		background-image: url(ui/img/item_fuel.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		left: 5%;
+		top: 30%;
+		background-size: cover;
+		overflow: hidden;	
+		opacity: 0.85;
+		transition: all 0.2s ease-in-out;
+
+		&:hover{
+			box-shadow: 0px 0px 100px white;
+		}
+
+		&.selected{
+			width: 170px;
+			height: 170px;
+			opacity: 1;
+		}
+	}
+
+	.item2 {
+		position: absolute;
+		background-image: url(ui/img/item_milk.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		left: 20%;
+		top: 30%;
+		background-size: cover;
+		overflow: hidden;	
+		opacity: 0.85;
+		transition: all 0.2s ease-in-out;
+
+		&:hover{
+			box-shadow: 0px 0px 100px white;
+		}
+
+		&.selected{
+			width: 170px;
+			height: 170px;
+			opacity: 1;
+		}
+	}
+
+	.item3 {
+		position: absolute;
+		background-image: url(ui/img/item_mayo.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		left: 35%;
+		top: 30%;
+		background-size: cover;
+		overflow: hidden;	
+		opacity: 0.85;
+		transition: all 0.2s ease-in-out;
+
+		&:hover{
+			box-shadow: 0px 0px 100px white;
+		}
+
+		&.selected{
+			width: 170px;
+			height: 170px;
+			opacity: 1;
+		}
+	}
+
+	.item4 {
+		position: absolute;
+		background-image: url(ui/img/item_deathward.png)
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		left: 50%;
+		top: 30%;
+		background-size: cover;
+		overflow: hidden;	
+		opacity: 0.85;
+		transition: all 0.2s ease-in-out;
+
+		&:hover{
+			box-shadow: 0px 0px 100px white;
+		}
+
+		&.selected{
+			width: 170px;
+			height: 170px;
+			opacity: 1;
+		}
+		&.depleted{
+			opacity: 0.1;
+		}
+	}
+
+	&.active{
+		opacity: 0.8;
 	}
 }

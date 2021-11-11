@@ -16,5 +16,6 @@ public partial class SlasherHud : HudEntity<RootPanel>
 		RootPanel.AddChild<PickedUpText>();
 		RootPanel.AddChild<SlasherInfo>();
 		RootPanel.AddChild<Menu>();
+		RootPanel.AddChild<ItemPicker>();
 	}
 }

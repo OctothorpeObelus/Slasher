@@ -195,6 +195,41 @@ partial class SurvivorPlayer : Player
 			}
 		}
 
+
+		if (Input.Pressed(InputButton.Flashlight))
+		{
+			if(Tags.Has("is_storing_fuel")){
+
+				PlaySound("item_equip");
+
+				this.Tags.Add("has_item");
+				this.Tags.Add("is_holding_fuel");
+
+				this.Tags.Remove("is_storing_fuel");
+			}
+
+			if(Tags.Has("is_storing_milk")){
+
+				PlaySound("item_equip");
+
+				this.Tags.Add("has_item");
+				this.Tags.Add("is_holding_milk");
+
+				this.Tags.Remove("is_storing_milk");
+			}
+
+			if(Tags.Has("is_storing_mayo")){
+
+				PlaySound("item_equip");
+
+				this.Tags.Add("has_item");
+				this.Tags.Add("is_holding_mayo");
+
+				this.Tags.Remove("is_storing_mayo");
+			}
+		}
+
+
 		if (Tags.Has("is_holding_battery") || Tags.Has("is_holding_fuel") || Tags.Has("is_holding_milk"))
 		{
 			this.SetAnimBool("b_item_equipped_generic", true);
@@ -416,6 +451,7 @@ partial class SurvivorPlayer : Player
 				this.SetBodyGroup("Milk", 0);
 			}
 		}
+
 	}
 
 	protected override void OnTagRemoved(string tag)

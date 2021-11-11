@@ -2,11 +2,12 @@ using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 using System;
+using LobbySlasher;
 
 public class Menu : Panel
 {
 
-	public Lobby SlasherLobby;
+	//public SlasherLobby Lobby;
 
 	public Label Label;
 
@@ -16,7 +17,7 @@ public class Menu : Panel
 
 	public Label SpectatorSpawn;
 
-	//public Label SlasherSelect;
+	public Label ReadyConfirm;	
 
 	public Label SlasherName;	
 
@@ -62,9 +63,25 @@ public class Menu : Panel
 
 	public bool SelectionSurvivor = true;
 
+	public bool IsThePlayerReady = false;
+
+	public int PlayerCount = 0;
+
+	public Client Owner;
+
+	public Client P1ID;
+
+	public Client P2ID;
+
+	public Client P3ID;
+
+	public Client P4ID;
+
+	public Client P5ID;
+
 	public Menu()
 	{
-		SlasherLobby = new Lobby();
+		//Lobby = new SlasherLobby();
 
 		Label = Add.Label("Alpha v0.01", "logo");
 
@@ -74,7 +91,7 @@ public class Menu : Panel
 
 		SpectatorSpawn = Add.Label("Spawn (Debug)", "spawn-spectator");
 
-		//SlasherSelect = Add.Label("","slasher-selection");
+		ReadyConfirm = Add.Label("Ready Up", "ready-confirmation");
 
 		SlasherName = Add.Label("Bababooey", "slasher-name");
 
@@ -98,19 +115,19 @@ public class Menu : Panel
 
 		LobbyBox = Add.Label("Player Lobby", "lobby-box");
 
-			Player1 = LobbyBox.Add.Label("Player 1", "player1");
+			Player1 = LobbyBox.Add.Label("", "player1");
 				ReadyP1 = Player1.Add.Label("", "ready");
 
-			Player2 = LobbyBox.Add.Label("Player 2", "player2");
+			Player2 = LobbyBox.Add.Label("", "player2");
 				ReadyP2 = Player2.Add.Label("", "ready");
 
-			Player3 = LobbyBox.Add.Label("Player 3", "player3");
+			Player3 = LobbyBox.Add.Label("", "player3");
 				ReadyP3 = Player3.Add.Label("", "ready");
 
-			Player4 = LobbyBox.Add.Label("Player 4", "player4");
+			Player4 = LobbyBox.Add.Label("", "player4");
 				ReadyP4 = Player4.Add.Label("", "ready");
 
-			Player5 = LobbyBox.Add.Label("Player 5", "player5");
+			Player5 = LobbyBox.Add.Label("", "player5");
 				ReadyP5 = Player5.Add.Label("", "ready");
 
 		Label.SetClass("active" , false);
@@ -119,6 +136,8 @@ public class Menu : Panel
 		{
 
 			SelectionSurvivor = true;
+			IsThePlayerReady = false;
+			
 
 			PlaySound("menu_ready");
 
@@ -133,36 +152,31 @@ public class Menu : Panel
 
 				if(SelectionSurvivor == true)
 					ConsoleSystem.Run( "spawnsurvivor",SelectedSurvivor);
-
 					
-				if(SelectionSurvivor == false){
-
-					switch(SelectedSlasher) {
-					case 1:
-						ConsoleSystem.Run( "slasher_1");
-					break;
-					case 2:
-						ConsoleSystem.Run( "slasher_2");
-					break;
-					case 3:
-						ConsoleSystem.Run( "slasher_3");
-					break;
-			}	
-
-			ConsoleSystem.Run( "spawnslasher");
-
-				}	
+				if(SelectionSurvivor == false)
+					ConsoleSystem.Run( "spawnslasher",SelectedSlasher);
 		} );
 
 		SlasherSpawn.AddEventListener( "onclick", () =>
 		{
 
 			SelectionSurvivor = false;
+			IsThePlayerReady = false;
 
 			PlaySound("menu_ready_slasher");
 
 			SurvivorSpawn.SetClass("active",false);	
 			SlasherSpawn.SetClass("active",true);
+
+		} );
+
+		ReadyConfirm.AddEventListener( "onclick", () =>
+		{
+
+			IsThePlayerReady = !IsThePlayerReady;
+
+			if(IsThePlayerReady)
+				PlaySound("menu_confirm");
 
 		} );
 
@@ -215,7 +229,18 @@ public class Menu : Panel
 	public override void Tick()
 	{
 
-		ReadyP1.SetClass("slasher",true);
+		//TEST
+
+		ReadyP1.SetClass("survivor",SelectionSurvivor);
+		ReadyP1.SetClass("slasher",!SelectionSurvivor);
+
+		ReadyP1.SetClass("confirm",IsThePlayerReady);
+
+		//END TEST
+
+		ReadyConfirm.SetClass("confirm",IsThePlayerReady);
+		ReadyConfirm.SetClass("survivor",SelectionSurvivor);
+		ReadyConfirm.SetClass("slasher",!SelectionSurvivor);
 
 		if(picked == false) SetClass("active" , true);
 		if(picked == true) SetClass("active" , false);
@@ -294,7 +319,7 @@ public class Menu : Panel
 				
 				SlasherName.Text = "Joe Averidge";
 
-				SlasherDesc.Text = "";
+				SlasherDesc.Text = "The Ordinary Man\n\nAs a Slasher Zone Power Recovery worker, your goal is to restore \npower by activating two generators and then escape unscathed. \n\n You will get the chance to choose one item to take before entering the Zone.";
 
 			break;
 			case 2:
@@ -306,7 +331,7 @@ public class Menu : Panel
 
 				SlasherName.Text = "John Goober";
 
-				SlasherDesc.Text = "";
+				SlasherDesc.Text = "The Safety Compliant\n\nAs a Slasher Zone Power Recovery worker, your goal is to restore \npower by activating two generators and then escape unscathed. \n\n You will get the chance to choose one item to take before entering the Zone.";
 
 			break;
 			case 3:
@@ -318,7 +343,7 @@ public class Menu : Panel
 
 				SlasherName.Text = "Biluy Howard";
 
-				SlasherDesc.Text = "";
+				SlasherDesc.Text = "The Thief\n\nAs a Slasher Zone Power Recovery worker, your goal is to restore \npower by activating two generators and then escape unscathed. \n\n You will get the chance to choose one item to take before entering the Zone.";
 
 			break;
 			case 4:
@@ -330,11 +355,32 @@ public class Menu : Panel
 
 				SlasherName.Text = "Dash Ketchup";
 
-				SlasherDesc.Text = "";
+				SlasherDesc.Text = "The Trespasser\n\nAs a Slasher Zone Power Recovery worker, your goal is to restore \npower by activating two generators and then escape unscathed. \n\n You will get the chance to choose one item to take before entering the Zone.";
 
 			break;
 		}
 
+		}
+
+		//Player1.Text = Slasher.P1ID.Name;
+
+	}
+
+	public void PlayerJoined(Client client) {
+
+		switch(PlayerCount){
+			case 0:
+			P1ID = client;
+			Event.Run( "player_1", P1ID.Name );
+			PlayerCount++;
+			Sandbox.Log.Info(P1ID.Name + ", " + PlayerCount);
+			break;
+			case 1:
+			P2ID = client;
+			Event.Run( "player_2", P1ID.Name );
+			PlayerCount++;
+			Sandbox.Log.Info(P1ID.Name + ", " + P2ID.Name + ", " + PlayerCount);
+			break;
 		}
 
 	}
@@ -342,20 +388,23 @@ public class Menu : Panel
 	[Event( "player_1" )]
 	public void Player1Info( string playername ) {
 		Player1.Text = playername;
-		Sandbox.Log.Info(playername +"!!!!~!");
 	}
+
 	[Event( "player_2" )]
 	public void Player2Info( string playername ) {
 		Player2.Text = playername;
 	}
+
 	[Event( "player_3" )]
 	public void Player3Info( string playername ) {
 		Player3.Text = playername;
 	}
+
 	[Event( "player_4" )]
 	public void Player4Info( string playername ) {
 		Player4.Text = playername;
 	}
+
 	[Event( "player_5" )]
 	public void Player5Info( string playername ) {
 		Player5.Text = playername;

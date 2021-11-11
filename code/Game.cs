@@ -1,10 +1,9 @@
 using System.Numerics;
 using System;
 using Sandbox;
+using LobbySlasher;
 
 public partial class Slasher : Sandbox.Game {
-
-	public static int SelectedSlasher = 1;
 
 	public bool spawned = false;
 
@@ -28,17 +27,7 @@ public partial class Slasher : Sandbox.Game {
 
 	public int PlayerCount;
 
-	[Net] public static string P1Name {get; set;} = "";
-
-	public string P2Name;
-
-	public string P3Name;
-
-	public string P4Name;
-
-	public string P5Name;
-
-	private Lobby Lobby;
+	public SlasherLobby GameLobby;
 
     public Slasher() {
 		if (IsServer)
@@ -115,6 +104,17 @@ public partial class Slasher : Sandbox.Game {
 		if(exit4.IsServer == false)
 			exit4.Delete();
 
+		var stash = new StashEntity();
+		stash.Position = new Vector3(-0f, 0f, 14f);
+		stash.Rotation = new Angles(0f, 0f, 0f).ToRotation();
+        stash.Spawn();
+
+		if(stash.IsServer == false)
+			stash.Delete();
+
+
+		//GameLobby = new SlasherLobby();
+
 	}
 
    public override void ClientJoined(Client client) {
@@ -124,18 +124,20 @@ public partial class Slasher : Sandbox.Game {
 		{
 			//Play the ambient sound
 			PlaySound("ambient");
-
-			Lobby = new Lobby();
 		}
 
-		Lobby.PlayerJoined(client);
+		GameLobby = new SlasherLobby();
+
+		GameLobby.Owner = client;
+
+		GameLobby.PlayerJoined(client);
     }
 
 	public override void ClientDisconnect( Client client, NetworkDisconnectionReason reason )	{
 
 		base.ClientDisconnect( client, reason );
 
-		Lobby.PlayerDisconnect(client);
+		GameLobby.PlayerDisconnect(client);
 
 	}
 
@@ -188,22 +190,6 @@ public partial class Slasher : Sandbox.Game {
 
 	}
 
-	[ServerCmd( "slasher_1" )]
-	public static void SlasherBababooey()
-	{
-		SelectedSlasher = 1;
-	}
-	[ServerCmd( "slasher_2" )]
-	public static void SlasherAmogus()
-	{
-		SelectedSlasher = 2;
-	}
-	[ServerCmd( "slasher_3" )]
-	public static void SlasherTrollge()
-	{
-		SelectedSlasher = 3;
-	}
-
 	[ServerCmd( "spawnsurvivor" )]
 	public static void SpawnSurvivor(int SelectedSurvivor)
 	{
@@ -222,7 +208,7 @@ public partial class Slasher : Sandbox.Game {
 	}
 
 	[ServerCmd( "spawnslasher" )]
-	public static void SpawnSlasher()
+	public static void SpawnSlasher(int SlasherSelection)
 	{
 		if ( ConsoleSystem.Caller == null )
 			return;
@@ -233,7 +219,7 @@ public partial class Slasher : Sandbox.Game {
 		player.Tags.Add("slasher");
 		ConsoleSystem.Caller.Pawn = player;
 
-		player.SelectSlasher(SelectedSlasher);
+		player.SelectSlasher(SlasherSelection);
 
 		player.Respawn();
 	}
@@ -250,6 +236,54 @@ public partial class Slasher : Sandbox.Game {
 		ConsoleSystem.Caller.Pawn = player;
 
 		player.Respawn();
+	}
+
+	[ServerCmd( "store_fuel" )]
+	public static void StoreFuel()
+	{
+		if ( ConsoleSystem.Caller == null )
+			return;
+
+		ConsoleSystem.Caller.Pawn.Tags.Remove("choosing_item");
+		ConsoleSystem.Caller.Pawn.Tags.Add("is_storing_fuel");
+	}
+
+	[ServerCmd( "store_milk" )]
+	public static void StoreMilk()
+	{
+		if ( ConsoleSystem.Caller == null )
+			return;
+
+		ConsoleSystem.Caller.Pawn.Tags.Remove("choosing_item");
+		ConsoleSystem.Caller.Pawn.Tags.Add("is_storing_milk");
+	}
+
+	[ServerCmd( "store_mayo" )]
+	public static void StoreMayo()
+	{
+		if ( ConsoleSystem.Caller == null )
+			return;
+
+		ConsoleSystem.Caller.Pawn.Tags.Remove("choosing_item");
+		ConsoleSystem.Caller.Pawn.Tags.Add("is_storing_mayo");
+	}
+
+	[ServerCmd( "stop_choosing" )]
+	public static void StopChoose()
+	{
+		if ( ConsoleSystem.Caller == null )
+			return;
+
+		ConsoleSystem.Caller.Pawn.Tags.Remove("choosing_item");
+	}
+
+	[ServerCmd( "cancel_ward" )]
+	public static void CancelWard()
+	{
+		if ( ConsoleSystem.Caller == null )
+			return;
+
+		ConsoleSystem.Caller.Pawn.Tags.Remove("has_deathward");
 	}
 
 }
