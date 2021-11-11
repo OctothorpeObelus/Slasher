@@ -196,7 +196,7 @@ partial class SurvivorPlayer : Player
 		}
 
 
-		if (Input.Pressed(InputButton.Flashlight))
+		if (Input.Pressed(InputButton.Flashlight)  && !Tags.Has("has_item"))
 		{
 			if(Tags.Has("is_storing_fuel")){
 

@@ -69,15 +69,21 @@ public class Menu : Panel
 
 	public Client Owner;
 
-	public Client P1ID;
+	public Client P1;
 
-	public Client P2ID;
+	public Client P2;
 
-	public Client P3ID;
+	public Client P3;
 
-	public Client P4ID;
+	public Client P4;
 
-	public Client P5ID;
+	public Client P5;
+
+	public static int P1R;
+	public static int P2R;
+	public static int P3R;
+	public static int P4R;
+	public static int P5R;
 
 	public Menu()
 	{
@@ -172,11 +178,11 @@ public class Menu : Panel
 
 		ReadyConfirm.AddEventListener( "onclick", () =>
 		{
-
 			IsThePlayerReady = !IsThePlayerReady;
 
 			if(IsThePlayerReady)
 				PlaySound("menu_confirm");
+
 
 		} );
 
@@ -231,10 +237,10 @@ public class Menu : Panel
 
 		//TEST
 
-		ReadyP1.SetClass("survivor",SelectionSurvivor);
-		ReadyP1.SetClass("slasher",!SelectionSurvivor);
+		//ReadyP1.SetClass("survivor",SelectionSurvivor);
+		//ReadyP1.SetClass("slasher",!SelectionSurvivor);
 
-		ReadyP1.SetClass("confirm",IsThePlayerReady);
+		//ReadyP1.SetClass("confirm",IsThePlayerReady);
 
 		//END TEST
 
@@ -362,52 +368,333 @@ public class Menu : Panel
 
 		}
 
-		//Player1.Text = Slasher.P1ID.Name;
+		foreach ( var client in Client.All )
+			{
 
-	}
+			//Player Joined / Left :)))	(this is actullay very good code don't wroryy)	
 
-	public void PlayerJoined(Client client) {
+				if(P1 == null)
+					P1 = client;
 
-		switch(PlayerCount){
+				if(P1 != client && P1 != null && P2 == null)
+					P2 = client;
+
+				if(P1 != null && P2 != client && P2 != null && P3 == null)
+					P3 = client;
+
+				if(P1 != null && P2 != null && P3 != client && P3 != null && P4 == null)
+					P4 = client;
+
+				if(P1 != null && P2 != null && P3 != null  && P4 != client && P4 != null && P5 == null)
+					P5 = client;
+			}
+
+		//Player leaving checks uwu
+
+		if(P5 == P4 || P5 == P3 || P5 == P2 || P5 == P1)
+			P5 = null;
+
+		if(P4 == P3 || P4 == P2 || P4 == P1)
+			P4 = null;
+
+		if(P3 == P2 || P3 == P1)
+			P3 = null;
+
+		if(P2 == P1)
+			P2 = null;
+
+
+		if(P1 != null)
+			Player1.Text = P1.Name;
+		else
+			Player1.Text = "";
+
+		if(P2 != null)
+			Player2.Text = P2.Name;
+		else
+			Player2.Text = "";
+
+		if(P3 != null)
+			Player3.Text = P3.Name;
+		else
+			Player3.Text = "";
+
+		if(P4 != null)
+			Player4.Text = P4.Name;
+		else
+			Player4.Text = "";
+
+		if(P5 != null)
+			Player5.Text = P5.Name;
+		else
+			Player5.Text = "";
+
+
+		//PlayerReady Definitions: 0-freshly joined 1-selected survivor 2-selected slasher 3-ready as survivor 4-ready as slasher
+
+		if(!IsThePlayerReady && P1 == Local.Client && SelectionSurvivor)
+			Event.Run("player_1_readiness", 1);
+
+		else if(!IsThePlayerReady && P1 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_1_readiness", 2);
+
+		else if(IsThePlayerReady && P1 == Local.Client && SelectionSurvivor)
+			Event.Run("player_1_readiness", 3);
+
+		else if(IsThePlayerReady && P1 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_1_readiness", 4);
+
+		
+		if(!IsThePlayerReady && P1 == Local.Client && SelectionSurvivor)
+			Event.Run("player_1_readiness", 1);
+
+		else if(!IsThePlayerReady && P1 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_1_readiness", 2);
+
+		else if(IsThePlayerReady && P1 == Local.Client && SelectionSurvivor)
+			Event.Run("player_1_readiness", 3);
+
+		else if(IsThePlayerReady && P1 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_1_readiness", 4);
+
+
+
+		if(!IsThePlayerReady && P2 == Local.Client && SelectionSurvivor)
+			Event.Run("player_2_readiness", 1);
+
+		else if(!IsThePlayerReady && P3 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_3_readiness", 2);
+
+		else if(IsThePlayerReady && P3 == Local.Client && SelectionSurvivor)
+			Event.Run("player_3_readiness", 3);
+
+		else if(IsThePlayerReady && P3 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_3_readiness", 4);
+
+
+
+		if(!IsThePlayerReady && P4 == Local.Client && SelectionSurvivor)
+			Event.Run("player_4_readiness", 1);
+
+		else if(!IsThePlayerReady && P4 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_4_readiness", 2);
+
+		else if(IsThePlayerReady && P4 == Local.Client && SelectionSurvivor)
+			Event.Run("player_4_readiness", 3);
+
+		else if(IsThePlayerReady && P4 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_4_readiness", 4);
+
+
+
+		if(!IsThePlayerReady && P5 == Local.Client && SelectionSurvivor)
+			Event.Run("player_5_readiness", 1);
+
+		else if(!IsThePlayerReady && P5 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_5_readiness", 2);
+
+		else if(IsThePlayerReady && P5 == Local.Client && SelectionSurvivor)
+			Event.Run("player_5_readiness", 3);
+
+		else if(IsThePlayerReady && P5 == Local.Client && !SelectionSurvivor)
+			Event.Run("player_5_readiness", 4);
+
+		switch(P1R)
+		{
 			case 0:
-			P1ID = client;
-			Event.Run( "player_1", P1ID.Name );
-			PlayerCount++;
-			Sandbox.Log.Info(P1ID.Name + ", " + PlayerCount);
+			ReadyP1.SetClass("survivor",false);
+			ReadyP1.SetClass("slasher",false);
+
+			ReadyP1.SetClass("confirm",false);
 			break;
 			case 1:
-			P2ID = client;
-			Event.Run( "player_2", P1ID.Name );
-			PlayerCount++;
-			Sandbox.Log.Info(P1ID.Name + ", " + P2ID.Name + ", " + PlayerCount);
+			ReadyP1.SetClass("survivor",true);
+			ReadyP1.SetClass("slasher",false);
+
+			ReadyP1.SetClass("confirm",false);
+			break;
+			case 2:
+			ReadyP1.SetClass("survivor",false);
+			ReadyP1.SetClass("slasher",true);
+
+			ReadyP1.SetClass("confirm",false);
+			break;
+			case 3:
+			ReadyP1.SetClass("survivor",true);
+			ReadyP1.SetClass("slasher",false);
+
+			ReadyP1.SetClass("confirm",true);
+			break;
+			case 4:
+			ReadyP1.SetClass("survivor",false);
+			ReadyP1.SetClass("slasher",true);
+
+			ReadyP1.SetClass("confirm",true);
 			break;
 		}
 
-	}
 
-	[Event( "player_1" )]
-	public void Player1Info( string playername ) {
-		Player1.Text = playername;
-	}
+		switch(P2R)
+		{
+			case 0:
+			ReadyP2.SetClass("survivor",false);
+			ReadyP2.SetClass("slasher",false);
 
-	[Event( "player_2" )]
-	public void Player2Info( string playername ) {
-		Player2.Text = playername;
-	}
+			ReadyP2.SetClass("confirm",false);
+			break;
+			case 1:
+			ReadyP2.SetClass("survivor",true);
+			ReadyP2.SetClass("slasher",false);
 
-	[Event( "player_3" )]
-	public void Player3Info( string playername ) {
-		Player3.Text = playername;
-	}
+			ReadyP2.SetClass("confirm",false);
+			break;
+			case 2:
+			ReadyP2.SetClass("survivor",false);
+			ReadyP2.SetClass("slasher",true);
 
-	[Event( "player_4" )]
-	public void Player4Info( string playername ) {
-		Player4.Text = playername;
-	}
+			ReadyP2.SetClass("confirm",false);
+			break;
+			case 3:
+			ReadyP2.SetClass("survivor",true);
+			ReadyP2.SetClass("slasher",false);
 
-	[Event( "player_5" )]
-	public void Player5Info( string playername ) {
-		Player5.Text = playername;
+			ReadyP2.SetClass("confirm",true);
+			break;
+			case 4:
+			ReadyP2.SetClass("survivor",false);
+			ReadyP2.SetClass("slasher",true);
+
+			ReadyP2.SetClass("confirm",true);
+			break;
+		}
+
+
+		switch(P3R)
+		{
+			case 0:
+			ReadyP3.SetClass("survivor",false);
+			ReadyP3.SetClass("slasher",false);
+
+			ReadyP3.SetClass("confirm",false);
+			break;
+			case 1:
+			ReadyP3.SetClass("survivor",true);
+			ReadyP3.SetClass("slasher",false);
+
+			ReadyP3.SetClass("confirm",false);
+			break;
+			case 2:
+			ReadyP3.SetClass("survivor",false);
+			ReadyP3.SetClass("slasher",true);
+
+			ReadyP3.SetClass("confirm",false);
+			break;
+			case 3:
+			ReadyP3.SetClass("survivor",true);
+			ReadyP3.SetClass("slasher",false);
+
+			ReadyP3.SetClass("confirm",true);
+			break;
+			case 4:
+			ReadyP3.SetClass("survivor",false);
+			ReadyP3.SetClass("slasher",true);
+
+			ReadyP3.SetClass("confirm",true);
+			break;
+		}
+
+
+
+		switch(P4R)
+		{
+			case 0:
+			ReadyP4.SetClass("survivor",false);
+			ReadyP4.SetClass("slasher",false);
+
+			ReadyP4.SetClass("confirm",false);
+			break;
+			case 1:
+			ReadyP4.SetClass("survivor",true);
+			ReadyP4.SetClass("slasher",false);
+
+			ReadyP4.SetClass("confirm",false);
+			break;
+			case 2:
+			ReadyP4.SetClass("survivor",false);
+			ReadyP4.SetClass("slasher",true);
+
+			ReadyP4.SetClass("confirm",false);
+			break;
+			case 3:
+			ReadyP4.SetClass("survivor",true);
+			ReadyP4.SetClass("slasher",false);
+
+			ReadyP4.SetClass("confirm",true);
+			break;
+			case 4:
+			ReadyP4.SetClass("survivor",false);
+			ReadyP4.SetClass("slasher",true);
+
+			ReadyP4.SetClass("confirm",true);
+			break;
+		}
+
+
+		switch(P5R)
+		{
+			case 0:
+			ReadyP5.SetClass("survivor",false);
+			ReadyP5.SetClass("slasher",false);
+
+			ReadyP5.SetClass("confirm",false);
+			break;
+			case 1:
+			ReadyP5.SetClass("survivor",true);
+			ReadyP5.SetClass("slasher",false);
+
+			ReadyP5.SetClass("confirm",false);
+			break;
+			case 2:
+			ReadyP5.SetClass("survivor",false);
+			ReadyP5.SetClass("slasher",true);
+
+			ReadyP5.SetClass("confirm",false);
+			break;
+			case 3:
+			ReadyP5.SetClass("survivor",true);
+			ReadyP5.SetClass("slasher",false);
+
+			ReadyP5.SetClass("confirm",true);
+			break;
+			case 4:
+			ReadyP5.SetClass("survivor",false);
+			ReadyP5.SetClass("slasher",true);
+
+			ReadyP5.SetClass("confirm",true);
+			break;
+		}
+		
+	}	
+
+	[Event("player_1_readiness")]
+	public static void Player1ReadyState(int state){	
+		P1R = state;
+	}
+	[Event("player_2_readiness")]
+	public static void Player2ReadyState(int state){	
+		P2R = state;
+	}
+	[Event("player_3_readiness")]
+	public static void Player3ReadyState(int state){	
+		P3R = state;
+	}
+	[Event("player_4_readiness")]
+	public static void Player4ReadyState(int state){	
+		P4R = state;
+	}
+	[Event("player_5_readiness")]
+	public static void Player5ReadyState(int state){	
+		P5R = state;
 	}
 
 }
